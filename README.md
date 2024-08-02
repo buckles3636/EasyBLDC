@@ -3,7 +3,7 @@
 # Easy BLDC
 
 ## Overview
-Easy BLDC is an open source sensorless FOC brushless dc motor driver designed to be connected to additional boards. I made this for project for use in underwater robotics, but it ha smany other applications.
+Easy BLDC is an open source sensorless FOC brushless dc motor driver designed to be connected to additional boards. It is designed around the Texas Instruments DRV8305 gate driver and InstaSpin® TMS320F28027F MCU. I made this for project for use in underwater robotics but it has many other applications. 
 
 ## Why FOC?
 TODO:
