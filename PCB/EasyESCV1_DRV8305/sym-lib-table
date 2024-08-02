@@ -1,0 +1,9 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "DRV8305")(type "KiCad")(uri "C:/Users/peter/GitHub/EasyBLDC/PCB/EasyESCSymbols/DRV8305.kicad_sym")(options "")(descr ""))
+  (lib (name "CSD16556Q5B")(type "KiCad")(uri "C:/Users/peter/GitHub/EasyBLDC/PCB/EasyESCSymbols/CSD16556Q5B.kicad_sym")(options "")(descr ""))
+  (lib (name "LMR16006XDDCR")(type "KiCad")(uri "C:/Users/peter/GitHub/EasyBLDC/PCB/EasyESCSymbols/LMR16006XDDCR.kicad_sym")(options "")(descr ""))
+  (lib (name "Connectors")(type "KiCad")(uri "C:/Users/peter/GitHub/EasyBLDC/PCB/EasyESCSymbols/Tag-Connect.kicad_sym")(options "")(descr ""))
+  (lib (name "TMS320F28027FPTT")(type "KiCad")(uri "C:/Users/peter/GitHub/EasyBLDC/PCB/EasyESCSymbols/TMS320F28027FPTT.kicad_sym")(options "")(descr ""))
+  (lib (name "TPD4E05U06DQAR")(type "KiCad")(uri "C:/Users/peter/GitHub/EasyBLDC/PCB/EasyESCSymbols/TPD4E05U06DQAR.kicad_sym")(options "")(descr ""))
+)

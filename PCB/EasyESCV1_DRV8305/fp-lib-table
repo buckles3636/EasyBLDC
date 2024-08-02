@@ -1,0 +1,9 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "DRV8305")(type "KiCad")(uri "C:/Users/peter/GitHub/EasyBLDC/PCB/EasyESCFootprints/DRV8305.pretty")(options "")(descr ""))
+  (lib (name "CSD16556Q5B")(type "KiCad")(uri "C:/Users/peter/GitHub/EasyBLDC/PCB/EasyESCFootprints/CSD16556Q5B.pretty")(options "")(descr ""))
+  (lib (name "LMR16006XDDCR")(type "KiCad")(uri "C:/Users/peter/GitHub/EasyBLDC/PCB/EasyESCFootprints/LMR16006XDDCR.pretty")(options "")(descr ""))
+  (lib (name "TMS320F28027FPTT")(type "KiCad")(uri "C:/Users/peter/GitHub/EasyBLDC/PCB/EasyESCFootprints/TMS320F28027FPTT.pretty")(options "")(descr ""))
+  (lib (name "TPD4E05U06DQAR")(type "KiCad")(uri "C:/Users/peter/GitHub/EasyBLDC/PCB/EasyESCFootprints/TPD4E05U06DQAR.pretty")(options "")(descr ""))
+  (lib (name "Connectors")(type "KiCad")(uri "C:/Users/peter/GitHub/EasyBLDC/PCB/EasyESCFootprints/Connectors.pretty")(options "")(descr ""))
+)

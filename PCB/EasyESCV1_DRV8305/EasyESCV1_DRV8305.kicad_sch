@@ -1,0 +1,127 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "6c304649-7c80-4a4c-b925-07b9210ad53d")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 115.57 71.12)
+		(size 58.42 39.37)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "22fb4715-9f33-45f1-b8d4-9537d945fe69")
+		(property "Sheetname" "Main Connector"
+			(at 115.57 70.4084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MainConnector.kicad_sch"
+			(at 115.57 111.0746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "EasyESCV1_DRV8305"
+				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 207.01 74.93)
+		(size 41.91 31.75)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8049925a-2faa-4187-b86e-b6208aed2e10")
+		(property "Sheetname" "TMS320F28027F Breakout"
+			(at 207.01 74.2184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "TMS320F28027FBreakout_sch.kicad_sch"
+			(at 207.01 107.2646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "EasyESCV1_DRV8305"
+				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 35.56 69.85)
+		(size 44.45 36.83)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8a0cf24a-00c0-47a8-b582-1a7bbe5ca078")
+		(property "Sheetname" "DRV8305 Breakout"
+			(at 35.56 69.1384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "DRV8305Breakout.kicad_sch"
+			(at 35.56 107.2646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "EasyESCV1_DRV8305"
+				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)
