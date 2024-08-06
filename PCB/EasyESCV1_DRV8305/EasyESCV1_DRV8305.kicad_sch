@@ -12,8 +12,8 @@
 	)
 	(lib_symbols)
 	(sheet
-		(at 115.57 71.12)
-		(size 58.42 39.37)
+		(at 113.03 62.23)
+		(size 72.39 78.74)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -24,7 +24,7 @@
 		)
 		(uuid "22fb4715-9f33-45f1-b8d4-9537d945fe69")
 		(property "Sheetname" "Main Connector"
-			(at 115.57 70.4084 0)
+			(at 113.03 61.5184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33,7 +33,7 @@
 			)
 		)
 		(property "Sheetfile" "MainConnector.kicad_sch"
-			(at 115.57 111.0746 0)
+			(at 113.03 141.5546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -50,8 +50,8 @@
 		)
 	)
 	(sheet
-		(at 207.01 74.93)
-		(size 41.91 31.75)
+		(at 191.77 62.23)
+		(size 72.39 78.74)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -62,7 +62,7 @@
 		)
 		(uuid "8049925a-2faa-4187-b86e-b6208aed2e10")
 		(property "Sheetname" "TMS320F28027F Breakout"
-			(at 207.01 74.2184 0)
+			(at 191.77 61.5184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -71,7 +71,7 @@
 			)
 		)
 		(property "Sheetfile" "TMS320F28027FBreakout_sch.kicad_sch"
-			(at 207.01 107.2646 0)
+			(at 191.77 141.5546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -88,8 +88,8 @@
 		)
 	)
 	(sheet
-		(at 35.56 69.85)
-		(size 44.45 36.83)
+		(at 34.29 62.23)
+		(size 72.39 78.74)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -100,7 +100,7 @@
 		)
 		(uuid "8a0cf24a-00c0-47a8-b582-1a7bbe5ca078")
 		(property "Sheetname" "DRV8305 Breakout"
-			(at 35.56 69.1384 0)
+			(at 34.29 61.5184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -109,7 +109,7 @@
 			)
 		)
 		(property "Sheetfile" "DRV8305Breakout.kicad_sch"
-			(at 35.56 107.2646 0)
+			(at 34.29 141.5546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
