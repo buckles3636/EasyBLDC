@@ -1,123 +1,4 @@
-23618690490517779
-2023Footprints
-3557-15
-
-
-0
-4
-2
-2023Footprints
-BR-ESC
-
-
-0
-7
-7
-2023Footprints
-LSHD-5601
-
-
-0
-10
-10
-2023Footprints
-MR30PW-F
-Connector XT30 Horizontal PCB Female, https://www.tme.eu/en/Document/5e47640ba39fa492dbd4c0f4c8ae7b93/MR30PW%20SPEC.pdf
-RC Connector XT30
-0
-5
-3
-2023Footprints
-MR30PW-M
-Connector XT30 Horizontal PCB Male, https://www.tme.eu/en/Document/5e47640ba39fa492dbd4c0f4c8ae7b93/MR30PW%20SPEC.pdf
-RC Connector XT30
-0
-5
-3
-2023Footprints
-TC7107CPL
-
-
-0
-40
-40
-2023Footprints
-Torpedo Motor
-
-
-0
-2
-2
-2023Footprints
-XT30PW-F
-Connector XT30 Horizontal PCB Female, https://www.tme.eu/en/Document/ce4077e36b79046da520ca73227e15de/XT30PW%20SPEC.pdf
-RC Connector XT30
-0
-4
-2
-2023Footprints
-XT30PW-M
-Connector XT30 Horizontal PCB Male, https://www.tme.eu/en/Document/ce4077e36b79046da520ca73227e15de/XT30PW%20SPEC.pdf
-RC Connector XT30
-0
-4
-2
-2023Footprints
-XT30U-F
-Connector XT30 Vertical Cable Female, https://www.tme.eu/en/Document/3cbfa5cfa544d79584972dd5234a409e/XT30U%20SPEC.pdf
-RC Connector XT30
-0
-2
-2
-2023Footprints
-XT30U-M
-Connector XT30 Vertical Cable Male, https://www.tme.eu/en/Document/3cbfa5cfa544d79584972dd5234a409e/XT30U%20SPEC.pdf
-RC Connector XT30
-0
-2
-2
-2023Footprints
-XT30UPB-F
-Connector XT30 Vertical PCB Female, https://www.tme.eu/en/Document/4acc913878197f8c2e30d4b8cdc47230/XT30UPB%20SPEC.pdf
-RC Connector XT30
-0
-2
-2
-2023Footprints
-XT30UPB-M
-Connector XT30 Vertical PCB Male, https://www.tme.eu/en/Document/4acc913878197f8c2e30d4b8cdc47230/XT30UPB%20SPEC.pdf
-RC Connector XT30
-0
-2
-2
-2023Footprints
-XT60-F
-AMASS female XT60, through hole, vertical, https://www.tme.eu/Document/2d152ced3b7a446066e6c419d84bb460/XT60%20SPEC.pdf
-XT60 female vertical
-0
-2
-2
-2023Footprints
-XT60-M
-AMASS female XT60, through hole, vertical, https://www.tme.eu/Document/2d152ced3b7a446066e6c419d84bb460/XT60%20SPEC.pdf
-XT60 female vertical
-0
-2
-2
-2023Footprints
-XT90PW-F
-
-
-0
-4
-4
-2023Footprints
-XT90PW-M
-
-
-0
-4
-4
+23611108337096823
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -2666,6 +2547,13 @@ speaker CUI
 0
 2
 2
+CSD16556Q5B
+DNK0008A
+
+CSD16556Q5B 
+0
+9
+9
 Calibration_Scale
 Gauge_10mm_Type1_CopperTop
 Gauge, Massstab, 10mm, CopperTop, Type 1,
@@ -52324,6 +52212,27 @@ connector Wuerth WR-WTB vertical
 0
 10
 10
+Connectors
+AMPHENOL_10159560-A00221RLF
+
+
+0
+12
+12
+Connectors
+Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical
+Tag-Connect programming header; http://www.tag-connect.com/Materials/TC2030-IDC-NL.pdf
+tag connect programming header pogo pins
+0
+6
+6
+Connectors
+Tag-Connect_TC2050-IDC-NL_2x05_P1.27mm_Vertical
+Tag-Connect programming header; https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2050-IDC-NL_Datasheet_8.pdf
+tag connect programming header pogo pins
+0
+10
+10
 Converter_ACDC
 Converter_ACDC_CUI_PBO-3-Sxx_THT_Vertical
 ACDC-Converter, 3W, CUI PBO-3, THT https://www.cui.com/product/resource/pbo-3.pdf
@@ -54494,6 +54403,27 @@ SMD SMT ceramic resonator filter filter hand-soldering
 0
 3
 3
+DRV8305
+PHP0048G_L
+
+DRV83053PHP 
+0
+74
+50
+DRV8305
+PHP0048G_M
+
+DRV83053PHP 
+0
+74
+50
+DRV8305
+PHP0048G_N
+
+DRV83053PHP 
+0
+74
+50
 Diode_SMD
 D_0201_0603Metric
 Diode SMD 0201 (0603 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.vishay.com/docs/20052/crcw0201e3.pdf), generated with kicad-footprint-generator
@@ -64497,6 +64427,13 @@ Yellow 5381 Series LED
 0
 2
 2
+LMR16006XDDCR
+DDC0006A
+
+LMR16006XDDCR 
+0
+6
+6
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet
@@ -90432,6 +90369,34 @@ Logo WEEE
 0
 0
 0
+TMS320F28027FPTT
+PT0048A_L
+
+TMS320F28027FPTT 
+0
+48
+48
+TMS320F28027FPTT
+PT0048A_M
+
+TMS320F28027FPTT 
+0
+48
+48
+TMS320F28027FPTT
+PT0048A_N
+
+TMS320F28027FPTT 
+0
+48
+48
+TPD4E05U06DQAR
+DQA0010A
+
+TPD4E05U06DQAR 
+0
+10
+10
 TerminalBlock
 TerminalBlock_Altech_AK300-2_P5.00mm
 Altech AK300 terminal block, pitch 5.0mm, 45 degree angled, see http://www.mouser.com/ds/2/16/PCBMETRC-24178.pdf
