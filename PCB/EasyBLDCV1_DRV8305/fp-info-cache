@@ -1,4 +1,4 @@
-23612832269553803
+23614555847610899
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -56384,6 +56384,13 @@ AMPHENOL_10159560-A00221RLF
 0
 12
 12
+EasyBLDC
+CAP_FP_10P3X10P3_PAN
+
+EEE-FPV391UAP 
+0
+2
+2
 EasyBLDC
 DDC0006A
 
