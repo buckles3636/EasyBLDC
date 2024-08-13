@@ -1,4 +1,4 @@
-23611108337096823
+23612832269553803
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -2547,13 +2547,6 @@ speaker CUI
 0
 2
 2
-CSD16556Q5B
-DNK0008A
-
-CSD16556Q5B 
-0
-9
-9
 Calibration_Scale
 Gauge_10mm_Type1_CopperTop
 Gauge, Massstab, 10mm, CopperTop, Type 1,
@@ -52212,27 +52205,6 @@ connector Wuerth WR-WTB vertical
 0
 10
 10
-Connectors
-AMPHENOL_10159560-A00221RLF
-
-
-0
-12
-12
-Connectors
-Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical
-Tag-Connect programming header; http://www.tag-connect.com/Materials/TC2030-IDC-NL.pdf
-tag connect programming header pogo pins
-0
-6
-6
-Connectors
-Tag-Connect_TC2050-IDC-NL_2x05_P1.27mm_Vertical
-Tag-Connect programming header; https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2050-IDC-NL_Datasheet_8.pdf
-tag connect programming header pogo pins
-0
-10
-10
 Converter_ACDC
 Converter_ACDC_CUI_PBO-3-Sxx_THT_Vertical
 ACDC-Converter, 3W, CUI PBO-3, THT https://www.cui.com/product/resource/pbo-3.pdf
@@ -54403,27 +54375,6 @@ SMD SMT ceramic resonator filter filter hand-soldering
 0
 3
 3
-DRV8305
-PHP0048G_L
-
-DRV83053PHP 
-0
-74
-50
-DRV8305
-PHP0048G_M
-
-DRV83053PHP 
-0
-74
-50
-DRV8305
-PHP0048G_N
-
-DRV83053PHP 
-0
-74
-50
 Diode_SMD
 D_0201_0603Metric
 Diode SMD 0201 (0603 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.vishay.com/docs/20052/crcw0201e3.pdf), generated with kicad-footprint-generator
@@ -56423,6 +56374,97 @@ Display_7Segment
 Sx39-1xxxxx
 Single digit 7 segment LED display in red, yellow or green colour http://www.kingbrightusa.com/images/catalog/SPEC/sa39-11ewa.pdf
 One digit LED 7 segment SA39-11 SC39-11 SA39-12 SC39-12
+0
+10
+10
+EasyBLDC
+AMPHENOL_10159560-A00221RLF
+
+
+0
+12
+12
+EasyBLDC
+DDC0006A
+
+LMR16006XDDCR 
+0
+6
+6
+EasyBLDC
+DNK0008A
+
+CSD16556Q5B 
+0
+9
+9
+EasyBLDC
+DQA0010A
+
+TPD4E05U06DQAR 
+0
+10
+10
+EasyBLDC
+PHP0048G_L
+
+DRV83053PHP 
+0
+74
+50
+EasyBLDC
+PHP0048G_M
+
+DRV83053PHP 
+0
+74
+50
+EasyBLDC
+PHP0048G_N
+
+DRV83053PHP 
+0
+74
+50
+EasyBLDC
+PT0048A_L
+
+TMS320F28027FPTT 
+0
+48
+48
+EasyBLDC
+PT0048A_M
+
+TMS320F28027FPTT 
+0
+48
+48
+EasyBLDC
+PT0048A_N
+
+TMS320F28027FPTT 
+0
+48
+48
+EasyBLDC
+SD53
+
+SD53-470-R 
+0
+2
+2
+EasyBLDC
+Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical
+Tag-Connect programming header; http://www.tag-connect.com/Materials/TC2030-IDC-NL.pdf
+tag connect programming header pogo pins
+0
+6
+6
+EasyBLDC
+Tag-Connect_TC2050-IDC-NL_2x05_P1.27mm_Vertical
+Tag-Connect programming header; https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2050-IDC-NL_Datasheet_8.pdf
+tag connect programming header pogo pins
 0
 10
 10
@@ -64427,13 +64469,6 @@ Yellow 5381 Series LED
 0
 2
 2
-LMR16006XDDCR
-DDC0006A
-
-LMR16006XDDCR 
-0
-6
-6
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet
@@ -90369,34 +90404,6 @@ Logo WEEE
 0
 0
 0
-TMS320F28027FPTT
-PT0048A_L
-
-TMS320F28027FPTT 
-0
-48
-48
-TMS320F28027FPTT
-PT0048A_M
-
-TMS320F28027FPTT 
-0
-48
-48
-TMS320F28027FPTT
-PT0048A_N
-
-TMS320F28027FPTT 
-0
-48
-48
-TPD4E05U06DQAR
-DQA0010A
-
-TPD4E05U06DQAR 
-0
-10
-10
 TerminalBlock
 TerminalBlock_Altech_AK300-2_P5.00mm
 Altech AK300 terminal block, pitch 5.0mm, 45 degree angled, see http://www.mouser.com/ds/2/16/PCBMETRC-24178.pdf

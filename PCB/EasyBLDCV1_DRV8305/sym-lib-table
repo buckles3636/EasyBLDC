@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "EasyBLDC")(type "KiCad")(uri "C:/Users/peter/GitHub/EasyBLDC/PCB/EasyBLDCSymbols/EasyBLDC.kicad_sym")(options "")(descr ""))
+  (lib (name "Tag-Connect")(type "KiCad")(uri "C:/Users/peter/GitHub/EasyBLDC/PCB/EasyBLDCSymbols/Tag-Connect.kicad_sym")(options "")(descr ""))
+)

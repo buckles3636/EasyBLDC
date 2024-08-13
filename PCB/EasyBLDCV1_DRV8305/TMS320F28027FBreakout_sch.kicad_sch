@@ -113,401 +113,6 @@
 				)
 			)
 		)
-		(symbol "Connectors:TC2050-IDC"
-			(pin_names
-				(offset 1.016) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 -11.43 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TC2050-IDC"
-				(at 0.635 -13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at -1.27 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2050-IDC-NL_Datasheet_8.pdf"
-				(at -1.27 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Header, Tagconnect, 2x5"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "TC2050*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "TC2050-IDC_0_1"
-				(circle
-					(center -2.54 -8.255)
-					(radius 1.4224)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center -1.6002 5.08)
-					(radius 0.889)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 8.255)
-					(radius 1.27)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "TC2050-IDC_1_1"
-				(circle
-					(center -1.6002 -5.1308)
-					(radius 0.889)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center -1.6002 -2.5908)
-					(radius 0.889)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center -1.6002 -0.0508)
-					(radius 0.889)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center -1.6002 2.4892)
-					(radius 0.889)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.6002 -5.08)
-					(radius 0.889)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.6002 -2.54)
-					(radius 0.889)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.6002 0)
-					(radius 0.889)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.6002 2.54)
-					(radius 0.889)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.6002 5.1308)
-					(radius 0.889)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.54 -8.255)
-					(radius 1.4224)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -6.35 5.08 0)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 6.35 5.08 180)
-					(length 3.81)
-					(name "Pin_10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -6.35 2.54 0)
-					(length 3.81)
-					(name "Pin_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -6.35 0 0)
-					(length 3.81)
-					(name "Pin_3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -6.35 -2.54 0)
-					(length 3.81)
-					(name "Pin_4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -6.35 -5.08 0)
-					(length 3.81)
-					(name "Pin_5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 6.35 -5.08 180)
-					(length 3.81)
-					(name "Pin_6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 6.35 -2.54 180)
-					(length 3.81)
-					(name "Pin_7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 6.35 0 180)
-					(length 3.81)
-					(name "Pin_8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 6.35 2.54 180)
-					(length 3.81)
-					(name "Pin_9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Device:C"
 			(pin_numbers hide)
 			(pin_names
@@ -1129,7 +734,402 @@
 				)
 			)
 		)
-		(symbol "TMS320F28027FPTT:TMS320F28027FPTT"
+		(symbol "EasyBLDC:TC2050-IDC"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TC2050-IDC"
+				(at 0.635 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.27 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2050-IDC-NL_Datasheet_8.pdf"
+				(at -1.27 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Header, Tagconnect, 2x5"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "TC2050*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TC2050-IDC_0_1"
+				(circle
+					(center -2.54 -8.255)
+					(radius 1.4224)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -1.6002 5.08)
+					(radius 0.889)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 8.255)
+					(radius 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TC2050-IDC_1_1"
+				(circle
+					(center -1.6002 -5.1308)
+					(radius 0.889)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -1.6002 -2.5908)
+					(radius 0.889)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -1.6002 -0.0508)
+					(radius 0.889)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -1.6002 2.4892)
+					(radius 0.889)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.6002 -5.08)
+					(radius 0.889)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.6002 -2.54)
+					(radius 0.889)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.6002 0)
+					(radius 0.889)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.6002 2.54)
+					(radius 0.889)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.6002 5.1308)
+					(radius 0.889)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 -8.255)
+					(radius 1.4224)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -6.35 5.08 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 6.35 5.08 180)
+					(length 3.81)
+					(name "Pin_10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -6.35 2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -6.35 0 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -6.35 -2.54 0)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -6.35 -5.08 0)
+					(length 3.81)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 6.35 -5.08 180)
+					(length 3.81)
+					(name "Pin_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 6.35 -2.54 180)
+					(length 3.81)
+					(name "Pin_7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 6.35 0 180)
+					(length 3.81)
+					(name "Pin_8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 6.35 2.54 180)
+					(length 3.81)
+					(name "Pin_9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "EasyBLDC:TMS320F28027FPTT"
 			(pin_names
 				(offset 0.254)
 			)
@@ -2340,6 +2340,12 @@
 		)
 	)
 	(junction
+		(at 171.45 92.71)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0907bd52-6347-46c6-8ffe-9da4771e1cdb")
+	)
+	(junction
 		(at 254 135.89)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2350,12 +2356,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "13d7a8a7-0ca6-4a8e-bd6c-4aaba256f021")
-	)
-	(junction
-		(at 171.45 92.71)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "31006e7c-0219-4da3-b6a2-90dcc9967177")
 	)
 	(junction
 		(at 223.52 53.34)
@@ -2376,16 +2376,16 @@
 		(uuid "5dcc955e-bbf3-4c8e-bf46-1b396549df08")
 	)
 	(junction
+		(at 171.45 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "71f396bf-11d6-49f2-a075-f7f00a487cd0")
+	)
+	(junction
 		(at 252.73 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7463c308-cc05-4300-aec6-0974034ff035")
-	)
-	(junction
-		(at 171.45 87.63)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8d8fa485-7ff0-4daa-9f25-ac96cabd085e")
 	)
 	(junction
 		(at 245.11 90.17)
@@ -2767,6 +2767,16 @@
 	)
 	(wire
 		(pts
+			(xy 171.45 87.63) (xy 185.42 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76c6aeab-3fb6-4ede-9942-c7b1be25effb")
+	)
+	(wire
+		(pts
 			(xy 38.1 67.31) (xy 38.1 74.93)
 		)
 		(stroke
@@ -2817,7 +2827,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 87.63) (xy 171.45 87.63)
+			(xy 167.64 87.63) (xy 171.45 87.63)
 		)
 		(stroke
 			(width 0)
@@ -2864,16 +2874,6 @@
 			(type default)
 		)
 		(uuid "8feea0c7-0668-42f4-9bfd-4c97e8f7c07b")
-	)
-	(wire
-		(pts
-			(xy 167.64 87.63) (xy 171.45 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9a0dc47a-168b-450b-8bc2-6c724b6e5761")
 	)
 	(wire
 		(pts
@@ -3027,16 +3027,6 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 92.71) (xy 177.8 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c13068e9-34f5-4e39-a5f2-49d481c63a8b")
-	)
-	(wire
-		(pts
 			(xy 210.82 78.74) (xy 210.82 80.01)
 		)
 		(stroke
@@ -3174,6 +3164,16 @@
 			(type default)
 		)
 		(uuid "f6c5c3bb-552c-441b-b7d3-8a0aaddd0dd5")
+	)
+	(wire
+		(pts
+			(xy 171.45 92.71) (xy 177.8 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa1dced4-2d57-4f03-93e3-b18ef8d1ca4b")
 	)
 	(wire
 		(pts
@@ -4337,6 +4337,214 @@
 		)
 	)
 	(symbol
+		(lib_id "EasyBLDC:TMS320F28027FPTT")
+		(at 110.49 85.09 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "105978d6-708c-411e-a5ca-0fa90da0face")
+		(property "Reference" "U2"
+			(at 110.49 16.51 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "TMS320F28027FPTT"
+			(at 110.49 19.05 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "EasyBLDC:PT0048A_N"
+			(at 110.49 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "TMS320F28027FPTT"
+			(at 110.49 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 110.49 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "15"
+			(uuid "33216600-d861-446b-9d88-85b224ec5d09")
+		)
+		(pin "6"
+			(uuid "02300c71-98fe-489d-a580-1bb4f68dd22d")
+		)
+		(pin "11"
+			(uuid "1c662e73-bf08-4031-b274-81552dc761aa")
+		)
+		(pin "23"
+			(uuid "75fc8f6f-f9b0-49c3-a94a-f601b1998447")
+		)
+		(pin "47"
+			(uuid "091dbe60-eb87-4848-84b2-ce4cefc9a80c")
+		)
+		(pin "48"
+			(uuid "b9144810-de6b-45fc-9fa8-0b1b67bef218")
+		)
+		(pin "20"
+			(uuid "06c479b7-fe47-4465-a264-fcaac60ef35f")
+		)
+		(pin "10"
+			(uuid "895b8e39-5d52-4270-a839-9f1f28769733")
+		)
+		(pin "46"
+			(uuid "b8e6833e-ad92-471f-b981-68ab02562cfc")
+		)
+		(pin "8"
+			(uuid "540df805-e2c3-455b-beaf-1812e56932f5")
+		)
+		(pin "9"
+			(uuid "7a95c892-24f9-418a-94a3-f66f42a30da2")
+		)
+		(pin "22"
+			(uuid "87823c49-ed1f-4d66-92e9-336e00408e0a")
+		)
+		(pin "29"
+			(uuid "a544efe9-e5c1-410d-9abb-9d64de521011")
+		)
+		(pin "34"
+			(uuid "0cab6ed5-e938-48eb-b3b1-7cd08d5fb628")
+		)
+		(pin "17"
+			(uuid "d9139a26-8bef-4296-b49e-0eb8d1d269c8")
+		)
+		(pin "5"
+			(uuid "e8ba8dad-dec8-4954-8a9d-0858ae8df0f3")
+		)
+		(pin "41"
+			(uuid "2d09cc29-e439-4313-bec9-7908a107fec9")
+		)
+		(pin "43"
+			(uuid "567146c4-7cca-4c27-9baf-d0bf519e25d6")
+		)
+		(pin "13"
+			(uuid "65a0d7bb-6f1d-4492-ba22-11b86fa6a020")
+		)
+		(pin "16"
+			(uuid "b39e0a44-7143-4878-9bc6-a46125e45c87")
+		)
+		(pin "38"
+			(uuid "93bc5b3e-2742-401b-bf27-768a44356dd4")
+		)
+		(pin "4"
+			(uuid "931b686e-eeb4-49a5-a7ce-4671a340eb32")
+		)
+		(pin "7"
+			(uuid "94545f5f-3f85-4e76-be45-eb5d3c24b610")
+		)
+		(pin "1"
+			(uuid "d31e510c-e0a9-46fd-83a3-032a78ea1ed1")
+		)
+		(pin "19"
+			(uuid "34d0d47f-3e20-4fac-bd4c-61ecc4c23f69")
+		)
+		(pin "2"
+			(uuid "9d2beefc-7419-464f-97ae-12636c938944")
+		)
+		(pin "31"
+			(uuid "f06bd6d8-f4b6-427b-aaac-69bb5923f41a")
+		)
+		(pin "12"
+			(uuid "99982465-dd50-463f-b62b-56cceca5d27f")
+		)
+		(pin "40"
+			(uuid "9a278130-b848-48ae-97bd-febca4f44540")
+		)
+		(pin "35"
+			(uuid "c154a447-4ca6-4dee-958c-4b4ef5766670")
+		)
+		(pin "33"
+			(uuid "1ed152c2-1a8f-432f-9dbd-5016b5501592")
+		)
+		(pin "45"
+			(uuid "505f1129-4be2-4c03-b419-a0c782293178")
+		)
+		(pin "30"
+			(uuid "74cba260-14ae-41b6-9179-24eb1685deb0")
+		)
+		(pin "24"
+			(uuid "bab9362a-316f-4837-9240-0096f70ccd9c")
+		)
+		(pin "37"
+			(uuid "160f14ef-7803-493f-b9cb-aa4011cfcfd7")
+		)
+		(pin "44"
+			(uuid "c1218244-cf9f-414e-b841-aa011abc913b")
+		)
+		(pin "18"
+			(uuid "27b076eb-9e4c-424d-b4ae-fc56ecbac154")
+		)
+		(pin "32"
+			(uuid "e1ef8000-d41f-4c09-b688-91ff62aed4bc")
+		)
+		(pin "39"
+			(uuid "2b5f29a1-13fe-464f-adf5-1b35d25fcac6")
+		)
+		(pin "21"
+			(uuid "c0eff602-3514-4df7-a179-fdd4f4fefccb")
+		)
+		(pin "25"
+			(uuid "166bd640-7607-45bd-85e0-8861bfdb1fea")
+		)
+		(pin "27"
+			(uuid "ec453dfa-3ea0-4a0f-806f-de11ddd7b1d8")
+		)
+		(pin "36"
+			(uuid "a83fed03-f47e-4939-bbee-bd4c70915da1")
+		)
+		(pin "14"
+			(uuid "e0000d28-205e-4eb2-9c16-7deb67c3f1d4")
+		)
+		(pin "28"
+			(uuid "ca30db6a-f29e-4ce3-aa2a-b7f1750473c2")
+		)
+		(pin "42"
+			(uuid "2f95c48c-a215-4480-baf9-c1d9ff22bfa5")
+		)
+		(pin "26"
+			(uuid "803a27e9-bd6b-4a1b-8b94-7d0dcfca64b6")
+		)
+		(pin "3"
+			(uuid "5ffc534c-ffa3-4a44-82ad-159bebc67e04")
+		)
+		(instances
+			(project ""
+				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8049925a-2faa-4187-b86e-b6208aed2e10"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:FerriteBead")
 		(at 228.6 83.82 0)
 		(unit 1)
@@ -4606,98 +4814,6 @@
 			(project "EasyESCV1_DRV8305"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8049925a-2faa-4187-b86e-b6208aed2e10"
 					(reference "R19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connectors:TC2050-IDC")
-		(at 237.49 48.26 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2170a7b6-12d9-463a-83da-1225a5ce20c6")
-		(property "Reference" "J2"
-			(at 237.49 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TC2050-IDC"
-			(at 237.49 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector:Tag-Connect_TC2050-IDC-NL_2x05_P1.27mm_Vertical"
-			(at 236.22 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2050-IDC-NL_Datasheet_8.pdf"
-			(at 236.22 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Header, Tagconnect, 2x5"
-			(at 237.49 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "9"
-			(uuid "f8f55dec-dfbb-4128-9fd4-3d7301c7892a")
-		)
-		(pin "8"
-			(uuid "22e634c7-380e-4a77-8969-50cf3f907e26")
-		)
-		(pin "6"
-			(uuid "37898f00-b994-4a8a-955a-bfa00955488b")
-		)
-		(pin "4"
-			(uuid "00b6c3d2-6203-485e-9159-eaca42dfd1d0")
-		)
-		(pin "7"
-			(uuid "658b1a73-84ee-4dfa-91df-1145348d376a")
-		)
-		(pin "3"
-			(uuid "fdf1c595-3ff6-4f77-bf0e-e5c1db5fb0ae")
-		)
-		(pin "2"
-			(uuid "cf01dd09-850a-42b6-9f4f-595ff921a787")
-		)
-		(pin "10"
-			(uuid "481e77cc-3283-41d8-bbd9-e01712a44134")
-		)
-		(pin "5"
-			(uuid "947841d1-5252-4cca-b718-e0efb82a7c40")
-		)
-		(pin "1"
-			(uuid "723ebbcc-3572-400b-b6bd-1e4182088054")
-		)
-		(instances
-			(project "EasyESCV1_DRV8305"
-				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8049925a-2faa-4187-b86e-b6208aed2e10"
-					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -5168,214 +5284,6 @@
 			(project "EasyESCV1_DRV8305"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8049925a-2faa-4187-b86e-b6208aed2e10"
 					(reference "R23")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "TMS320F28027FPTT:TMS320F28027FPTT")
-		(at 110.49 85.09 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "435a24b8-1d07-4cd4-88e6-7468b083e5e4")
-		(property "Reference" "U2"
-			(at 110.49 16.51 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "TMS320F28027FPTT"
-			(at 110.49 19.05 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Footprint" "TMS320F28027FPTT:PT0048A_N"
-			(at 110.49 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "TMS320F28027FPTT"
-			(at 110.49 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 110.49 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "46"
-			(uuid "b6ac39ec-bbff-4150-922c-23663f9af659")
-		)
-		(pin "9"
-			(uuid "4461a599-04d4-4247-a171-f08237146cba")
-		)
-		(pin "38"
-			(uuid "d1626aa7-db57-4d66-9808-a489c737d40e")
-		)
-		(pin "11"
-			(uuid "e50c13df-b1a5-4da8-ab7f-8ad580719a65")
-		)
-		(pin "12"
-			(uuid "ef909565-acb6-47d5-ad88-df7626adcdcd")
-		)
-		(pin "10"
-			(uuid "80429c60-a638-4d74-b49e-0175a85a222b")
-		)
-		(pin "31"
-			(uuid "f3bc288d-2156-4e31-bb0b-a83a9aa016da")
-		)
-		(pin "40"
-			(uuid "84bbfd12-02d1-409f-95e4-bf1e1daa77c5")
-		)
-		(pin "5"
-			(uuid "83aae498-f979-4415-9ad8-304b8806c8a9")
-		)
-		(pin "16"
-			(uuid "4d9d77e2-2762-4d00-a009-50503757771f")
-		)
-		(pin "8"
-			(uuid "8244e490-4245-4940-9e4e-108698a9cff6")
-		)
-		(pin "19"
-			(uuid "0c9adf30-f184-42d8-91c0-bd749eef03f3")
-		)
-		(pin "33"
-			(uuid "c6b6ca55-bcb3-416b-8b7d-e900e24bb5bc")
-		)
-		(pin "22"
-			(uuid "ec548171-c852-40ca-ba9b-e1cee00262c9")
-		)
-		(pin "27"
-			(uuid "9ec36b8c-f647-4e58-b5fb-07a9f2c9c134")
-		)
-		(pin "30"
-			(uuid "05b40ce7-e6e2-4d73-956a-f69a733f874d")
-		)
-		(pin "44"
-			(uuid "341714c0-b2c9-435b-8efc-94e534d71f8e")
-		)
-		(pin "48"
-			(uuid "3eef5e19-6b43-4be5-a271-14f413616337")
-		)
-		(pin "7"
-			(uuid "42852ca7-4c78-45d1-bed7-350c551ab2c9")
-		)
-		(pin "23"
-			(uuid "003a972a-1903-4420-b91c-c1002c5de791")
-		)
-		(pin "37"
-			(uuid "de8c6dcf-c1c1-4470-a341-b5ab3dc87f92")
-		)
-		(pin "4"
-			(uuid "8f8233f9-de77-4ee0-8389-d219dac5ad46")
-		)
-		(pin "18"
-			(uuid "b9e2a00a-8829-4062-b4aa-a1b2b122537e")
-		)
-		(pin "25"
-			(uuid "1714b08f-53f3-44ab-a0d1-c9e53a7729b0")
-		)
-		(pin "29"
-			(uuid "819a132f-64b7-4321-84cc-12956f65754c")
-		)
-		(pin "26"
-			(uuid "a052e02c-81dc-480d-8915-d10626dd1602")
-		)
-		(pin "2"
-			(uuid "c607321c-1fca-4f91-aab0-12596da18df6")
-		)
-		(pin "28"
-			(uuid "ee2a8e0e-7fa9-453f-bbd0-2cafba362f7c")
-		)
-		(pin "1"
-			(uuid "32e51c9b-d2f3-4f25-8c57-8134e7bff7a6")
-		)
-		(pin "43"
-			(uuid "dbf99c1f-c352-4555-a20f-55e7ad0bca42")
-		)
-		(pin "34"
-			(uuid "60334575-86a9-4969-aa11-74b14d18c558")
-		)
-		(pin "21"
-			(uuid "8aec6f02-102c-4d29-ae95-957b32029e39")
-		)
-		(pin "36"
-			(uuid "6d2225dd-ae12-4ebf-a190-be0b7818249a")
-		)
-		(pin "42"
-			(uuid "ea9555bc-9708-4532-8b31-1111e55c59ea")
-		)
-		(pin "45"
-			(uuid "761263ff-a166-4505-b89f-9d5da2dcf5b7")
-		)
-		(pin "47"
-			(uuid "d1bb9e5e-5872-4181-844d-9104431a9d73")
-		)
-		(pin "35"
-			(uuid "36f141db-37a4-441f-bcca-17d5db0f2c6f")
-		)
-		(pin "14"
-			(uuid "70b640e3-297a-4b0b-835c-8dc72f5b777a")
-		)
-		(pin "3"
-			(uuid "ad1d15d0-2536-4770-98ab-1d045198da55")
-		)
-		(pin "13"
-			(uuid "b00a2f6b-6f01-4219-b339-df7c9f4a1ad0")
-		)
-		(pin "6"
-			(uuid "340f4fd9-2a19-4701-8455-2763a1fc12d8")
-		)
-		(pin "41"
-			(uuid "9987400d-59eb-4cae-81ec-7cb660a6303e")
-		)
-		(pin "32"
-			(uuid "f18d7297-d738-4d34-8fc1-aecc41ad3ced")
-		)
-		(pin "24"
-			(uuid "319debed-47c4-4577-ab03-c8934737b637")
-		)
-		(pin "15"
-			(uuid "da5b4518-6d36-4df9-a76a-6b5c13984995")
-		)
-		(pin "17"
-			(uuid "86a00037-df79-4641-9f84-9aeb865bc488")
-		)
-		(pin "20"
-			(uuid "ba22983d-d675-41b7-9c44-caddbb87eddb")
-		)
-		(pin "39"
-			(uuid "8a517144-0c8a-4586-a105-76043019149b")
-		)
-		(instances
-			(project ""
-				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8049925a-2faa-4187-b86e-b6208aed2e10"
-					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -7127,6 +7035,98 @@
 			(project "EasyESCV1_DRV8305"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8049925a-2faa-4187-b86e-b6208aed2e10"
 					(reference "R21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "EasyBLDC:TC2050-IDC")
+		(at 237.49 48.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fad80896-2dc4-48e2-8102-0a7d6dee5ecc")
+		(property "Reference" "J2"
+			(at 237.49 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TC2050-IDC"
+			(at 237.49 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 236.22 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2050-IDC-NL_Datasheet_8.pdf"
+			(at 236.22 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Header, Tagconnect, 2x5"
+			(at 237.49 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "6b8e1147-3ee6-431c-94fd-528f09accb7e")
+		)
+		(pin "3"
+			(uuid "a0d35822-e3f7-4d00-850d-e5977955efa8")
+		)
+		(pin "6"
+			(uuid "402f6491-37e8-421e-86ea-40e38d4b8908")
+		)
+		(pin "7"
+			(uuid "463fb1a8-c336-490e-b36f-023b01d6e25a")
+		)
+		(pin "8"
+			(uuid "7e2dd118-88e8-4d06-8a00-0ba4223e08fd")
+		)
+		(pin "4"
+			(uuid "06bc2078-b89b-4b75-9762-2a1544693f10")
+		)
+		(pin "5"
+			(uuid "1aac3900-b72a-47d9-98c8-6fba30205b11")
+		)
+		(pin "9"
+			(uuid "887c1409-df22-478c-b1b9-0f2e8246662f")
+		)
+		(pin "10"
+			(uuid "3d7f62ec-a6f5-463f-acba-d0153ca4596e")
+		)
+		(pin "1"
+			(uuid "efa35715-f596-4ba6-aa12-f99385e3fb7d")
+		)
+		(instances
+			(project ""
+				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8049925a-2faa-4187-b86e-b6208aed2e10"
+					(reference "J2")
 					(unit 1)
 				)
 			)

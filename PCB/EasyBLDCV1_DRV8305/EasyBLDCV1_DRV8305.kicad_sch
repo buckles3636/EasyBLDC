@@ -42,7 +42,7 @@
 			)
 		)
 		(instances
-			(project "EasyESCV1_DRV8305"
+			(project "EasyBLDCV1_DRV8305"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d"
 					(page "1")
 				)
@@ -80,7 +80,7 @@
 			)
 		)
 		(instances
-			(project "EasyESCV1_DRV8305"
+			(project "EasyBLDCV1_DRV8305"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d"
 					(page "3")
 				)
@@ -118,7 +118,7 @@
 			)
 		)
 		(instances
-			(project "EasyESCV1_DRV8305"
+			(project "EasyBLDCV1_DRV8305"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d"
 					(page "2")
 				)
