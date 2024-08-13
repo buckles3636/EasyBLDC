@@ -6524,7 +6524,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
 			(at 261.62 86.36 0)
 			(effects
 				(font
@@ -7066,7 +7066,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "EasyBLDC:Tag-Connect_TC2050-IDC-NL_2x05_P1.27mm_Vertical"
 			(at 236.22 45.72 0)
 			(effects
 				(font

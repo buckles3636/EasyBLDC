@@ -3278,7 +3278,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "EasyBLDC:CAP_FP_10P3X10P3_PAN"
 			(at 59.69 127 0)
 			(effects
 				(font
@@ -4355,7 +4355,7 @@
 				)
 			)
 		)
-		(property "Footprint" "10159560-A00221RLF:AMPHENOL_10159560-A00221RLF"
+		(property "Footprint" "EasyBLDC:AMPHENOL_10159560-A00221RLF"
 			(at 71.12 60.96 0)
 			(effects
 				(font
