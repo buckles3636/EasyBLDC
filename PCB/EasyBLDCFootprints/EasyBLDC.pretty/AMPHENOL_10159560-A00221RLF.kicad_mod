@@ -333,4 +333,15 @@
 			(xyz 0 0 0)
 		)
 	)
+	(model "C:/Users/peter/GitHub/EasyBLDC/PCB/EasyBLDCFootprints/EasyBLDC.pretty/10159560-A00221RLF.step"
+		(offset
+			(xyz 0 0 5.7)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )

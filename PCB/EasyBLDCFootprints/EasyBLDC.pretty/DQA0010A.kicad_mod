@@ -241,4 +241,15 @@
 		(layers "F.Cu" "F.Paste" "F.Mask")
 		(uuid "66ce7900-9342-48fd-a6ac-4065ed69f713")
 	)
+	(model "C:/Users/peter/GitHub/EasyBLDC/PCB/EasyBLDCFootprints/EasyBLDC.pretty/DQA0010B.stp"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )

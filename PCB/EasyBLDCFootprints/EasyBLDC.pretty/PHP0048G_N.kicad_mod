@@ -711,4 +711,15 @@
 		(remove_unused_layers no)
 		(uuid "1a58c176-9786-4163-b6d9-68b3dcbf7bce")
 	)
+	(model "C:/Users/peter/GitHub/EasyBLDC/PCB/EasyBLDCFootprints/EasyBLDC.pretty/PT0048A.stp"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )

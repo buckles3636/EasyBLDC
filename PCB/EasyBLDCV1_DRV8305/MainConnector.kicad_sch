@@ -3441,7 +3441,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_DIN965"
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_ISO7380"
 			(at 167.64 120.65 0)
 			(effects
 				(font
@@ -3772,7 +3772,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_DIN965"
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_ISO7380"
 			(at 148.59 114.3 0)
 			(effects
 				(font
@@ -3907,7 +3907,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_DIN965"
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_ISO7380"
 			(at 167.64 114.3 0)
 			(effects
 				(font
@@ -4511,7 +4511,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_DIN965"
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_ISO7380"
 			(at 148.59 120.65 0)
 			(effects
 				(font
