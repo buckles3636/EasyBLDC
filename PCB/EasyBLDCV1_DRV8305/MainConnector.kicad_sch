@@ -3269,7 +3269,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "390u"
+		(property "Value" "10u"
 			(at 63.5 127.6349 0)
 			(effects
 				(font
@@ -3278,7 +3278,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "EasyBLDC:CAP_FP_10P3X10P3_PAN"
+		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
 			(at 59.69 127 0)
 			(effects
 				(font
@@ -3548,7 +3548,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D3.0mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
 			(at 237.49 44.45 0)
 			(effects
 				(font
