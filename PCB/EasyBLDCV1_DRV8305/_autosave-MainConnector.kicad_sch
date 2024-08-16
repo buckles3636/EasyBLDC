@@ -3928,7 +3928,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "EasyBLDC:SD53"
+		(property "Footprint" "Inductor_SMD:L_Changjiang_FNR4020S"
 			(at 204.47 45.72 0)
 			(effects
 				(font
