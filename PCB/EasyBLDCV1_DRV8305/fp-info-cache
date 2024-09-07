@@ -1,4 +1,4 @@
-23614559206000192
+23616287975277137
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -56454,6 +56454,13 @@ TMS320F28027FPTT
 0
 48
 48
+EasyBLDC
+SAMTEC_FTSH-105-01-F-DV-P-TR
+
+
+0
+10
+10
 EasyBLDC
 SD53
 

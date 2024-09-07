@@ -3129,7 +3129,7 @@
 	)
 	(text "Main Connector"
 		(exclude_from_sim no)
-		(at 66.04 41.91 0)
+		(at 66.04 36.83 0)
 		(effects
 			(font
 				(size 3.048 3.048)
