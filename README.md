@@ -13,7 +13,7 @@ Easy BLDC is an open source sensorless FOC brushless dc motor driver designed fo
 * Modifiable parameters via Ti MotorWare® GUI
 
 ## Why FOC?
-FOC is the most advanced of the three common algorithms. Unlike trapezoidal or sinusoidal control, which energize the motor’s phases based on predefined waveforms, FOC actively keeps tracks the stators exact position. This allows for precise control of both torque and speed by decoupling the motor’s magnetic field into two components: one that controls the motor's flux and the other that controls the torque. FOC is extremely efficient, especially at higher speeds, and results in the smoothest possible operation at lower speeds. However, it comes at the cost of greater computational complexity and more demanding hardware requirements.
+FOC is the most advanced of the three common algorithms. Unlike trapezoidal or sinusoidal control, which energize the motor’s phases based on predefined waveforms, FOC actively keeps tracks the stator position. This allows for precise control of both torque and speed by decoupling the motor’s magnetic field into two components: one that controls the motor's flux and the other that controls the torque. FOC is extremely efficient, especially at higher speeds, and results in smooth operation at lower speeds. 
 
 ## Key Components
 * Texas Instruments DRV8305 gate driver
