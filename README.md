@@ -5,6 +5,8 @@
 ## Overview
 Easy BLDC is an open source sensorless FOC brushless dc motor driver designed for propeller thrust applications such as drones or underwater AUVS.
 
+![PCB Render](PCB/EasyBLDCV1_DRV8305/EasyBLDCV1_DRV8305.png)
+
 ## Features
 * 30V Maximum Input Voltage
 * 20A Maximum Continues Current (Untested)
@@ -18,7 +20,6 @@ FOC is the most advanced of the three common algorithms. Unlike trapezoidal or s
 ## Key Components
 * Texas Instruments DRV8305 gate driver
 * Texas Instruments InstaSpin® TMS320F28027F MCU
-![PCB Render](PCB/EasyBLDCV1_DRV8305/EasyBLDCV1_DRV8305.png)
 
 ## Ordering Guide
 TODO:
