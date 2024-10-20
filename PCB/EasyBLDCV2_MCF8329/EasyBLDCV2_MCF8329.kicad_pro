@@ -59,11 +59,7 @@
         }
       ],
       "drc_exclusions": [
-        "hole_clearance|87122000|63738000|bef8df42-0bd0-41c8-8fa7-44a0467f3540|8cb50fd7-f493-47b8-a181-ad42d2799c2f",
-        "malformed_courtyard|41402000|61967999|36177ce0-2a02-41bc-962d-45251d304b4e|00000000-0000-0000-0000-000000000000",
-        "malformed_courtyard|41902002|61468000|36177ce0-2a02-41bc-962d-45251d304b4e|00000000-0000-0000-0000-000000000000",
-        "malformed_courtyard|50850998|46355000|ca1359e5-a18b-4d35-93d2-6ec4ec9cb25e|00000000-0000-0000-0000-000000000000",
-        "malformed_courtyard|51351000|46854999|ca1359e5-a18b-4d35-93d2-6ec4ec9cb25e|00000000-0000-0000-0000-000000000000"
+        "hole_clearance|87122000|63738000|bef8df42-0bd0-41c8-8fa7-44a0467f3540|8cb50fd7-f493-47b8-a181-ad42d2799c2f"
       ],
       "meta": {
         "version": 2
@@ -609,15 +605,15 @@
     ],
     [
       "22fb4715-9f33-45f1-b8d4-9537d945fe69",
-      "Main Connector"
+      "Main Connector & Voltage Regulation"
     ],
     [
       "8a0cf24a-00c0-47a8-b582-1a7bbe5ca078",
-      "DRV8305 Breakout"
+      "Power Stage"
     ],
     [
       "8049925a-2faa-4187-b86e-b6208aed2e10",
-      "TMS320F28027F Breakout"
+      "MCF8329 Breakout"
     ]
   ],
   "text_variables": {}

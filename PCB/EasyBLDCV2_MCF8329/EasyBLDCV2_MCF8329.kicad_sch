@@ -5,9 +5,9 @@
 	(uuid "6c304649-7c80-4a4c-b925-07b9210ad53d")
 	(paper "A4")
 	(title_block
-		(title "Easy ESC")
+		(title "Easy BLDC")
 		(date "2024-08-06")
-		(rev "1.0")
+		(rev "2.0")
 		(company "Peter Buckley Engineering")
 	)
 	(lib_symbols)
@@ -23,7 +23,7 @@
 			(color 0 0 0 0.0000)
 		)
 		(uuid "22fb4715-9f33-45f1-b8d4-9537d945fe69")
-		(property "Sheetname" "Main Connector"
+		(property "Sheetname" "Main Connector & Voltage Regulation"
 			(at 113.03 61.5184 0)
 			(effects
 				(font
@@ -42,7 +42,7 @@
 			)
 		)
 		(instances
-			(project "EasyBLDCV1_DRV8305"
+			(project "EasyBLDCV2_MCF8329"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d"
 					(page "1")
 				)
@@ -61,7 +61,7 @@
 			(color 0 0 0 0.0000)
 		)
 		(uuid "8049925a-2faa-4187-b86e-b6208aed2e10")
-		(property "Sheetname" "TMS320F28027F Breakout"
+		(property "Sheetname" "MCF8329 Breakout"
 			(at 191.77 61.5184 0)
 			(effects
 				(font
@@ -80,7 +80,7 @@
 			)
 		)
 		(instances
-			(project "EasyBLDCV1_DRV8305"
+			(project "EasyBLDCV2_MCF8329"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d"
 					(page "3")
 				)
@@ -99,7 +99,7 @@
 			(color 0 0 0 0.0000)
 		)
 		(uuid "8a0cf24a-00c0-47a8-b582-1a7bbe5ca078")
-		(property "Sheetname" "DRV8305 Breakout"
+		(property "Sheetname" "Power Stage"
 			(at 34.29 61.5184 0)
 			(effects
 				(font
@@ -118,7 +118,7 @@
 			)
 		)
 		(instances
-			(project "EasyBLDCV1_DRV8305"
+			(project "EasyBLDCV2_MCF8329"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d"
 					(page "2")
 				)
