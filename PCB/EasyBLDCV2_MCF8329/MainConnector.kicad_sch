@@ -937,38 +937,38 @@
 		)
 	)
 	(junction
-		(at 78.74 77.47)
+		(at 45.72 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "44703cdc-17ff-4561-bbd3-70a6d65337d2")
 	)
 	(junction
-		(at 78.74 49.53)
+		(at 45.72 39.37)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "86f602cb-bb7e-4b9d-b4a6-d4f5863d3b37")
 	)
 	(junction
-		(at 88.9 58.42)
+		(at 55.88 48.26)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8be92cdd-0b17-41a4-8e6a-e80968b84488")
 	)
 	(junction
-		(at 88.9 68.58)
+		(at 55.88 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "941e2324-f117-4430-aa3e-2878e6c2a9cf")
 	)
 	(junction
-		(at 88.9 63.5)
+		(at 55.88 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b3fa4809-4af2-4dba-9e80-ea2bdeb6451f")
 	)
 	(wire
 		(pts
-			(xy 76.2 68.58) (xy 88.9 68.58)
+			(xy 43.18 58.42) (xy 55.88 58.42)
 		)
 		(stroke
 			(width 0)
@@ -978,7 +978,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 46.99) (xy 88.9 49.53)
+			(xy 55.88 36.83) (xy 55.88 39.37)
 		)
 		(stroke
 			(width 0)
@@ -988,7 +988,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 78.74) (xy 76.2 78.74)
+			(xy 45.72 68.58) (xy 43.18 68.58)
 		)
 		(stroke
 			(width 0)
@@ -998,7 +998,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 58.42) (xy 88.9 63.5)
+			(xy 55.88 48.26) (xy 55.88 53.34)
 		)
 		(stroke
 			(width 0)
@@ -1008,7 +1008,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 58.42) (xy 88.9 58.42)
+			(xy 43.18 48.26) (xy 55.88 48.26)
 		)
 		(stroke
 			(width 0)
@@ -1018,7 +1018,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 76.2) (xy 78.74 76.2)
+			(xy 43.18 66.04) (xy 45.72 66.04)
 		)
 		(stroke
 			(width 0)
@@ -1028,7 +1028,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 50.8) (xy 78.74 50.8)
+			(xy 43.18 40.64) (xy 45.72 40.64)
 		)
 		(stroke
 			(width 0)
@@ -1038,7 +1038,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 50.8) (xy 78.74 49.53)
+			(xy 45.72 40.64) (xy 45.72 39.37)
 		)
 		(stroke
 			(width 0)
@@ -1048,7 +1048,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 63.5) (xy 88.9 68.58)
+			(xy 55.88 53.34) (xy 55.88 58.42)
 		)
 		(stroke
 			(width 0)
@@ -1058,7 +1058,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 53.34) (xy 88.9 58.42)
+			(xy 55.88 43.18) (xy 55.88 48.26)
 		)
 		(stroke
 			(width 0)
@@ -1068,7 +1068,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 77.47) (xy 78.74 78.74)
+			(xy 45.72 67.31) (xy 45.72 68.58)
 		)
 		(stroke
 			(width 0)
@@ -1078,7 +1078,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 49.53) (xy 88.9 49.53)
+			(xy 45.72 39.37) (xy 55.88 39.37)
 		)
 		(stroke
 			(width 0)
@@ -1088,7 +1088,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 77.47) (xy 88.9 80.01)
+			(xy 55.88 67.31) (xy 55.88 69.85)
 		)
 		(stroke
 			(width 0)
@@ -1098,7 +1098,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 76.2) (xy 78.74 77.47)
+			(xy 45.72 66.04) (xy 45.72 67.31)
 		)
 		(stroke
 			(width 0)
@@ -1108,7 +1108,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 77.47) (xy 88.9 77.47)
+			(xy 45.72 67.31) (xy 55.88 67.31)
 		)
 		(stroke
 			(width 0)
@@ -1118,7 +1118,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 68.58) (xy 88.9 69.85)
+			(xy 55.88 58.42) (xy 55.88 59.69)
 		)
 		(stroke
 			(width 0)
@@ -1128,7 +1128,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 63.5) (xy 88.9 63.5)
+			(xy 43.18 53.34) (xy 55.88 53.34)
 		)
 		(stroke
 			(width 0)
@@ -1138,7 +1138,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 53.34) (xy 88.9 53.34)
+			(xy 43.18 43.18) (xy 55.88 43.18)
 		)
 		(stroke
 			(width 0)
@@ -1148,7 +1148,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 48.26) (xy 76.2 48.26)
+			(xy 45.72 38.1) (xy 43.18 38.1)
 		)
 		(stroke
 			(width 0)
@@ -1158,7 +1158,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 49.53) (xy 78.74 48.26)
+			(xy 45.72 39.37) (xy 45.72 38.1)
 		)
 		(stroke
 			(width 0)
@@ -1168,7 +1168,7 @@
 	)
 	(text "Main Connector"
 		(exclude_from_sim no)
-		(at 66.04 36.83 0)
+		(at 40.64 26.162 0)
 		(effects
 			(font
 				(size 3.048 3.048)
@@ -1177,9 +1177,20 @@
 		)
 		(uuid "4c3b3893-f99d-4514-bb98-6065a6160a1f")
 	)
+	(text "Standoffs"
+		(exclude_from_sim no)
+		(at 40.64 84.328 0)
+		(effects
+			(font
+				(size 3.048 3.048)
+				(bold yes)
+			)
+		)
+		(uuid "9be3be7d-07d5-418c-9eb3-23f2a8ff6f19")
+	)
 	(global_label "MOT_A"
 		(shape input)
-		(at 76.2 55.88 0)
+		(at 43.18 45.72 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1189,7 +1200,7 @@
 		)
 		(uuid "02b8951a-5a72-4d13-8e73-0f76c9d81073")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 84.9909 55.88 0)
+			(at 51.9709 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1201,7 +1212,7 @@
 	)
 	(global_label "COM"
 		(shape input)
-		(at 76.2 71.12 0)
+		(at 43.18 60.96 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1211,7 +1222,7 @@
 		)
 		(uuid "2d00d1f5-e6ff-413f-a484-35a08b69d2f8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 83.2371 71.12 0)
+			(at 50.2171 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1223,7 +1234,7 @@
 	)
 	(global_label "MOT_B"
 		(shape input)
-		(at 76.2 60.96 0)
+		(at 43.18 50.8 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1233,7 +1244,7 @@
 		)
 		(uuid "6ba9a5f3-90f4-4e4f-9801-a5bc4bdc977f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 85.1723 60.96 0)
+			(at 52.1523 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1245,7 +1256,7 @@
 	)
 	(global_label "MOT_C"
 		(shape input)
-		(at 76.2 66.04 0)
+		(at 43.18 55.88 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1255,7 +1266,7 @@
 		)
 		(uuid "d738387f-d943-46d3-8b2b-24dfff3c86a9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 85.1723 66.04 0)
+			(at 52.1523 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1267,7 +1278,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 167.64 120.65 0)
+		(at 49.53 97.79 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -1276,7 +1287,7 @@
 		(fields_autoplaced yes)
 		(uuid "09f26f83-80c2-4ee6-8846-548dde303670")
 		(property "Reference" "H4"
-			(at 170.18 119.3799 0)
+			(at 52.07 96.5199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1285,7 +1296,7 @@
 			)
 		)
 		(property "Value" "M2.5"
-			(at 170.18 121.9199 0)
+			(at 52.07 99.0599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1294,7 +1305,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_ISO7380"
-			(at 167.64 120.65 0)
+			(at 49.53 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1303,7 +1314,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 167.64 120.65 0)
+			(at 49.53 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1312,7 +1323,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 167.64 120.65 0)
+			(at 49.53 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1331,7 +1342,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 148.59 114.3 0)
+		(at 30.48 91.44 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -1340,7 +1351,7 @@
 		(fields_autoplaced yes)
 		(uuid "43265ea8-9a56-4d35-a118-82b699878dea")
 		(property "Reference" "H1"
-			(at 151.13 113.0299 0)
+			(at 33.02 90.1699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1349,7 +1360,7 @@
 			)
 		)
 		(property "Value" "M2.5"
-			(at 151.13 115.5699 0)
+			(at 33.02 92.7099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1358,7 +1369,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_ISO7380"
-			(at 148.59 114.3 0)
+			(at 30.48 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1367,7 +1378,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 148.59 114.3 0)
+			(at 30.48 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1376,7 +1387,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 148.59 114.3 0)
+			(at 30.48 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1395,7 +1406,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 167.64 114.3 0)
+		(at 49.53 91.44 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -1404,7 +1415,7 @@
 		(fields_autoplaced yes)
 		(uuid "4b655546-9f12-45b6-9ca9-b4abc0e3224a")
 		(property "Reference" "H2"
-			(at 170.18 113.0299 0)
+			(at 52.07 90.1699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1413,7 +1424,7 @@
 			)
 		)
 		(property "Value" "M2.5"
-			(at 170.18 115.5699 0)
+			(at 52.07 92.7099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1422,7 +1433,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_ISO7380"
-			(at 167.64 114.3 0)
+			(at 49.53 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1431,7 +1442,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 167.64 114.3 0)
+			(at 49.53 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1440,7 +1451,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 167.64 114.3 0)
+			(at 49.53 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1459,7 +1470,7 @@
 	)
 	(symbol
 		(lib_id "power:VDC")
-		(at 88.9 46.99 0)
+		(at 55.88 36.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1467,7 +1478,7 @@
 		(dnp no)
 		(uuid "7518c312-df7b-4910-875d-fc713b8eb357")
 		(property "Reference" "#PWR053"
-			(at 88.9 50.8 0)
+			(at 55.88 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1476,7 +1487,7 @@
 			)
 		)
 		(property "Value" "PVDD"
-			(at 88.9 43.18 0)
+			(at 55.88 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1484,7 +1495,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 88.9 46.99 0)
+			(at 55.88 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1493,7 +1504,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 88.9 46.99 0)
+			(at 55.88 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1502,7 +1513,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VDC\""
-			(at 88.9 46.99 0)
+			(at 55.88 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1524,7 +1535,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 148.59 120.65 0)
+		(at 30.48 97.79 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -1533,7 +1544,7 @@
 		(fields_autoplaced yes)
 		(uuid "8f0f108f-bf67-4023-8cd1-cf2fbdbef4b0")
 		(property "Reference" "H3"
-			(at 151.13 119.3799 0)
+			(at 33.02 96.5199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1542,7 +1553,7 @@
 			)
 		)
 		(property "Value" "M2.5"
-			(at 151.13 121.9199 0)
+			(at 33.02 99.0599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1551,7 +1562,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_ISO7380"
-			(at 148.59 120.65 0)
+			(at 30.48 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1560,7 +1571,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 148.59 120.65 0)
+			(at 30.48 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1569,7 +1580,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 148.59 120.65 0)
+			(at 30.48 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1588,7 +1599,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 88.9 80.01 0)
+		(at 55.88 69.85 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1596,7 +1607,7 @@
 		(dnp no)
 		(uuid "cf8d44ad-2f82-4021-acc8-47a834d1e35a")
 		(property "Reference" "#PWR046"
-			(at 88.9 86.36 0)
+			(at 55.88 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1605,7 +1616,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 88.9 83.82 0)
+			(at 55.88 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1613,7 +1624,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 88.9 80.01 0)
+			(at 55.88 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1622,7 +1633,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 88.9 80.01 0)
+			(at 55.88 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1631,7 +1642,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 88.9 80.01 0)
+			(at 55.88 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1653,7 +1664,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 88.9 69.85 0)
+		(at 55.88 59.69 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1661,7 +1672,7 @@
 		(dnp no)
 		(uuid "d0570307-4862-4b32-b63e-fb504a5f4781")
 		(property "Reference" "#PWR045"
-			(at 88.9 76.2 0)
+			(at 55.88 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1670,7 +1681,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 88.9 73.66 0)
+			(at 55.88 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1678,7 +1689,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 88.9 69.85 0)
+			(at 55.88 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1687,7 +1698,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 88.9 69.85 0)
+			(at 55.88 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1696,7 +1707,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 88.9 69.85 0)
+			(at 55.88 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1718,7 +1729,7 @@
 	)
 	(symbol
 		(lib_id "EasyBLDC:10159560-A00221RLF")
-		(at 71.12 60.96 0)
+		(at 38.1 50.8 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -1728,7 +1739,7 @@
 		(fields_autoplaced yes)
 		(uuid "dec10816-60b2-4197-84c1-7e149bf9a50a")
 		(property "Reference" "J1"
-			(at 64.77 40.64 0)
+			(at 31.75 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1736,7 +1747,7 @@
 			)
 		)
 		(property "Value" "10159560-A00221RLF"
-			(at 64.77 43.18 0)
+			(at 31.75 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1744,7 +1755,7 @@
 			)
 		)
 		(property "Footprint" "10159560-A00221RLF:AMPHENOL_10159560-A00221RLF"
-			(at 71.12 60.96 0)
+			(at 38.1 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1754,7 +1765,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 71.12 60.96 0)
+			(at 38.1 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1763,7 +1774,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 71.12 60.96 0)
+			(at 38.1 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1772,7 +1783,7 @@
 			)
 		)
 		(property "PARTREV" "C"
-			(at 71.12 60.96 0)
+			(at 38.1 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1782,7 +1793,7 @@
 			)
 		)
 		(property "STANDARD" "Manufacturer Recommendations"
-			(at 71.12 60.96 0)
+			(at 38.1 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1792,7 +1803,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "5.70mm"
-			(at 71.12 60.96 0)
+			(at 38.1 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1802,7 +1813,7 @@
 			)
 		)
 		(property "MANUFACTURER" "Amphenol ICC"
-			(at 71.12 60.96 0)
+			(at 38.1 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
