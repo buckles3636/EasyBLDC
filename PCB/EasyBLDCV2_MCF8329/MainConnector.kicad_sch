@@ -1925,12 +1925,6 @@
 		)
 	)
 	(junction
-		(at 106.68 40.64)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7f95a99b-619b-4c6d-99b7-98946d244e27")
-	)
-	(junction
 		(at 62.23 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1953,12 +1947,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "941e2324-f117-4430-aa3e-2878e6c2a9cf")
-	)
-	(junction
-		(at 106.68 68.58)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "99e40d1e-9896-4c2c-952b-d4a1595f150b")
 	)
 	(junction
 		(at 81.28 68.58)
@@ -2008,36 +1996,6 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 58.42) (xy 106.68 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "02af80a0-2cf6-415c-a0b7-0129639fce8a")
-	)
-	(wire
-		(pts
-			(xy 111.76 40.64) (xy 106.68 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0ccc08ec-ff4b-4525-9768-0b9a48942590")
-	)
-	(wire
-		(pts
-			(xy 106.68 50.8) (xy 106.68 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0de28489-51bc-433a-b295-c3de6c333583")
-	)
-	(wire
-		(pts
 			(xy 173.99 72.39) (xy 187.96 72.39)
 		)
 		(stroke
@@ -2078,7 +2036,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 40.64) (xy 81.28 40.64)
+			(xy 81.28 40.64) (xy 93.98 40.64)
 		)
 		(stroke
 			(width 0)
@@ -2088,7 +2046,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 36.83) (xy 111.76 40.64)
+			(xy 100.33 36.83) (xy 100.33 40.64)
 		)
 		(stroke
 			(width 0)
@@ -2178,16 +2136,6 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 68.58) (xy 106.68 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5d0154cf-724a-4cd9-8067-4438e2fa5937")
-	)
-	(wire
-		(pts
 			(xy 59.69 67.31) (xy 62.23 67.31)
 		)
 		(stroke
@@ -2198,7 +2146,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 68.58) (xy 111.76 72.39)
+			(xy 100.33 68.58) (xy 100.33 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2235,6 +2183,16 @@
 			(type default)
 		)
 		(uuid "6869375c-7c57-48b6-a31f-8f306c79b300")
+	)
+	(wire
+		(pts
+			(xy 93.98 68.58) (xy 100.33 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ad0dd32-023d-4708-8c78-31df67f4eb4d")
 	)
 	(wire
 		(pts
@@ -2318,16 +2276,6 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 68.58) (xy 93.98 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "92a11bde-b6f5-4827-b9e0-d16c92570f8d")
-	)
-	(wire
-		(pts
 			(xy 72.39 54.61) (xy 72.39 59.69)
 		)
 		(stroke
@@ -2408,7 +2356,17 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 68.58) (xy 81.28 68.58)
+			(xy 93.98 40.64) (xy 100.33 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a761a40d-0074-4ff3-8a3b-91b3508ad816")
+	)
+	(wire
+		(pts
+			(xy 81.28 68.58) (xy 93.98 68.58)
 		)
 		(stroke
 			(width 0)
@@ -2425,16 +2383,6 @@
 			(type default)
 		)
 		(uuid "b274f614-b304-43eb-81cd-591e7d1eac9f")
-	)
-	(wire
-		(pts
-			(xy 106.68 40.64) (xy 93.98 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bb6fc6a3-31de-4461-8403-2f3d33c31754")
 	)
 	(wire
 		(pts
@@ -3031,7 +2979,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0c752670-6bb8-41a4-be9e-23147ef69010")
-		(property "Reference" "R17"
+		(property "Reference" "R3"
 			(at 214.122 63.5 0)
 			(effects
 				(font
@@ -3047,7 +2995,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 209.804 64.516 90)
 			(effects
 				(font
@@ -3083,7 +3031,7 @@
 		(instances
 			(project "EasyBLDCV2_MCF8329"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/22fb4715-9f33-45f1-b8d4-9537d945fe69"
-					(reference "R17")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -3098,7 +3046,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2dedd8b4-f148-4148-b5f1-73e7231c69d9")
-		(property "Reference" "#PWR027"
+		(property "Reference" "#PWR02"
 			(at 232.41 40.64 0)
 			(effects
 				(font
@@ -3148,7 +3096,7 @@
 		(instances
 			(project "EasyBLDCV2_MCF8329"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/22fb4715-9f33-45f1-b8d4-9537d945fe69"
-					(reference "#PWR027")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -3164,7 +3112,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3b6476bf-a601-4b25-902d-09c4a1398294")
-		(property "Reference" "C19"
+		(property "Reference" "C1"
 			(at 85.09 52.7049 0)
 			(effects
 				(font
@@ -3182,7 +3130,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_5x5.3"
 			(at 81.28 54.61 0)
 			(effects
 				(font
@@ -3218,7 +3166,7 @@
 		(instances
 			(project ""
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/22fb4715-9f33-45f1-b8d4-9537d945fe69"
-					(reference "C19")
+					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -3233,7 +3181,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "421a8ef0-6e38-4cdd-93b7-97b54279aba3")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR07"
 			(at 40.64 113.03 0)
 			(effects
 				(font
@@ -3283,7 +3231,7 @@
 		(instances
 			(project "EasyBLDCV2_MCF8329"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/22fb4715-9f33-45f1-b8d4-9537d945fe69"
-					(reference "#PWR06")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -3426,7 +3374,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "58e6225d-df01-4349-aa24-8d175bd6f184")
-		(property "Reference" "#PWR025"
+		(property "Reference" "#PWR03"
 			(at 210.82 53.34 0)
 			(effects
 				(font
@@ -3476,7 +3424,7 @@
 		(instances
 			(project "EasyBLDCV2_MCF8329"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/22fb4715-9f33-45f1-b8d4-9537d945fe69"
-					(reference "#PWR025")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -3511,7 +3459,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels"
 			(at 187.96 53.34 0)
 			(effects
 				(font
@@ -3565,7 +3513,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5bc35f58-5139-4877-9cc9-991603f9f936")
-		(property "Reference" "R22"
+		(property "Reference" "R4"
 			(at 235.712 63.5 0)
 			(effects
 				(font
@@ -3581,7 +3529,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 231.394 64.516 90)
 			(effects
 				(font
@@ -3617,7 +3565,7 @@
 		(instances
 			(project "EasyBLDCV2_MCF8329"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/22fb4715-9f33-45f1-b8d4-9537d945fe69"
-					(reference "R22")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -3625,15 +3573,15 @@
 	)
 	(symbol
 		(lib_id "power:VDC")
-		(at 111.76 36.83 0)
+		(at 100.33 36.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "7518c312-df7b-4910-875d-fc713b8eb357")
-		(property "Reference" "#PWR053"
-			(at 111.76 40.64 0)
+		(property "Reference" "#PWR01"
+			(at 100.33 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3642,7 +3590,7 @@
 			)
 		)
 		(property "Value" "PVDD"
-			(at 111.76 33.02 0)
+			(at 100.33 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3650,7 +3598,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 111.76 36.83 0)
+			(at 100.33 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3659,7 +3607,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 111.76 36.83 0)
+			(at 100.33 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3668,7 +3616,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VDC\""
-			(at 111.76 36.83 0)
+			(at 100.33 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3682,7 +3630,7 @@
 		(instances
 			(project "EasyESCV1_DRV8305"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/22fb4715-9f33-45f1-b8d4-9537d945fe69"
-					(reference "#PWR053")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -3697,7 +3645,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "77f982fe-bd1b-45f5-ad5a-1d8514815d90")
-		(property "Reference" "#PWR031"
+		(property "Reference" "#PWR05"
 			(at 232.41 77.47 0)
 			(effects
 				(font
@@ -3747,7 +3695,7 @@
 		(instances
 			(project "EasyBLDCV2_MCF8329"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/22fb4715-9f33-45f1-b8d4-9537d945fe69"
-					(reference "#PWR031")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -3782,7 +3730,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels"
 			(at 232.41 53.34 0)
 			(effects
 				(font
@@ -3901,7 +3849,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a1fe31e5-e19e-4730-b21e-57e9f316c023")
-		(property "Reference" "C20"
+		(property "Reference" "C2"
 			(at 97.79 52.7049 0)
 			(effects
 				(font
@@ -3919,7 +3867,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_10x10.5"
 			(at 93.98 54.61 0)
 			(effects
 				(font
@@ -3955,7 +3903,7 @@
 		(instances
 			(project "EasyBLDCV2_MCF8329"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/22fb4715-9f33-45f1-b8d4-9537d945fe69"
-					(reference "C20")
+					(reference "C2")
 					(unit 1)
 				)
 			)
@@ -3970,7 +3918,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c56a4925-040e-4e86-bc16-94747b17cfc4")
-		(property "Reference" "R18"
+		(property "Reference" "R2"
 			(at 235.712 40.64 0)
 			(effects
 				(font
@@ -3986,7 +3934,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 231.394 41.656 90)
 			(effects
 				(font
@@ -4022,7 +3970,7 @@
 		(instances
 			(project "EasyBLDCV2_MCF8329"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/22fb4715-9f33-45f1-b8d4-9537d945fe69"
-					(reference "R18")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -4030,15 +3978,15 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 111.76 72.39 0)
+		(at 100.33 72.39 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "cf8d44ad-2f82-4021-acc8-47a834d1e35a")
-		(property "Reference" "#PWR046"
-			(at 111.76 78.74 0)
+		(property "Reference" "#PWR06"
+			(at 100.33 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4047,7 +3995,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 111.76 76.2 0)
+			(at 100.33 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4055,7 +4003,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 111.76 72.39 0)
+			(at 100.33 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4064,7 +4012,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 111.76 72.39 0)
+			(at 100.33 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4073,7 +4021,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 111.76 72.39 0)
+			(at 100.33 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4087,77 +4035,7 @@
 		(instances
 			(project "EasyESCV1_DRV8305"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/22fb4715-9f33-45f1-b8d4-9537d945fe69"
-					(reference "#PWR046")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Polarized_US")
-		(at 106.68 54.61 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d50a4b2f-364d-4208-939c-efd1bb0e30e3")
-		(property "Reference" "C21"
-			(at 110.49 52.7049 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "220u"
-			(at 110.49 55.2449 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 106.68 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 106.68 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Polarized capacitor, US symbol"
-			(at 106.68 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "ac9a44c6-2253-43dd-a5ea-3942fe0d0c49")
-		)
-		(pin "1"
-			(uuid "f4914e9c-9d04-4690-80f4-d8478fd81405")
-		)
-		(instances
-			(project "EasyBLDCV2_MCF8329"
-				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/22fb4715-9f33-45f1-b8d4-9537d945fe69"
-					(reference "C21")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -4172,7 +4050,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d5325ee2-9c35-4906-8b9f-9e961727113f")
-		(property "Reference" "#PWR026"
+		(property "Reference" "#PWR04"
 			(at 210.82 77.47 0)
 			(effects
 				(font
@@ -4222,7 +4100,7 @@
 		(instances
 			(project "EasyBLDCV2_MCF8329"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/22fb4715-9f33-45f1-b8d4-9537d945fe69"
-					(reference "#PWR026")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -4377,7 +4255,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e780d438-b480-4418-a6c4-e6d118e7aad0")
-		(property "Reference" "R16"
+		(property "Reference" "R1"
 			(at 214.122 39.37 0)
 			(effects
 				(font
@@ -4393,7 +4271,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 209.804 40.386 90)
 			(effects
 				(font
@@ -4429,7 +4307,7 @@
 		(instances
 			(project "EasyBLDCV2_MCF8329"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/22fb4715-9f33-45f1-b8d4-9537d945fe69"
-					(reference "R16")
+					(reference "R1")
 					(unit 1)
 				)
 			)
