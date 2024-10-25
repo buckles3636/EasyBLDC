@@ -23,7 +23,7 @@
 			(color 0 0 0 0.0000)
 		)
 		(uuid "22fb4715-9f33-45f1-b8d4-9537d945fe69")
-		(property "Sheetname" "Main Connector & Functional Jumpers"
+		(property "Sheetname" "Main Connector & Debug"
 			(at 113.03 61.5184 0)
 			(effects
 				(font

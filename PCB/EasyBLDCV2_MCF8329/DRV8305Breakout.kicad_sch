@@ -2137,7 +2137,7 @@
 		)
 		(uuid "326b640c-f33b-4374-9e97-04016e9eb956")
 	)
-	(text "Back EMF\n"
+	(text "Current Sense\n"
 		(exclude_from_sim no)
 		(at 45.72 90.17 0)
 		(effects
@@ -2656,7 +2656,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
+		(property "Footprint" ""
 			(at 38.354 65.024 90)
 			(effects
 				(font
@@ -2723,7 +2723,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
+		(property "Footprint" ""
 			(at 208.534 65.024 90)
 			(effects
 				(font
@@ -2793,7 +2793,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "DNK0008A"
+		(property "Footprint" "EasyBLDC:DNK0008A"
 			(at 230.378 51.562 0)
 			(effects
 				(font
@@ -2947,7 +2947,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
+		(property "Footprint" ""
 			(at 123.444 47.244 90)
 			(effects
 				(font
@@ -3082,7 +3082,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" ""
 			(at 248.6152 59.69 0)
 			(effects
 				(font
@@ -3216,7 +3216,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
+		(property "Footprint" ""
 			(at 38.354 47.244 90)
 			(effects
 				(font
@@ -3286,7 +3286,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" ""
 			(at 92.4052 59.69 0)
 			(effects
 				(font
@@ -3353,7 +3353,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
+		(property "Footprint" ""
 			(at 45.466 108.966 90)
 			(effects
 				(font
@@ -3423,7 +3423,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "DNK0008A"
+		(property "Footprint" "EasyBLDC:DNK0008A"
 			(at 145.288 69.342 0)
 			(effects
 				(font
@@ -3580,7 +3580,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "DNK0008A"
+		(property "Footprint" "EasyBLDC:DNK0008A"
 			(at 230.378 69.342 0)
 			(effects
 				(font
@@ -3670,7 +3670,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "DNK0008A"
+		(property "Footprint" "EasyBLDC:DNK0008A"
 			(at 60.198 69.342 0)
 			(effects
 				(font
@@ -3760,7 +3760,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" ""
 			(at 177.4952 59.69 0)
 			(effects
 				(font
@@ -3964,7 +3964,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "DNK0008A"
+		(property "Footprint" "EasyBLDC:DNK0008A"
 			(at 60.198 51.562 0)
 			(effects
 				(font
@@ -4053,7 +4053,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" ""
 			(at 78.4352 59.69 0)
 			(effects
 				(font
@@ -4252,7 +4252,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
+		(property "Footprint" ""
 			(at 123.444 65.024 90)
 			(effects
 				(font
@@ -4320,7 +4320,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
+		(property "Footprint" ""
 			(at 57.404 114.046 90)
 			(effects
 				(font
@@ -4390,7 +4390,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" ""
 			(at 163.5252 59.69 0)
 			(effects
 				(font
@@ -4524,7 +4524,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
+		(property "Footprint" ""
 			(at 45.466 121.666 90)
 			(effects
 				(font
@@ -4591,7 +4591,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
+		(property "Footprint" ""
 			(at 208.534 47.244 90)
 			(effects
 				(font
@@ -4793,7 +4793,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "DNK0008A"
+		(property "Footprint" "EasyBLDC:DNK0008A"
 			(at 145.288 51.562 0)
 			(effects
 				(font
@@ -4883,7 +4883,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" ""
 			(at 262.5852 59.69 0)
 			(effects
 				(font
