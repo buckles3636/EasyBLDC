@@ -64,6 +64,7 @@
 			)
 		)
 	)
+	(clearance 0.001)
 	(attr smd)
 	(fp_poly
 		(pts
