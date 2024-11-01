@@ -4133,7 +4133,7 @@
 				)
 			)
 		)
-		(property "Footprint" "10159560-A00221RLF:AMPHENOL_10159560-A00221RLF"
+		(property "Footprint" "EasyBLDC:AMPHENOL_10159560-A00221RLF"
 			(at 54.61 52.07 0)
 			(effects
 				(font
@@ -4341,7 +4341,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x05_P2.54mm_Vertical"
 			(at 72.39 107.95 0)
 			(effects
 				(font
