@@ -1,0 +1,22 @@
+{
+    "BEmfConstant": 3.7424941062927246,
+    "compatibility": [
+        "FOC",
+        "sixStep"
+    ],
+    "description": "T200 Underwater Thruster by blue robotics. 14pp 3800rpm",
+    "friction": 165.64,
+    "hardwareFamily": "MOTOR",
+    "id": "BlueRoboticsT200",
+    "inertia": 842.27,
+    "label": "BlueRoboticsT200",
+    "ls": 0.03,
+    "magneticStructure": {
+        "type": "SM-PMSM"
+    },
+    "maxRatedSpeed": 1062,
+    "nominalCurrent": 8,
+    "nominalDCVoltage": 23.86993408203125,
+    "polePairs": 14,
+    "rs": 0.10000000149011612
+}
