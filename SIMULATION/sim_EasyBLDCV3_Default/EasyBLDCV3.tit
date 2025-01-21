@@ -1,0 +1,3966 @@
+$$$$ GENERATED TITAN NETLIST using revision 81e4570437
+
+* ==== HEADER WITH GENERAL OPTIONS =======
+* Change syntax properties and semantics of some functions/operators
+.COMOPT COMPAT=PSPICE
+.COMOPT NAMES=RELAXED
+.COMOPT LEVEL=0
+.COMOPT MESSAGE SUPPRESS = E-027, E-091, E-238, E-458, E-636
+.OPTION DEFL=100u
+.OPTION DEFW=100u
+* Define some functions aliases which are typically used
+.FUNC iff(cond,then,else) = '(cond != 0)? then : else'
+.FUNC ln(x) = 'log(x)'
+* Define an alias for temperature evaluation
+.PARAM TEMP = 'TEMPER'
+
+* ======= SPECIAL TITAN SETTINGS ======== 
+* Possible errors which will be suppressed
+.OPTION MESSAGE WARNING=707,708,700,596,593
+.OPTION MESSAGE WARNING=DP-0493
+* Show progress during simulation
+.OPTION PROGRESS=0.5 VERBOSE 
+* ---- Settings for robustness ---- 
+.TEST 737 
+.TEST 254 * TOL_LIMIT=200
+.TEST 253 
+.OPTION ITL4=80
+.COMOPT COMPAT=TITAN
+.NLSOL
+   OP, DC FIRST, DC SWEEP:
+     NEWTON;
+     PSEUDO(PSALPHA=1e-5);
+     RAMP;
+   TRAN DC:
+     NEWTON;
+     PSEUDO;
+     RAMP(ACCEPT_QUIET_TRAN=1, MIN_SPREAD=10);
+     RAMP(RAMP_TIME=1E-6, ACCEPT_QUIET_TRAN=0, MIN_SPREAD=10, WAVEFORMS=1, SETTLE_TIME=100, DELMAX=100);
+.ENDNLSOL
+.COMOPT COMPAT=RESTORE
+
+* ======= SCHEMATIC START ======== 
+
+.global 0
+.subckt 2edl05n06pf lo ho gnd lin hin vdd vb vs 
+r_hin hin gnd 1E12
+c_hin hin gnd 1F
+r_ho ho gnd 1E12
+c_ho ho gnd 1F
+r_vb vb gnd 1E12
+c_vb vb gnd 1F
+r_vs vs gnd 1E12
+c_vs vs gnd 1F
+r_lin lin gnd 1E12
+c_lin lin gnd 1F
+r_lo lo gnd 1E12
+c_out lo gnd 1F
+r_vcc vdd gnd 1E12
+c_vcc vdd gnd 1F
+e_sd sd gnd value = '5'
+r_dt dt gnd 1
+c_dt dt gnd 1P
+x_gd_template lo ho gnd lin hin vdd vb vs sd dt two_edl05n06pf_gd_template  * endx-call 
+.ends 2edl05n06pf
+.subckt two_edl05n06pf_gd_template lo ho com lin hin vcc vb vs sd dt hb_en='1' sht_en='0' p_offset_dt='7.5E-08' p_slope_dt='-0.0' p_sd_d='2.5714285714285715E-08' p_th_sd_up='2.1' p_th_sd_dw='0.9' p_c_tpd='6.2374E-08' p_th_tpd='0.5145856856' p_c_pw_min='2.78E-08' p_th_hin_off='0.9' p_th_lin_off='0.9' p_th_hin_on='2.1' p_th_lin_on='2.1' p_r_hin_cl='94285.71428571429' p_r_lin_cl='94285.71428571429' p_c_gate='1.2E-11' p_rbond_nmos='0.01' p_rbond_pmos='0.01' p_lo_vgs_nmos='3' p_lo_vgs_pmos='3' p_lpmos_lamda='0.5' p_lpmos_kp='2E-05' p_lnmos_lamda='0.394' p_lnmos_kp='4.9E-05' p_ho_vgs_nmos='3' p_ho_vgs_pmos='3' p_hpmos_lamda='0.5' p_hpmos_kp='2E-05' p_hnmos_lamda='0.394' p_hnmos_kp='4.9E-05' p_vcc_uvh='9.1' p_vcc_uvl='8.3' p_vb_uvl='8.3' p_vb_uvh='9.1' p_r_uv_d_h='2571428' p_r_uv_d_l='2571428' p_vcc_min='10' p_iq_vcc='0.00028' p_vb_min='10' p_iq_vb='0.00017' p_v_leak='600' p_i_leak='1E-06' p_r_bsd='52' p_n_bsd='1.2294559113268089' p_is_bsd='1E-17' 
+r_lin_clamp lin com 'P_R_LIN_CL'
+r_hin_clamp hin com 'P_R_HIN_CL'
+r_sd_clamp sd com 'P_R_LIN_CL'
+x_hin_vcc_d hin vcc two_edl05n06pf_esd_dio p_v_bv='1' p_i_bv='1M'  * endx-call 
+x_com_hin_d com hin two_edl05n06pf_esd_dio p_v_bv='1' p_i_bv='1M'  * endx-call 
+x_lin_vcc_d lin vcc two_edl05n06pf_esd_dio p_v_bv='1' p_i_bv='1M'  * endx-call 
+x_com_lin_d com lin two_edl05n06pf_esd_dio p_v_bv='1' p_i_bv='1M'  * endx-call 
+x_sd_vcc_d sd vcc two_edl05n06pf_esd_dio p_v_bv='1' p_i_bv='1M'  * endx-call 
+x_com_sd_d com sd two_edl05n06pf_esd_dio p_v_bv='1' p_i_bv='1M'  * endx-call 
+x_cl_hin hin com two_edl05n06pf_cl_dio p_v_bv='5.25' p_i_bv='0.1M'  * endx-call 
+x_cl_lin lin com two_edl05n06pf_cl_dio p_v_bv='5.25' p_i_bv='0.1M'  * endx-call 
+x_cl_vcc vcc com two_edl05n06pf_cl_dio p_v_bv='20' p_i_bv='1'  * endx-call 
+x_cl_vb vb vs two_edl05n06pf_cl_dio p_v_bv='20' p_i_bv='1'  * endx-call 
+d_bs_diode vcc vb two_edl05n06pf_bs_dio
+.model two_edl05n06pf_bs_dio d
++is='P_IS_BSD' rs='P_R_BSD' n='P_N_BSD' 
+x_input_stage lin_dd hin_dd sd_dd lin hin sd com two_edl05n06pf_input_stage p_sd_d='P_SD_D' p_th_sd_up='P_TH_SD_UP' p_th_sd_dw='P_TH_SD_DW' p_c_tpd='P_C_TPD' p_th_tpd='P_TH_TPD' p_c_pw_min='P_C_PW_MIN' p_th_hin_off='P_TH_HIN_OFF' p_th_lin_off='P_TH_LIN_OFF' p_th_hin_on='P_TH_HIN_ON' p_th_lin_on='P_TH_LIN_ON'  * endx-call 
+x_deadtime lin_dt_dig hin_dt_dig lin_dd hin_dd dt vcc com vcc_uv two_edl05n06pf_deadtime p_slope_dt='P_SLOPE_DT' p_offset_dt='P_OFFSET_DT' hb_en='HB_EN' sht_en='SHT_EN'  * endx-call 
+x_ho_stage ho hin_dt_dig vcc_uv vb_uv sd_dd vb vs two_edl05n06pf_ho_stage p_rbond_pmos='P_RBOND_PMOS' p_rbond_nmos='P_RBOND_NMOS' p_c_gate='P_C_GATE' p_ho_vgs_pmos='P_HO_VGS_PMOS' p_hpmos_lamda='P_HPMOS_LAMDA' p_hpmos_kp='P_HPMOS_KP' p_ho_vgs_nmos='P_HO_VGS_NMOS' p_hnmos_lamda='P_HNMOS_LAMDA' p_hnmos_kp='P_HNMOS_KP'  * endx-call 
+x_lo_stage lo lin_dt_dig vcc_uv sd_dd vcc com two_edl05n06pf_lo_stage p_rbond_pmos='P_RBOND_PMOS' p_rbond_nmos='P_RBOND_NMOS' p_c_gate='P_C_GATE' p_lo_vgs_pmos='P_LO_VGS_PMOS' p_lpmos_lamda='P_LPMOS_LAMDA' p_lpmos_kp='P_LPMOS_KP' p_lo_vgs_nmos='P_LO_VGS_NMOS' p_lnmos_lamda='P_LNMOS_LAMDA' p_lnmos_kp='P_LNMOS_KP'  * endx-call 
+x_uv_detect vcc_uv vb_uv vcc vb com vs two_edl05n06pf_uv_detect p_vb_uvl='P_VB_UVL' p_vb_uvh='P_VB_UVH' p_r_uv_d_h='P_R_UV_D_H' p_vcc_uvl='P_VCC_UVL' p_vcc_uvh='P_VCC_UVH' p_r_uv_d_l='P_R_UV_D_L'  * endx-call 
+x_cc_emulator vcc com vb vs two_edl05n06pf_cc_emulator p_vb_min='P_VB_MIN' p_vcc_min='P_VCC_MIN' p_iq_vb='P_IQ_VB' p_iq_vcc='P_IQ_VCC' p_i_leak='P_I_LEAK' p_v_leak='P_V_LEAK'  * endx-call 
+.ends two_edl05n06pf_gd_template
+.subckt two_edl05n06pf_input_stage lin_dd hin_dd sd_dd lin hin sd com p_sd_d='5E-08' p_th_sd_up='2.1' p_th_sd_dw='1.1' p_c_tpd='1.9E-07' p_th_tpd='10E-9' p_th_hin_off='0.9' p_th_lin_off='0.9' p_th_hin_on='2.1' p_th_lin_on='2.1' p_c_pw_min='42E-9' 
+x_sd_th sd sd_dig com two_edl05n06pf_stp_ideal p_th_up='P_TH_SD_UP' p_th_dw='P_TH_SD_DW'  * endx-call 
+x_sd_dd sd_dig sd_dd two_edl05n06pf_rc_delay_10 p_c_delay='P_SD_D'  * endx-call 
+x_hin_th hin hin_dig com two_edl05n06pf_stp_ideal p_th_up='P_TH_HIN_ON' p_th_dw='P_TH_HIN_OFF'  * endx-call 
+x_hin_lpf hin_dig hin_lpf_dig two_edl05n06pf_adv_filter p_c_delay='1.45E-08'  * endx-call 
+x_hin_dd hin_lpf_dig hin_dd two_edl05n06pf_rc_delay_10 p_c_delay='5.8652E-08' p_th_tpd='0.5069963491'  * endx-call 
+x_lin_th lin lin_dig com two_edl05n06pf_stp_ideal p_th_up='P_TH_LIN_ON' p_th_dw='P_TH_LIN_OFF'  * endx-call 
+x_lin_lpf lin_dig lin_lpf_dig two_edl05n06pf_adv_filter p_c_delay='2.17E-08'  * endx-call 
+x_lin_dd lin_lpf_dig lin_dd two_edl05n06pf_rc_delay_10 p_c_delay='4.4222E-08' p_th_tpd='0.5092815206'  * endx-call 
+.ends two_edl05n06pf_input_stage
+.subckt two_edl05n06pf_deadtime lin_dt_dig hin_dt_dig lin hin dt vcc com vcc_uv hb_en='1' sht_en='0.0' p_slope_dt='2.43236451E-05' p_offset_dt='5.4E-07' p_i_dt='1E-06' p_c_dt='10P' p_th_up='0.5' 
+x_lin_dt lin lin_dd two_edl05n06pf_rc_delay_10 p_c_delay='0.3N'  * endx-call 
+x_hin_dt hin hin_dd two_edl05n06pf_rc_delay_10 p_c_delay='0.1N'  * endx-call 
+e_vcc_1v vcc_1v 0 value = 'TABLE( V(VCC,COM) , 0,0 , 3,0 , 6,1 )'
+g_dt vcc dt value = 'TABLE( V(VCC,DT) , 0,0 , 10M,{P_I_DT} )'
+e_hdt_pls hin_dt_pls 0 value = 'IF( ((V(HIN_DD) - V(LIN_DD)) > 0.1) | (V(HIN_DT_DIG) > 0.5) | ({HB_EN} < 0.5), 1.0 , 0.0 )'
+e_hin_dt hin_dt_dig 0 value = 'IF( ( ((V(HIN_DT_PLS) > 0.5) & (V(LOFF) > {P_TH_UP})) | {HB_EN} < 0.5 ) & (V(HIN_DD) > 0.5 ) & V( VCC_UV) > 0.5 , 1.0 , 0.0 )'
+e_ldt_pls lin_dt_pls 0 value = 'IF( ((V(LIN_DD) - V(HIN_DD)) > 0.1) | (V(LIN_DT_DIG) > 0.5) | ({HB_EN} < 0.5) , 1.0 , 0.0 )'
+e_lin_dt lin_dt_dig 0 value = 'IF( ( ((V(LIN_DT_PLS) > 0.5) & (V(HOFF) > {P_TH_UP})) | {HB_EN} < 0.5 ) & (V(LIN_DD) > 0.5 ) , 1.0 , 0.0 )'
+e_sht_h sht_h 0 value = 'IF( {SHT_EN} > 0.5 , V(HIN_DD) , V(HIN_DT_DIG) )'
+e_sht_l sht_l 0 value = 'IF( {SHT_EN} > 0.5 , V(LIN_DD) , V(LIN_DT_DIG) )'
+g_h_dt vcc_1v hoff value = 'TABLE( V(VCC_1V,HOFF) , 0,0 , 10M, I_DT( V(DT,COM) ) )'
+c_h_dt hoff 0 'P_C_DT'
+r_h_dt hoff 0 1E8
+s_h_dt hoff 0 sht_h 0 two_edl05n06pf_dt_sw
+g_l_dt vcc_1v loff value = 'TABLE( V(VCC_1V,LOFF) , 0,0 , 10M, I_DT( V(DT,COM) ) )'
+c_l_dt loff 0 'P_C_DT'
+r_l_dt loff 0 1E8
+s_l_dt loff 0 sht_l 0 two_edl05n06pf_dt_sw
+.func i_dt ( v_dt ) '{P_C_DT} * {P_TH_UP} / ({P_SLOPE_DT}/{P_I_DT}*V_DT + {P_OFFSET_DT})'
+.model two_edl05n06pf_dt_sw vswitch
++ron='1' roff='100MEG' von='0.8' voff='0.2' 
+.ends two_edl05n06pf_deadtime
+.subckt two_edl05n06pf_ho_stage ho hin_dt_dig vcc_uv vb_uv sd_dd vb vs p_rbond_nmos='10M' p_rbond_pmos='10M' p_c_gate='1E-12' p_ho_vgs_pmos='6' p_hpmos_lamda='0.06' p_hpmos_kp='60U' p_ho_vgs_nmos='6' p_hnmos_lamda='0.05' p_hnmos_kp='100U' 
+r_hin_dt_dd hin_dt_dig hin_dt_dd 100
+c_hin_dt_dd hin_dt_dd 0 1N
+e_hin_pls hin_pls 0 value = 'IF( (V(HIN_DT_DIG) - V(HIN_DT_DD)) > 0.1 | ((V(HGATE_DIG) > 0.5) & V(HIN_DT_DIG)>0.5), 1.0,0.0 )'
+e_hgate_dig hgate_dig 0 value = 'IF( ( V(VB_UV) > 0.5 & V(HIN_PLS) > 0.5 & V(SD_DD) > 0.5 ) , 1.0,0.0 )'
+r_hgate hgate_dig hgate 1
+c_hgate hgate 0 'P_C_GATE'
+e_hgate_p vb hgate_p value = 'V(HGATE) * {P_HO_VGS_PMOS} * V(HGATE_DIG)'
+e_hgate_n hgate_n vs value = '(1 - V(HGATE)) * {P_HO_VGS_NMOS} * (1 - V(HGATE_DIG))'
+m_ho_pmos ho hgate_p vb vb two_edl05n06pf_ho_pmos
+m_ho_nmos ho hgate_n vs vs two_edl05n06pf_ho_nmos
+.model two_edl05n06pf_ho_pmos pmos
++level='1' vto='-1' cgso='100P' w='1M' l='1U' rb='1' rg='10' rs='10M' rd='P_RBOND_PMOS' lambda='P_HPMOS_LAMDA' kp='P_HPMOS_KP' 
+.model two_edl05n06pf_ho_nmos nmos
++level='1' vto='1' cgso='100P' w='1M' l='1U' rb='1' rg='10' rs='10M' rd='P_RBOND_NMOS' lambda='P_HNMOS_LAMDA' kp='P_HNMOS_KP' 
+.ends two_edl05n06pf_ho_stage
+.subckt two_edl05n06pf_lo_stage lo lin_dt_dig vcc_uv sd_dd vcc com p_rbond_nmos='10M' p_rbond_pmos='10M' p_c_gate='1E-12' p_lo_vgs_pmos='6' p_lpmos_lamda='0.06' p_lpmos_kp='60U' p_lo_vgs_nmos='6' p_lnmos_lamda='0.05' p_lnmos_kp='100U' 
+e_lgate_dig lgate_dig 0 value = 'IF( (V(VCC_UV) > 0.5 & V(LIN_DT_DIG) > 0.5 & V(SD_DD) > 0.5 ), 1.0,0.0 )'
+r_lgate lgate_dig lgate 1
+c_lgate lgate 0 'P_C_GATE'
+e_lgate_p vcc lgate_p value = 'V(LGATE) * {P_LO_VGS_PMOS} * V(LGATE_DIG)'
+e_lgate_n lgate_n com value = '(1 - V(LGATE)) * {P_LO_VGS_NMOS} * (1 - V(LGATE_DIG))'
+m_lo_pmos lo lgate_p vcc vcc two_edl05n06pf_lo_pmos
+m_lo_nmos lo lgate_n com com two_edl05n06pf_lo_nmos
+.model two_edl05n06pf_lo_pmos pmos
++level='1' vto='-1' cgso='100P' w='1M' l='1U' rb='1' rg='10' rs='10M' rd='P_RBOND_PMOS' lambda='P_LPMOS_LAMDA' kp='P_LPMOS_KP' 
+.model two_edl05n06pf_lo_nmos nmos
++level='1' vto='1' cgso='100P' w='1M' l='1U' rb='1' rg='10' rs='10M' rd='P_RBOND_NMOS' lambda='P_LNMOS_LAMDA' kp='P_LNMOS_KP' 
+.ends two_edl05n06pf_lo_stage
+.subckt two_edl05n06pf_uv_detect vcc_uv vb_uv vcc vb com vs p_vb_uvl='7' p_vb_uvh='8' p_r_uv_d_h='142857' p_vcc_uvl='8' p_vcc_uvh='9' p_r_uv_d_l='71428' 
+x_vb_uv vb vb_uv_dig vs two_edl05n06pf_stp_ideal p_th_up='P_VB_UVH' p_th_dw='P_VB_UVL'  * endx-call 
+e_vb_uvl vb_uvl 0 value = 'IF( V(VB,VS) < {P_VB_UVL} , 0.0 , 1.0 )'
+r_vb_uvl vb_uvl vb_uvl_lpf 'P_R_UV_D_H'
+c_vb_uvl vb_uvl_lpf 0 1P
+e_vb_uvl_pls vb_uvl_pls 0 value = 'IF( V(VB_UVL_LPF) < 0.5 | V(VB_UV) < 0.5 , 0.0 , 1.0 )'
+e_vb_uv vb_uv 0 value = 'IF( V(VB_UV_DIG) < 0.5 & V(VB_UVL_PLS) < 0.5 , 0.0 , 1.0 )'
+x_vcc_uv vcc vcc_uv_dig com two_edl05n06pf_stp_ideal p_th_up='P_VCC_UVH' p_th_dw='P_VCC_UVL'  * endx-call 
+e_vcc_uvl vcc_uvl 0 value = 'IF( V(VCC,COM) < {P_VCC_UVL} , 0.0 , 1.0 )'
+r_vcc_uvl vcc_uvl vcc_uvl_lpf 'P_R_UV_D_L'
+c_vcc_uvl vcc_uvl_lpf 0 1P
+e_vcc_uvl_pls vcc_uvl_pls 0 value = 'IF( V(VCC_UVL_LPF) < 0.5 | V(VCC_UV) < 0.5 , 0.0 , 1.0 )'
+e_vcc_uv vcc_uv 0 value = 'IF( V(VCC_UV_DIG) < 0.5 & V(VCC_UVL_PLS) < 0.5 , 0.0 , 1.0 )'
+.ends two_edl05n06pf_uv_detect
+.subckt two_edl05n06pf_cc_emulator vcc com vb vs p_vb_min='10' p_vcc_min='10' p_iq_vb='100U' p_iq_vcc='500U' p_i_leak='1.0U' p_v_leak='650' 
+g_qb vb vs value = 'TABLE(V(VB,VS) , 0,0 , 0.1,1U , 1,100U , 0.8*{P_VB_MIN},{P_IQ_VB})'
+r_qb vb vs 1E12
+g_qcc vcc com value = 'TABLE(V(VCC,COM) , 0,0 , 0.1,1U , 1,100U , 0.8*{P_VCC_MIN},{P_IQ_VCC})'
+r_qcc vcc com 1E12
+g_vb_leak vs com value = 'TABLE(V(VS,COM) , 0,0 , {P_V_LEAK},{P_I_LEAK})'
+r_vb_leak vs com 1E12
+.ends two_edl05n06pf_cc_emulator
+.subckt two_edl05n06pf_cl_dio c a p_v_bv='5' p_i_bv='1' 
+g_cl_dio c a value = 'TABLE(V(C,A) , 0,0 , {P_V_BV}*1.01,0 , {P_V_BV}*1.02,{P_I_BV} , 10*{P_V_BV}, 100*{P_I_BV} )'
+c_cl_dio c a 1P
+r_cl_dio c a 1E12
+.ends two_edl05n06pf_cl_dio
+.subckt two_edl05n06pf_esd_dio c a p_v_bv='5' p_i_bv='1' 
+g_cl_dio c a value = 'TABLE(V(C,A) , 0,0 , {P_V_BV}*1.01,0 , {P_V_BV}*1.02,{P_I_BV} , 10*{P_V_BV}, 10*{P_I_BV} )'
+c_cl_dio c a 1P
+r_cl_dio c a 1E12
+.ends two_edl05n06pf_esd_dio
+.subckt two_edl05n06pf_rc_delay_10 in out p_c_delay='60E-9' p_th_tpd='0.5' 
+x_d1 in out two_edl05n06pf_rc_delay_5 p_c_delay='P_C_DELAY' p_th_tpd='P_TH_TPD'  * endx-call 
+.ends two_edl05n06pf_rc_delay_10
+.subckt two_edl05n06pf_rc_delay_5 in out p_c_delay='60E-9' p_th_tpd='0.5' 
+x_d1 in d1 two_edl05n06pf_rc_delay_base p_c_delay='P_C_DELAY' p_th_tpd='P_TH_TPD'  * endx-call 
+x_d2 d1 d2 two_edl05n06pf_rc_delay_base p_c_delay='P_C_DELAY' p_th_tpd='P_TH_TPD'  * endx-call 
+x_d3 d2 d3 two_edl05n06pf_rc_delay_base p_c_delay='P_C_DELAY' p_th_tpd='P_TH_TPD'  * endx-call 
+x_d4 d3 d4 two_edl05n06pf_rc_delay_base p_c_delay='P_C_DELAY' p_th_tpd='P_TH_TPD'  * endx-call 
+x_d5 d4 out two_edl05n06pf_rc_delay_base p_c_delay='P_C_DELAY' p_th_tpd='P_TH_TPD'  * endx-call 
+.ends two_edl05n06pf_rc_delay_5
+.subckt two_edl05n06pf_rc_delay_base in out p_c_delay='60E-9' p_th_tpd='0.5' 
+r_delay in in_del 1
+c_delay in_del 0 'P_C_DELAY'
+e_delay out 0 value = 'IF( V(IN_DEL) > {P_TH_TPD} , 1.0,0.0 )'
+.ends two_edl05n06pf_rc_delay_base
+.subckt two_edl05n06pf_adv_filter in out p_c_delay='60E-9' p_th_tpd='0.5' 
+r_rise in in_del 1
+c_rise in_del 0 'P_C_DELAY'
+x_cmp in_del out 0 two_edl05n06pf_stp_ideal p_th_up='0.999' p_th_dw='0.001'  * endx-call 
+.ends two_edl05n06pf_adv_filter
+.subckt two_edl05n06pf_stp_ideal in out gnd p_th_up='0.9' p_th_dw='0.1' 
+e_outp outp 0 value = 'IF( V(IN,GND)>={P_TH_UP} | V(OUTN)<0.5 , 1,0 )'
+e_outn outn 0 value = 'IF( V(IN,GND)<={P_TH_DW} | V(OUTP)<0.5 , 1,0 )'
+e_out out 0 value = 'V(OUTP)'
+.ends two_edl05n06pf_stp_ideal
+.subckt two_edl05n06pf_stp_ideal1 in out gnd up dw p_th_up='0.9' p_th_dw='0.1' 
+e_outp outp 0 value = 'IF( V(IN,GND)>=V(UP) | V(OUTN)<0.5 , 1,0 )'
+e_outn outn 0 value = 'IF( V(IN,GND)<=V(DW) | V(OUTP)<0.5 , 1,0 )'
+e_out out 0 value = 'V(OUTP)'
+.ends two_edl05n06pf_stp_ideal1
+.subckt two_edl05n06pf_stn_ideal in out gnd p_th_up='0.9' p_th_dw='0.1' 
+e_outp outp 0 value = 'IF( V(IN,GND)>={P_TH_UP} | V(OUTN)<0.5 , 1,0 )'
+e_outn outn 0 value = 'IF( V(IN,GND)<={P_TH_DW} | V(OUTP)<0.5 , 1,0 )'
+e_out out 0 value = 'V(OUTN)'
+.ends two_edl05n06pf_stn_ideal
+.subckt two_edl05n06pf_stn_ideal1 in out gnd up dw p_th_up='0.9' p_th_dw='0.1' 
+e_outp outp 0 value = 'IF( V(IN,GND)>=V(UP) | V(OUTN)<0.5 , 1,0 )'
+e_outn outn 0 value = 'IF( V(IN,GND)<=V(DW) | V(OUTP)<0.5 , 1,0 )'
+e_out out 0 value = 'V(OUTN)'
+.ends two_edl05n06pf_stn_ideal1
+.subckt a6_40_d_var dd g s0 sp tj a='1' dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' inn='1' unn='1' rmax='0' gmin='1' rsp='1' rs='1' rp='1' rmet='1u' 
+.param dvthmax='0.3'
+.param dcmax='0.3'
+.param dvbrmax='3.15'
+.param fm='0.05'
+.param fn='1'
+.param al='0.5'
+.param c='0.95'
+.param vth0='2.152'
+.param auth='3.0m'
+.param ut='15.11m'
+.param ab='18.74m'
+.param lb='-23'
+.param ub='42.5'
+.param b0='213.4'
+.param nmu3='1.769'
+.param p0='5.043'
+.param p1='-14.06m'
+.param p2='21.76u'
+.param tref='298'
+.param t0='273'
+.param kbq='86.2u'
+.param lnisj='-25.41'
+.param ndi='1.099'
+.param nisj='2.463'
+.param rdi='1.152m'
+.param nmu2='0.959'
+.param td='20n'
+.param ta='2n'
+.param rd='3.436m'
+.param rf='0.6'
+.param nmu='3.044'
+.param f3='606.2p'
+.param f3a='31.78p'
+.param q81='145.0p'
+.param qs1='65.62p'
+.param qs2='345.4p'
+.param qs3='-87.45m'
+.param qs4='85.58p'
+.param qs5='-16.63m'
+.param x0='308.2m'
+.param x1='27.68'
+.param dx='x1-x0'
+.param f2r='226.4m'
+.param ps0='2.966p'
+.param ps1='16.86p'
+.param ps2='-1.938'
+.param ps3='85.69p'
+.param ps4='-162.1m'
+.param ps5='6.862p'
+.param ps6='8.007p'
+.param f5='34.57p'
+.param x2='6.017'
+.param x3='25.02'
+.param dx2='x3-x2'
+.param vth='Vth0+dVthmax*dVth'
+.param q0='b0*((T0/Tref)**nmu3)*a'
+.param q1='(Unn-Inn*Rs-Vth0)*q0'
+.param q2='(Fm*sqrt(0.4)-c)*Inn*q0'
+.param rlim='(q1+2*q2*Rmax-sqrt(max(q1**2+4*q2,0)))/(2*q2)'
+.param drd='Rd/a+if(dVth==0,limit(dRdson,0,1)*max(Rlim-Rd/a-Rs-Rp,0),0)'
+.param bm='c/((1/gmin-Rs)**2*Inn*a*(T0/Tref)**nmu3)'
+.param bet='b0+(b0-bm)*if(dRdson==0,if(dVth==0,limit(dgfs,-1,0),0),0)'
+.param dc1='1+dCmax*limit(dC,0,1)'
+.param cgs0='f3*a*dC1'
+.param cgs1='f3a*a*dC1'
+.param drdi='Rdi/a'
+.param cox1='(ps1*a+ps0*sqrt(a))*dC1'
+.param cox2='ps3*a*dC1'
+.param cox3='(ps5*a+ps6)*dC1'
+.param cox4='(f5*a+(ps5*a+ps6))*dC1'
+.param cds0='qs1*a*dC1'
+.param cds1='qs2*(1+f2r/sqrt(a))*a*dC1'
+.param cds2='qs4*a*dC1'
+.param cds3='(q81+qs1)*a*dC1'
+.func vbr ( usps ) 'UB+dVbrmax*dVbr'
+.func i0 ( uee , p , pp , z1 ) 'if(Uee>pp,(Uee-c*z1)*z1,p*(pp-p)/c*exp((Uee-pp)/p))'
+.func ig ( uds , t , p , uee ) 'bet*(T0/T)**nmu3*I0(Uee,p,min(2*p,p+c*Uds),min(Uds,Uee/(2*c)))'
+.func j ( d , g , t , da , s , usps ) 'a*(s*(Ig(da,T,(p0+(p1+p2*T)*T)*kbq*T,g-Vth+auth*(T-Tref)+Fm*da**Fn+1*limit(-d,0,1))+ exp(min(lB+(d-VBR(Usps)-ab*(T-Tref))/UT,25))))'
+.func idiode ( usd , tj , iss ) 'exp(min(log(Iss)+Usd/(ndi*kbq*Tj),7))-Iss'
+.func idiod ( usd , tj ) 'a*Idiode(Usd,Tj,exp(min(lnIsj+(Tj/Tref-1)*1.12/(ndi*kbq*Tj),7))*(Tj/Tref)**nisj)'
+.func pr ( vss0 , vssp ) 'Vss0*Vss0/max(Rmet,1u)+Vssp*Vssp/Rsp'
+.func qcds ( x ) 'Cds3*min(x,x1)+Cds0*max(x-x1,0)+(Cds3-Cds0)*((limit(x,x0,x1)-x0)**3/(dx*dx)*((limit(x,x0,x1)-x0)/(2*dx)-1))'
+.func qcdg ( x ) 'Cox4*min(x,x3)+Cox3*max(x-x3,0)+(Cox4-Cox3)*((limit(x,x2,x3)-x2)**3/(dx2*dx2)*((limit(x,x2,x3)-x2)/(2*dx2)-1))'
+e_edg1 d ox value = 'if(V(d,g)>0,V(d,g)-(exp(ps2*max(V(d,g),0))-1)/ps2,0)'
+c_cdg1 ox g 'Cox1'
+e_edg2 d ox1 value = 'if(V(d,g)>0,V(d,g)-(exp(ps4*max(V(d,g),0))-1)/ps4,0)'
+c_cdg2 ox1 g 'Cox2'
+e_edg3 d ox2 value = 'V(d,g)-QCdg(V(d,g))/Cox4'
+c_cdg3 ox2 g 'Cox4'
+e_eds d edep value = 'V(d,s)-QCds(V(d,s))/Cds3'
+c_cds edep s 'Cds3/2'
+e_eds1 d edep1 value = 'V(d,sp)-QCds(V(d,sp))/Cds3'
+c_cds1 edep1 sp 'Cds3/2'
+e_eds2 d edep2 value = 'if(V(d,sp)>0,V(d,sp)-(exp(qs5*max(V(d,sp),0))-1)/qs5,0)'
+c_cds2 edep2 sp 'Cds2'
+e_eds3 d edep3 value = 'if(V(d,sp)>0,V(d,sp)-(exp(qs3*max(V(d,sp),0))-1)/qs3,0)'
+c_cds3 edep3 sp 'Cds1'
+c_cgs g s 'Cgs0'
+c_cgs1 g sp 'Cgs1'
+r_fp s sp 'Rsp'
+g_chan d5a s value = 'J(V(d5a,s),V(g,s),T0+limit(V(Tj),-200,300),(sqrt(1+4*al*abs(V(d5a,s)))-1)/2/al,sgn(V(d5a,s)),V(sp,s))'
+r_d06 d5a d5 1u
+v_sm d d5 0
+g_rmos d1 d value = 'V(d1,d)/(Rf*dRd+(1-Rf)*dRd*((limit(V(Tj),-200,999)+T0)/Tref)**nmu)'
+v_sense dd d1 0
+g_diode s d3 value = 'Idiod(V(s,d3),T0+limit(V(Tj),-200,499))'
+g_rdio d2 d1 value = 'V(d2,d1)/(dRdi*((limit(V(Tj),-200,999)+T0)/Tref)**nmu2)'
+v_sense2 d2 d3 0
+r_1 g s 1G
+r_d01 d s 1G
+r_d02 d2 s 1G
+r_d03 d1 d 1k
+r_ssp g sp 100Meg
+r_met s s0 'Rmet'
+g_th 0 tj value = '(I(V_sense)-I(V_sense2))*V(d1,d)+I(V_sm)*V(d,s)+I(V_sense2)*V(d1,s)+Pr(V(s,s0),V(s,sp))'
+.ends a6_40_d_var
+.subckt a6_40_d1_var dd g s0 sp tj a='1' dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' inn='1' unn='1' rmax='0' gmin='1' rsp='1' rs='1' rp='1' rmet='1u' 
+.param dvthmax='0.4'
+.param dcmax='0.3'
+.param dvbrmax='3.15'
+.param fm='0.05'
+.param fn='1'
+.param al='0.5'
+.param c='0.95'
+.param vth0='3.51'
+.param auth='3.0m'
+.param ut='84.76m'
+.param ab='20.15m'
+.param lb='-23'
+.param ub='41.4'
+.param b0='143.8'
+.param p0='6.094'
+.param p1='-15.32m'
+.param p2='26.44u'
+.param rd='3.52m'
+.param nmu='3.214'
+.param tref='298'
+.param t0='273'
+.param lnisj='-27.1'
+.param ndi='1.063'
+.param nisj='3.00'
+.param rdi='0.717m'
+.param nmu2='1.616'
+.param td='20n'
+.param ta='2n'
+.param rf='0.6'
+.param nmu3='1.1'
+.param kbq='86.2u'
+.param f3='544.8p'
+.param f3a='31.78p'
+.param q81='31.98p'
+.param qs1='58.61p'
+.param qs2='548.4p'
+.param qs3='-85.34m'
+.param qs4='46.61p'
+.param qs5='-8.081m'
+.param x0='12.88'
+.param x1='25.56'
+.param dx='x1-x0'
+.param f2r='178.9m'
+.param ps0='27.7p'
+.param ps1='55.67p'
+.param ps2='-159.6m'
+.param ps3='6.027p'
+.param ps4='-1.123m'
+.param ps5='8.05f'
+.param ps6='7.499p'
+.param f5='27.9p'
+.param x2='7.131'
+.param x3='25.52'
+.param dx2='x3-x2'
+.param vth='Vth0+dVthmax*dVth'
+.param q0='b0*((T0/Tref)**nmu3)*a'
+.param q1='(Unn-Inn*Rs-Vth0)*q0'
+.param q2='(Fm*sqrt(0.4)-c)*Inn*q0'
+.param rlim='(q1+2*q2*Rmax-sqrt(max(q1**2+4*q2,0)))/(2*q2)'
+.param drd='Rd/a+if(dVth==0,limit(dRdson,0,1)*max(Rlim-Rd/a-Rs-Rp,0),0)'
+.param bm='c/((1/gmin-Rs)**2*Inn*a*(T0/Tref)**nmu3)'
+.param bet='b0+(b0-bm)*if(dRdson==0,if(dVth==0,limit(dgfs,-1,0),0),0)'
+.param dc1='1+dCmax*limit(dC,0,1)'
+.param cgs0='f3*a*dC1'
+.param cgs1='f3a*a*dC1'
+.param drdi='Rdi/a'
+.param cox1='(ps1*a+ps0*sqrt(a))*dC1'
+.param cox2='ps3*a*dC1'
+.param cox3='(ps5*a+ps6)*dC1'
+.param cox4='(f5*a+(ps5*a+ps6))*dC1'
+.param cds0='qs1*a*dC1'
+.param cds1='qs2*(1+f2r/sqrt(a))*a*dC1'
+.param cds2='qs4*a*dC1'
+.param cds3='(q81+qs1)*a*dC1'
+.func vbr ( usps ) 'UB+dVbrmax*dVbr'
+.func i0 ( uee , p , pp , z1 ) 'if(Uee>pp,(Uee-c*z1)*z1,p*(pp-p)/c*exp((Uee-pp)/p))'
+.func ig ( uds , t , p , uee ) 'bet*(T0/T)**nmu3*I0(Uee,p,min(2*p,p+c*Uds),min(Uds,Uee/(2*c)))'
+.func j ( d , g , t , da , s , usps ) 'a*(s*(Ig(da,T,(p0+(p1+p2*T)*T)*kbq*T,g-Vth+auth*(T-Tref)+Fm*da**Fn+1*limit(-d,0,1))+ exp(min(lB+(d-VBR(Usps)-ab*(T-Tref))/UT,25))))'
+.func idiode ( usd , tj , iss ) 'exp(min(log(Iss)+Usd/(ndi*kbq*Tj),7))-Iss'
+.func idiod ( usd , tj ) 'a*Idiode(Usd,Tj,exp(min(lnIsj+(Tj/Tref-1)*1.12/(ndi*kbq*Tj),7))*(Tj/Tref)**nisj)'
+.func pr ( vss0 , vssp ) 'Vss0*Vss0/max(Rmet,1u)+Vssp*Vssp/Rsp'
+.func qcds ( x ) 'Cds3*min(x,x1)+Cds0*max(x-x1,0)+(Cds3-Cds0)*((limit(x,x0,x1)-x0)**3/(dx*dx)*((limit(x,x0,x1)-x0)/(2*dx)-1))'
+.func qcdg ( x ) 'Cox4*min(x,x3)+Cox3*max(x-x3,0)+(Cox4-Cox3)*((limit(x,x2,x3)-x2)**3/(dx2*dx2)*((limit(x,x2,x3)-x2)/(2*dx2)-1))'
+e_edg1 d ox value = 'if(V(d,g)>0,V(d,g)-(exp(ps2*max(V(d,g),0))-1)/ps2,0)'
+c_cdg1 ox g 'Cox1'
+e_edg2 d ox1 value = 'if(V(d,g)>0,V(d,g)-(exp(ps4*max(V(d,g),0))-1)/ps4,0)'
+c_cdg2 ox1 g 'Cox2'
+e_edg3 d ox2 value = 'V(d,g)-QCdg(V(d,g))/Cox4'
+c_cdg3 ox2 g 'Cox4'
+e_eds d edep value = 'V(d,s)-QCds(V(d,s))/Cds3'
+c_cds edep s 'Cds3/2'
+e_eds1 d edep1 value = 'V(d,sp)-QCds(V(d,sp))/Cds3'
+c_cds1 edep1 sp 'Cds3/2'
+e_eds2 d edep2 value = 'if(V(d,sp)>0,V(d,sp)-(exp(qs5*max(V(d,sp),0))-1)/qs5,0)'
+c_cds2 edep2 sp 'Cds2'
+e_eds3 d edep3 value = 'if(V(d,sp)>0,V(d,sp)-(exp(qs3*max(V(d,sp),0))-1)/qs3,0)'
+c_cds3 edep3 sp 'Cds1'
+c_cgs g s 'Cgs0'
+c_cgs1 g sp 'Cgs1'
+r_fp s sp 'Rsp'
+g_chan d5a s value = 'J(V(d5a,s),V(g,s),T0+limit(V(Tj),-200,300),(sqrt(1+4*al*abs(V(d5a,s)))-1)/2/al,sgn(V(d5a,s)),V(sp,s))'
+r_d06 d5a d5 1u
+v_sm d d5 0
+g_rmos d1 d value = 'V(d1,d)/(Rf*dRd+(1-Rf)*dRd*((limit(V(Tj),-200,999)+T0)/Tref)**nmu)'
+v_sense dd d1 0
+g_diode s d3 value = 'Idiod(V(s,d3),T0+limit(V(Tj),-200,499))'
+g_rdio d2 d1 value = 'V(d2,d1)/(dRdi*((limit(V(Tj),-200,999)+T0)/Tref)**nmu2)'
+v_sense2 d2 d3 0
+r_1 g s 1G
+r_d01 d s 1G
+r_d02 d2 s 1G
+r_d03 d1 d 1k
+r_ssp g sp 100Meg
+r_met s s0 'Rmet'
+g_th 0 tj value = '(I(V_sense)-I(V_sense2))*V(d1,d)+I(V_sm)*V(d,s)+I(V_sense2)*V(d1,s)+Pr(V(s,s0),V(s,sp))'
+.ends a6_40_d1_var
+.subckt a6_40_e_var dd g s0 sp tj a='1' dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' inn='1' unn='1' rmax='0' gmin='1' rsp='1' rs='1' rp='1' rmet='1u' 
+.param dvthmax='0.3'
+.param dcmax='0.3'
+.param dvbrmax='3.15'
+.param fm='0.05'
+.param fn='1'
+.param al='0.5'
+.param c='0.95'
+.param vth0='2.152'
+.param auth='3.0m'
+.param ut='15.11m'
+.param ab='18.74m'
+.param lb='-23'
+.param ub='42.5'
+.param b0='213.4'
+.param p0='5.043'
+.param p1='-14.06m'
+.param p2='21.76u'
+.param rd='3.579m'
+.param nmu='3.044'
+.param tref='298'
+.param t0='273'
+.param lnisj='-25.41'
+.param ndi='1.099'
+.param nisj='2.463'
+.param rdi='1.152m'
+.param nmu2='0.959'
+.param td='20n'
+.param ta='2n'
+.param rf='0.6'
+.param nmu3='1.769'
+.param kbq='86.2u'
+.param f3='606.2p'
+.param f3a='31.78p'
+.param q81='145.0p'
+.param qs1='65.62p'
+.param qs2='345.4p'
+.param qs3='-87.45m'
+.param qs4='85.58p'
+.param qs5='-16.63m'
+.param x0='308.2m'
+.param x1='27.68'
+.param dx='x1-x0'
+.param f2r='226.4m'
+.param ps0='2.966p'
+.param ps1='16.86p'
+.param ps2='-1.938'
+.param ps3='85.69p'
+.param ps4='-162.1m'
+.param ps5='6.862p'
+.param ps6='8.007p'
+.param f5='34.57p'
+.param x2='6.017'
+.param x3='25.02'
+.param dx2='x3-x2'
+.param vth='Vth0+dVthmax*dVth'
+.param q0='b0*((T0/Tref)**nmu3)*a'
+.param q1='(Unn-Inn*Rs-Vth0)*q0'
+.param q2='(Fm*sqrt(0.4)-c)*Inn*q0'
+.param rlim='(q1+2*q2*Rmax-sqrt(max(q1**2+4*q2,0)))/(2*q2)'
+.param drd='Rd/a+if(dVth==0,limit(dRdson,0,1)*max(Rlim-Rd/a-Rs-Rp,0),0)'
+.param bm='c/((1/gmin-Rs)**2*Inn*a*(T0/Tref)**nmu3)'
+.param bet='b0+(b0-bm)*if(dRdson==0,if(dVth==0,limit(dgfs,-1,0),0),0)'
+.param dc1='1+dCmax*limit(dC,0,1)'
+.param cgs0='f3*a*dC1'
+.param cgs1='f3a*a*dC1'
+.param drdi='Rdi/a'
+.param cox1='(ps1*a+ps0*sqrt(a))*dC1'
+.param cox2='ps3*a*dC1'
+.param cox3='(ps5*a+ps6)*dC1'
+.param cox4='(f5*a+(ps5*a+ps6))*dC1'
+.param cds0='qs1*a*dC1'
+.param cds1='qs2*(1+f2r/sqrt(a))*a*dC1'
+.param cds2='qs4*a*dC1'
+.param cds3='(q81+qs1)*a*dC1'
+.func vbr ( usps ) 'UB+dVbrmax*dVbr'
+.func i0 ( uee , p , pp , z1 ) 'if(Uee>pp,(Uee-c*z1)*z1,p*(pp-p)/c*exp((Uee-pp)/p))'
+.func ig ( uds , t , p , uee ) 'bet*(T0/T)**nmu3*I0(Uee,p,min(2*p,p+c*Uds),min(Uds,Uee/(2*c)))'
+.func j ( d , g , t , da , s , usps ) 'a*(s*(Ig(da,T,(p0+(p1+p2*T)*T)*kbq*T,g-Vth+auth*(T-Tref)+Fm*da**Fn+1*limit(-d,0,1))+ exp(min(lB+(d-VBR(Usps)-ab*(T-Tref))/UT,25))))'
+.func idiode ( usd , tj , iss ) 'exp(min(log(Iss)+Usd/(ndi*kbq*Tj),7))-Iss'
+.func idiod ( usd , tj ) 'a*Idiode(Usd,Tj,exp(min(lnIsj+(Tj/Tref-1)*1.12/(ndi*kbq*Tj),7))*(Tj/Tref)**nisj)'
+.func pr ( vss0 , vssp ) 'Vss0*Vss0/max(Rmet,1u)+Vssp*Vssp/Rsp'
+.func qcds ( x ) 'Cds3*min(x,x1)+Cds0*max(x-x1,0)+(Cds3-Cds0)*((limit(x,x0,x1)-x0)**3/(dx*dx)*((limit(x,x0,x1)-x0)/(2*dx)-1))'
+.func qcdg ( x ) 'Cox4*min(x,x3)+Cox3*max(x-x3,0)+(Cox4-Cox3)*((limit(x,x2,x3)-x2)**3/(dx2*dx2)*((limit(x,x2,x3)-x2)/(2*dx2)-1))'
+e_edg1 d ox value = 'if(V(d,g)>0,V(d,g)-(exp(ps2*max(V(d,g),0))-1)/ps2,0)'
+c_cdg1 ox g 'Cox1'
+e_edg2 d ox1 value = 'if(V(d,g)>0,V(d,g)-(exp(ps4*max(V(d,g),0))-1)/ps4,0)'
+c_cdg2 ox1 g 'Cox2'
+e_edg3 d ox2 value = 'V(d,g)-QCdg(V(d,g))/Cox4'
+c_cdg3 ox2 g 'Cox4'
+e_eds d edep value = 'V(d,s)-QCds(V(d,s))/Cds3'
+c_cds edep s 'Cds3/2'
+e_eds1 d edep1 value = 'V(d,sp)-QCds(V(d,sp))/Cds3'
+c_cds1 edep1 sp 'Cds3/2'
+e_eds2 d edep2 value = 'if(V(d,sp)>0,V(d,sp)-(exp(qs5*max(V(d,sp),0))-1)/qs5,0)'
+c_cds2 edep2 sp 'Cds2'
+e_eds3 d edep3 value = 'if(V(d,sp)>0,V(d,sp)-(exp(qs3*max(V(d,sp),0))-1)/qs3,0)'
+c_cds3 edep3 sp 'Cds1'
+c_cgs g s 'Cgs0'
+c_cgs1 g sp 'Cgs1'
+r_fp s sp 'Rsp'
+g_chan d5a s value = 'J(V(d5a,s),V(g,s),T0+limit(V(Tj),-200,300),(sqrt(1+4*al*abs(V(d5a,s)))-1)/2/al,sgn(V(d5a,s)),V(sp,s))'
+r_d06 d5a d5 1u
+v_sm d d5 0
+g_rmos d1 d value = 'V(d1,d)/(Rf*dRd+(1-Rf)*dRd*((limit(V(Tj),-200,999)+T0)/Tref)**nmu)'
+v_sense dd d1 0
+g_diode s d3 value = 'Idiod(V(s,d3),T0+limit(V(Tj),-200,499))'
+g_rdio d2 d1 value = 'V(d2,d1)/(dRdi*((limit(V(Tj),-200,999)+T0)/Tref)**nmu2)'
+v_sense2 d2 d3 0
+r_1 g s 1G
+r_d01 d s 1G
+r_d02 d2 s 1G
+r_d03 d1 d 1k
+r_ssp g sp 100Meg
+r_met s s0 'Rmet'
+g_th 0 tj value = '(I(V_sense)-I(V_sense2))*V(d1,d)+I(V_sm)*V(d,s)+I(V_sense2)*V(d1,s)+Pr(V(s,s0),V(s,sp))'
+.ends a6_40_e_var
+.subckt a6_40_e1_var dd g s0 sp tj a='1' dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' inn='1' unn='1' rmax='0' gmin='1' rsp='1' rs='1' rp='1' rmet='1u' 
+.param dvthmax='0.4'
+.param dcmax='0.3'
+.param dvbrmax='3.15'
+.param fm='0.05'
+.param fn='1'
+.param al='0.5'
+.param c='0.95'
+.param vth0='3.51'
+.param auth='3.0m'
+.param ut='84.76m'
+.param ab='20.15m'
+.param lb='-23'
+.param ub='41.4'
+.param b0='143.8'
+.param p0='6.094'
+.param p1='-15.32m'
+.param p2='26.44u'
+.param rd='4.02m'
+.param nmu='3.214'
+.param tref='298'
+.param t0='273'
+.param lnisj='-27.1'
+.param ndi='1.063'
+.param nisj='3.00'
+.param rdi='0.717m'
+.param nmu2='1.616'
+.param td='20n'
+.param ta='2n'
+.param rf='0.6'
+.param nmu3='1.1'
+.param kbq='86.2u'
+.param f3='544.8p'
+.param f3a='31.78p'
+.param q81='31.98p'
+.param qs1='58.61p'
+.param qs2='548.4p'
+.param qs3='-85.34m'
+.param qs4='46.61p'
+.param qs5='-8.081m'
+.param x0='12.88'
+.param x1='25.56'
+.param dx='x1-x0'
+.param f2r='178.9m'
+.param ps0='27.7p'
+.param ps1='55.67p'
+.param ps2='-159.6m'
+.param ps3='6.027p'
+.param ps4='-1.123m'
+.param ps5='8.05f'
+.param ps6='7.499p'
+.param f5='27.9p'
+.param x2='7.131'
+.param x3='25.52'
+.param dx2='x3-x2'
+.param vth='Vth0+dVthmax*dVth'
+.param q0='b0*((T0/Tref)**nmu3)*a'
+.param q1='(Unn-Inn*Rs-Vth0)*q0'
+.param q2='(Fm*sqrt(0.4)-c)*Inn*q0'
+.param rlim='(q1+2*q2*Rmax-sqrt(max(q1**2+4*q2,0)))/(2*q2)'
+.param drd='Rd/a+if(dVth==0,limit(dRdson,0,1)*max(Rlim-Rd/a-Rs-Rp,0),0)'
+.param bm='c/((1/gmin-Rs)**2*Inn*a*(T0/Tref)**nmu3)'
+.param bet='b0+(b0-bm)*if(dRdson==0,if(dVth==0,limit(dgfs,-1,0),0),0)'
+.param dc1='1+dCmax*limit(dC,0,1)'
+.param cgs0='f3*a*dC1'
+.param cgs1='f3a*a*dC1'
+.param drdi='Rdi/a'
+.param cox1='(ps1*a+ps0*sqrt(a))*dC1'
+.param cox2='ps3*a*dC1'
+.param cox3='(ps5*a+ps6)*dC1'
+.param cox4='(f5*a+(ps5*a+ps6))*dC1'
+.param cds0='qs1*a*dC1'
+.param cds1='qs2*(1+f2r/sqrt(a))*a*dC1'
+.param cds2='qs4*a*dC1'
+.param cds3='(q81+qs1)*a*dC1'
+.func vbr ( usps ) 'UB+dVbrmax*dVbr'
+.func i0 ( uee , p , pp , z1 ) 'if(Uee>pp,(Uee-c*z1)*z1,p*(pp-p)/c*exp((Uee-pp)/p))'
+.func ig ( uds , t , p , uee ) 'bet*(T0/T)**nmu3*I0(Uee,p,min(2*p,p+c*Uds),min(Uds,Uee/(2*c)))'
+.func j ( d , g , t , da , s , usps ) 'a*(s*(Ig(da,T,(p0+(p1+p2*T)*T)*kbq*T,g-Vth+auth*(T-Tref)+Fm*da**Fn+1*limit(-d,0,1))+ exp(min(lB+(d-VBR(Usps)-ab*(T-Tref))/UT,25))))'
+.func idiode ( usd , tj , iss ) 'exp(min(log(Iss)+Usd/(ndi*kbq*Tj),7))-Iss'
+.func idiod ( usd , tj ) 'a*Idiode(Usd,Tj,exp(min(lnIsj+(Tj/Tref-1)*1.12/(ndi*kbq*Tj),7))*(Tj/Tref)**nisj)'
+.func pr ( vss0 , vssp ) 'Vss0*Vss0/max(Rmet,1u)+Vssp*Vssp/Rsp'
+.func qcds ( x ) 'Cds3*min(x,x1)+Cds0*max(x-x1,0)+(Cds3-Cds0)*((limit(x,x0,x1)-x0)**3/(dx*dx)*((limit(x,x0,x1)-x0)/(2*dx)-1))'
+.func qcdg ( x ) 'Cox4*min(x,x3)+Cox3*max(x-x3,0)+(Cox4-Cox3)*((limit(x,x2,x3)-x2)**3/(dx2*dx2)*((limit(x,x2,x3)-x2)/(2*dx2)-1))'
+e_edg1 d ox value = 'if(V(d,g)>0,V(d,g)-(exp(ps2*max(V(d,g),0))-1)/ps2,0)'
+c_cdg1 ox g 'Cox1'
+e_edg2 d ox1 value = 'if(V(d,g)>0,V(d,g)-(exp(ps4*max(V(d,g),0))-1)/ps4,0)'
+c_cdg2 ox1 g 'Cox2'
+e_edg3 d ox2 value = 'V(d,g)-QCdg(V(d,g))/Cox4'
+c_cdg3 ox2 g 'Cox4'
+e_eds d edep value = 'V(d,s)-QCds(V(d,s))/Cds3'
+c_cds edep s 'Cds3/2'
+e_eds1 d edep1 value = 'V(d,sp)-QCds(V(d,sp))/Cds3'
+c_cds1 edep1 sp 'Cds3/2'
+e_eds2 d edep2 value = 'if(V(d,sp)>0,V(d,sp)-(exp(qs5*max(V(d,sp),0))-1)/qs5,0)'
+c_cds2 edep2 sp 'Cds2'
+e_eds3 d edep3 value = 'if(V(d,sp)>0,V(d,sp)-(exp(qs3*max(V(d,sp),0))-1)/qs3,0)'
+c_cds3 edep3 sp 'Cds1'
+c_cgs g s 'Cgs0'
+c_cgs1 g sp 'Cgs1'
+r_fp s sp 'Rsp'
+g_chan d5a s value = 'J(V(d5a,s),V(g,s),T0+limit(V(Tj),-200,300),(sqrt(1+4*al*abs(V(d5a,s)))-1)/2/al,sgn(V(d5a,s)),V(sp,s))'
+r_d06 d5a d5 1u
+v_sm d d5 0
+g_rmos d1 d value = 'V(d1,d)/(Rf*dRd+(1-Rf)*dRd*((limit(V(Tj),-200,999)+T0)/Tref)**nmu)'
+v_sense dd d1 0
+g_diode s d3 value = 'Idiod(V(s,d3),T0+limit(V(Tj),-200,499))'
+g_rdio d2 d1 value = 'V(d2,d1)/(dRdi*((limit(V(Tj),-200,999)+T0)/Tref)**nmu2)'
+v_sense2 d2 d3 0
+r_1 g s 1G
+r_d01 d s 1G
+r_d02 d2 s 1G
+r_d03 d1 d 1k
+r_ssp g sp 100Meg
+r_met s s0 'Rmet'
+g_th 0 tj value = '(I(V_sense)-I(V_sense2))*V(d1,d)+I(V_sm)*V(d,s)+I(V_sense2)*V(d1,s)+Pr(V(s,s0),V(s,sp))'
+.ends a6_40_e1_var
+.subckt iaua250n04s6n005 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='0.7n' lg='0.1n' 
+.param rs='85u'
+.param rg='1.0'
+.param rd='6u'
+.param rmet='11u'
+.param inn='125'
+.param unn='10'
+.param rmax='0.55m'
+.param gmin='126'
+.param rrf='165m'
+.param rrbond='344u'
+.param rtb='716.8m'
+.param g2='266m'
+.param act='14.78'
+.param rsp='2.4'
+.func pb ( i , dt , rb ) 'Rb/(2*Rtb)*(I-limit((dT/(max(I,1n)*Rb)+RRf*I)*g2,0,I))**2'
+x_1 d1 g s sp tj a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+g_th 0 tb value = 'Pb(abs(I(L_s)),V(Tj,Tcase),Rrbond*(1+(limit((V(Tb)+V(Tj))/2,-200,999)-25)*4m))'
+c_thb tb 0 17.72m
+r_thb tb tj 'Rtb'
+r_th1 tj t1 '1.89m+limit(dZth,0,1)*701.33u'
+r_th2 t1 t2 '24.14m+limit(dZth,0,1)*8.93m'
+r_th3 t2 t3 '85.05m+limit(dZth,0,1)*3.1m'
+r_th4 t3 t4 '96.71m+limit(dZth,0,1)*53.26m'
+r_th5 t4 tcase '210.36m+limit(dZth,0,1)*115.86m'
+c_th1 tj 0 128.607u
+c_th2 t1 0 552.827u
+c_th3 t2 0 3.302m
+c_th4 t3 0 2.605m
+c_th5 t4 0 51.15m
+c_th6 tcase 0 50m
+.ends iaua250n04s6n005
+.subckt iaua250n04s6n007e drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='0.7n' lg='0.1n' 
+.param rs='117u'
+.param rg='1.0'
+.param rd='6u'
+.param rmet='19u'
+.param inn='125'
+.param unn='10'
+.param rmax='0.7m'
+.param gmin='109'
+.param rrf='230m'
+.param rrbond='470u'
+.param rtb='716.8m'
+.param g2='266m'
+.param act='11.11'
+.param rsp='2.4'
+.func pb ( i , dt , rb ) 'Rb/(2*Rtb)*(I-limit((dT/(max(I,1n)*Rb)+RRf*I)*g2,0,I))**2'
+x_1 d1 g s sp tj a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+g_th 0 tb value = 'Pb(abs(I(L_s)),V(Tj,Tcase),Rrbond*(1+(limit((V(Tb)+V(Tj))/2,-200,999)-25)*4m))'
+c_thb tb 0 17.72m
+r_thb tb tj 'Rtb'
+r_th1 tj t1 '2.52m+limit(dZth,0,1)*927.03u'
+r_th2 t1 t2 '31.9m+limit(dZth,0,1)*11.81m'
+r_th3 t2 t3 '112.27m+limit(dZth,0,1)*4.2m'
+r_th4 t3 t4 '128.65m+limit(dZth,0,1)*84.93m'
+r_th5 t4 tcase '242.63m+limit(dZth,0,1)*160.17m'
+c_th1 tj 0 96.672u
+c_th2 t1 0 418.241u
+c_th3 t2 0 2.503m
+c_th4 t3 0 1.958m
+c_th5 t4 0 41.975m
+c_th6 tcase 0 50m
+.ends iaua250n04s6n007e
+.subckt iaua250n04s6n008 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='0.7n' lg='0.1n' 
+.param rs='117u'
+.param rg='0.9'
+.param rd='6u'
+.param rmet='19u'
+.param inn='125'
+.param unn='10'
+.param rmax='0.8m'
+.param gmin='101'
+.param rrf='230m'
+.param rrbond='470u'
+.param rtb='716.8m'
+.param g2='266m'
+.param act='9.42'
+.param rsp='2.4'
+.func pb ( i , dt , rb ) 'Rb/(2*Rtb)*(I-limit((dT/(max(I,1n)*Rb)+RRf*I)*g2,0,I))**2'
+x_1 d1 g s sp tj a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+g_th 0 tb value = 'Pb(abs(I(L_s)),V(Tj,Tcase),Rrbond*(1+(limit((V(Tb)+V(Tj))/2,-200,999)-25)*4m))'
+c_thb tb 0 17.72m
+r_thb tb tj 'Rtb'
+r_th1 tj t1 '2.97m+limit(dZth,0,1)*1.09m'
+r_th2 t1 t2 '37.47m+limit(dZth,0,1)*13.87m'
+r_th3 t2 t3 '131.74m+limit(dZth,0,1)*5.02m'
+r_th4 t3 t4 '151.74m+limit(dZth,0,1)*95.74m'
+r_th5 t4 tcase '263.87m+limit(dZth,0,1)*166.49m'
+c_th1 tj 0 81.967u
+c_th2 t1 0 356.097u
+c_th3 t2 0 2.134m
+c_th4 t3 0 1.66m
+c_th5 t4 0 37.75m
+c_th6 tcase 0 50m
+.ends iaua250n04s6n008
+.subckt iaucn04s6n007t drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.5n' ld='0.3n' lg='3n' 
+.param rs='162u'
+.param rg='1.0'
+.param rd='119u'
+.param rmet='6u'
+.param inn='60'
+.param unn='10'
+.param rmax='0.75m'
+.param gmin='77'
+.param act='11.58'
+.param rsp='1.6'
+x_1 d1 g s sp tj a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '2.41m+limit(dZth,0,1)*897.01u'
+r_th2 t1 t2 '30.64m+limit(dZth,0,1)*11.34m'
+r_th3 t2 t3 '107.84m+limit(dZth,0,1)*4.02m'
+r_th4 t3 t4 '123.43m+limit(dZth,0,1)*72.42m'
+r_th5 t4 tcase '237.6m+limit(dZth,0,1)*139.4m'
+c_th1 tj 0 100.762u
+c_th2 t1 0 435.503u
+c_th3 t2 0 2.605m
+c_th4 t3 0 2.041m
+c_th5 t4 0 43.15m
+c_th6 tcase 0 30m
+.ends iaucn04s6n007t
+.subckt iaucn04s6n009t drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.5n' ld='0.3n' lg='3n' 
+.param rs='173u'
+.param rg='0.9'
+.param rd='121u'
+.param rmet='7u'
+.param inn='60'
+.param unn='10'
+.param rmax='0.89m'
+.param gmin='70'
+.param act='9.42'
+.param rsp='1.5'
+x_1 d1 g s sp tj a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '2.97m+limit(dZth,0,1)*1.09m'
+r_th2 t1 t2 '37.47m+limit(dZth,0,1)*13.87m'
+r_th3 t2 t3 '131.74m+limit(dZth,0,1)*5.02m'
+r_th4 t3 t4 '151.74m+limit(dZth,0,1)*84.79m'
+r_th5 t4 tcase '263.87m+limit(dZth,0,1)*147.44m'
+c_th1 tj 0 81.967u
+c_th2 t1 0 356.097u
+c_th3 t2 0 2.134m
+c_th4 t3 0 1.66m
+c_th5 t4 0 37.75m
+c_th6 tcase 0 30m
+.ends iaucn04s6n009t
+.subckt iaucn04s6n013t drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.5n' ld='0.3n' lg='3n' 
+.param rs='261u'
+.param rg='1.1'
+.param rd='125u'
+.param rmet='61u'
+.param inn='60'
+.param unn='10'
+.param rmax='1.32m'
+.param gmin='55'
+.param act='5.85'
+.param rsp='1.8'
+x_1 d1 g s sp tj a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '4.78m+limit(dZth,0,1)*1.76m'
+r_th2 t1 t2 '59.49m+limit(dZth,0,1)*22.02m'
+r_th3 t2 t3 '208.56m+limit(dZth,0,1)*8.39m'
+r_th4 t3 t4 '244.33m+limit(dZth,0,1)*98.35m'
+r_th5 t4 tcase '336.76m+limit(dZth,0,1)*135.56m'
+c_th1 tj 0 50.903u
+c_th2 t1 0 224.272u
+c_th3 t2 0 1.349m
+c_th4 t3 0 1.031m
+c_th5 t4 0 28.825m
+c_th6 tcase 0 30m
+.ends iaucn04s6n013t
+.subckt iaucn04s6n017t drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.5n' ld='0.3n' lg='3n' 
+.param rs='211u'
+.param rg='2.5'
+.param rd='129u'
+.param rmet='11u'
+.param inn='60'
+.param unn='10'
+.param rmax='1.73m'
+.param gmin='46'
+.param act='4.14'
+.param rsp='4.1'
+x_1 d1 g s sp tj a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '6.75m+limit(dZth,0,1)*2.5m'
+r_th2 t1 t2 '83.03m+limit(dZth,0,1)*30.73m'
+r_th3 t2 t3 '290.32m+limit(dZth,0,1)*12.24m'
+r_th4 t3 t4 '345.25m+limit(dZth,0,1)*132.76m'
+r_th5 t4 tcase '401.88m+limit(dZth,0,1)*154.54m'
+c_th1 tj 0 36.024u
+c_th2 t1 0 160.7u
+c_th3 t2 0 970.485u
+c_th4 t3 0 729.547u
+c_th5 t4 0 24.55m
+c_th6 tcase 0 30m
+.ends iaucn04s6n017t
+.subckt iauc120n04s6l005 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='82u'
+.param rg='1.0'
+.param rd='33u'
+.param rmet='8u'
+.param inn='60'
+.param unn='10'
+.param rmax='0.55m'
+.param gmin='128'
+.param act='13.02'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '2.15m+limit(dZth,0,1)*790.52u'
+r_th2 t1 t2 '27.32m+limit(dZth,0,1)*10.12m'
+r_th3 t2 t3 '96.23m+limit(dZth,0,1)*3.55m'
+r_th4 t3 t4 '109.78m+limit(dZth,0,1)*107.23m'
+r_th5 t4 tcase '224.01m+limit(dZth,0,1)*218.82m'
+c_th1 tj 0 113.292u
+c_th2 t1 0 488.338u
+c_th3 t2 0 2.919m
+c_th4 t3 0 2.294m
+c_th5 t4 0 46.75m
+c_th6 tcase 0 30m
+.ends iauc120n04s6l005
+.subckt iauc120n04s6n006 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='82u'
+.param rg='1.0'
+.param rd='33u'
+.param rmet='8u'
+.param inn='60'
+.param unn='10'
+.param rmax='0.6m'
+.param gmin='83'
+.param act='13.02'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '2.15m+limit(dZth,0,1)*790.52u'
+r_th2 t1 t2 '27.32m+limit(dZth,0,1)*10.12m'
+r_th3 t2 t3 '96.23m+limit(dZth,0,1)*3.55m'
+r_th4 t3 t4 '109.78m+limit(dZth,0,1)*107.23m'
+r_th5 t4 tcase '224.01m+limit(dZth,0,1)*218.82m'
+c_th1 tj 0 113.292u
+c_th2 t1 0 488.338u
+c_th3 t2 0 2.919m
+c_th4 t3 0 2.294m
+c_th5 t4 0 46.75m
+c_th6 tcase 0 30m
+.ends iauc120n04s6n006
+.subckt iauc120n04s6l008 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='150u'
+.param rg='0.8'
+.param rd='5u'
+.param rmet='12u'
+.param inn='60'
+.param unn='10'
+.param rmax='0.8m'
+.param gmin='108'
+.param act='9.42'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_e_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '2.97m+limit(dZth,0,1)*1.09m'
+r_th2 t1 t2 '37.47m+limit(dZth,0,1)*13.87m'
+r_th3 t2 t3 '132.49m+limit(dZth,0,1)*12.02m'
+r_th4 t3 t4 '151.74m+limit(dZth,0,1)*140.37m'
+r_th5 t4 tcase '263.87m+limit(dZth,0,1)*244.11m'
+c_th1 tj 0 81.967u
+c_th2 t1 0 356.097u
+c_th3 t2 0 2.188m
+c_th4 t3 0 1.66m
+c_th5 t4 0 37.75m
+c_th6 tcase 0 30m
+.ends iauc120n04s6l008
+.subckt iauc120n04s6n008 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='150u'
+.param rg='0.8'
+.param rd='5u'
+.param rmet='12u'
+.param inn='60'
+.param unn='10'
+.param rmax='0.8m'
+.param gmin='70'
+.param act='9.42'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_e1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '2.97m+limit(dZth,0,1)*1.09m'
+r_th2 t1 t2 '37.47m+limit(dZth,0,1)*13.87m'
+r_th3 t2 t3 '132.49m+limit(dZth,0,1)*12.02m'
+r_th4 t3 t4 '151.74m+limit(dZth,0,1)*140.37m'
+r_th5 t4 tcase '263.87m+limit(dZth,0,1)*244.11m'
+c_th1 tj 0 81.967u
+c_th2 t1 0 356.097u
+c_th3 t2 0 2.188m
+c_th4 t3 0 1.66m
+c_th5 t4 0 37.75m
+c_th6 tcase 0 30m
+.ends iauc120n04s6n008
+.subckt iauc120n04s6n009 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='150u'
+.param rg='0.8'
+.param rd='5u'
+.param rmet='12u'
+.param inn='60'
+.param unn='10'
+.param rmax='0.9m'
+.param gmin='70'
+.param act='9.42'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_e1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '2.97m+limit(dZth,0,1)*1.09m'
+r_th2 t1 t2 '37.47m+limit(dZth,0,1)*13.87m'
+r_th3 t2 t3 '132.49m+limit(dZth,0,1)*12.02m'
+r_th4 t3 t4 '151.74m+limit(dZth,0,1)*140.37m'
+r_th5 t4 tcase '263.87m+limit(dZth,0,1)*244.11m'
+c_th1 tj 0 81.967u
+c_th2 t1 0 356.097u
+c_th3 t2 0 2.188m
+c_th4 t3 0 1.66m
+c_th5 t4 0 37.75m
+c_th6 tcase 0 30m
+.ends iauc120n04s6n009
+.subckt iauc120n04s6l009 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='270u'
+.param rg='0.75'
+.param rd='5u'
+.param rmet='93u'
+.param inn='60'
+.param unn='10'
+.param rmax='0.96m'
+.param gmin='104'
+.param act='9.28'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_e_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '3.01m+limit(dZth,0,1)*1.12m'
+r_th2 t1 t2 '38.02m+limit(dZth,0,1)*14.07m'
+r_th3 t2 t3 '134.4m+limit(dZth,0,1)*12.21m'
+r_th4 t3 t4 '154.02m+limit(dZth,0,1)*138.38m'
+r_th5 t4 tcase '265.89m+limit(dZth,0,1)*238.88m'
+c_th1 tj 0 80.749u
+c_th2 t1 0 350.943u
+c_th3 t2 0 2.157m
+c_th4 t3 0 1.635m
+c_th5 t4 0 37.4m
+c_th6 tcase 0 30m
+.ends iauc120n04s6l009
+.subckt iauc120n04s6n010 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='271u'
+.param rg='0.75'
+.param rd='5u'
+.param rmet='94u'
+.param inn='60'
+.param unn='10'
+.param rmax='1.03m'
+.param gmin='68'
+.param act='9.28'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_e1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '3.01m+limit(dZth,0,1)*1.12m'
+r_th2 t1 t2 '38.02m+limit(dZth,0,1)*14.07m'
+r_th3 t2 t3 '134.4m+limit(dZth,0,1)*12.21m'
+r_th4 t3 t4 '154.02m+limit(dZth,0,1)*138.38m'
+r_th5 t4 tcase '265.89m+limit(dZth,0,1)*238.88m'
+c_th1 tj 0 80.749u
+c_th2 t1 0 350.943u
+c_th3 t2 0 2.157m
+c_th4 t3 0 1.635m
+c_th5 t4 0 37.4m
+c_th6 tcase 0 30m
+.ends iauc120n04s6n010
+.subckt iauc120n04s6l012 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='235u'
+.param rg='0.75'
+.param rd='5u'
+.param rmet='58u'
+.param inn='60'
+.param unn='10'
+.param rmax='1.21m'
+.param gmin='84'
+.param act='5.74'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '4.87m+limit(dZth,0,1)*1.8m'
+r_th2 t1 t2 '60.6m+limit(dZth,0,1)*22.42m'
+r_th3 t2 t3 '212.4m+limit(dZth,0,1)*8.56m'
+r_th4 t3 t4 '249.01m+limit(dZth,0,1)*169.22m'
+r_th5 t4 tcase '340.04m+limit(dZth,0,1)*231.08m'
+c_th1 tj 0 49.946u
+c_th2 t1 0 220.193u
+c_th3 t2 0 1.325m
+c_th4 t3 0 1.011m
+c_th5 t4 0 28.55m
+c_th6 tcase 0 30m
+.ends iauc120n04s6l012
+.subckt iauc120n04s6n013 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='236u'
+.param rg='0.75'
+.param rd='5u'
+.param rmet='59u'
+.param inn='60'
+.param unn='10'
+.param rmax='1.34m'
+.param gmin='54'
+.param act='5.74'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '4.87m+limit(dZth,0,1)*1.8m'
+r_th2 t1 t2 '60.6m+limit(dZth,0,1)*22.42m'
+r_th3 t2 t3 '212.4m+limit(dZth,0,1)*8.56m'
+r_th4 t3 t4 '249.01m+limit(dZth,0,1)*169.22m'
+r_th5 t4 tcase '340.04m+limit(dZth,0,1)*231.08m'
+c_th1 tj 0 49.946u
+c_th2 t1 0 220.193u
+c_th3 t2 0 1.325m
+c_th4 t3 0 1.011m
+c_th5 t4 0 28.55m
+c_th6 tcase 0 30m
+.ends iauc120n04s6n013
+.subckt iauc100n04s6l014 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='222u'
+.param rg='2.2'
+.param rd='5u'
+.param rmet='45u'
+.param inn='50'
+.param unn='10'
+.param rmax='1.40m'
+.param gmin='69'
+.param act='4.672'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '5.98m+limit(dZth,0,1)*2.22m'
+r_th2 t1 t2 '73.91m+limit(dZth,0,1)*27.36m'
+r_th3 t2 t3 '258.69m+limit(dZth,0,1)*10.72m'
+r_th4 t3 t4 '305.94m+limit(dZth,0,1)*195.71m'
+r_th5 t4 tcase '377.8m+limit(dZth,0,1)*241.67m'
+c_th1 tj 0 40.653u
+c_th2 t1 0 180.521u
+c_th3 t2 0 1.089m
+c_th4 t3 0 823.295u
+c_th5 t4 0 25.88m
+c_th6 tcase 0 30m
+.ends iauc100n04s6l014
+.subckt iauc100n04s6n015 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='222u'
+.param rg='2.4'
+.param rd='5u'
+.param rmet='45u'
+.param inn='50'
+.param unn='10'
+.param rmax='1.55m'
+.param gmin='45'
+.param act='4.672'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '5.98m+limit(dZth,0,1)*2.22m'
+r_th2 t1 t2 '73.91m+limit(dZth,0,1)*27.36m'
+r_th3 t2 t3 '258.69m+limit(dZth,0,1)*10.72m'
+r_th4 t3 t4 '305.94m+limit(dZth,0,1)*195.71m'
+r_th5 t4 tcase '377.8m+limit(dZth,0,1)*241.67m'
+c_th1 tj 0 40.653u
+c_th2 t1 0 180.521u
+c_th3 t2 0 1.089m
+c_th4 t3 0 823.295u
+c_th5 t4 0 25.88m
+c_th6 tcase 0 30m
+.ends iauc100n04s6n015
+.subckt iauc100n04s6l020 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='378u'
+.param rg='2.3'
+.param rd='5u'
+.param rmet='163u'
+.param inn='50'
+.param unn='10'
+.param rmax='2.04m'
+.param gmin='57'
+.param act='3.254'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '8.59m+limit(dZth,0,1)*3.18m'
+r_th2 t1 t2 '104.59m+limit(dZth,0,1)*38.71m'
+r_th3 t2 t3 '364.98m+limit(dZth,0,1)*15.95m'
+r_th4 t3 t4 '439.26m+limit(dZth,0,1)*280.09m'
+r_th5 t4 tcase '454.71m+limit(dZth,0,1)*289.94m'
+c_th1 tj 0 28.314u
+c_th2 t1 0 127.573u
+c_th3 t2 0 772.68u
+c_th4 t3 0 573.417u
+c_th5 t4 0 22.335m
+c_th6 tcase 0 30m
+.ends iauc100n04s6l020
+.subckt iauc100n04s6n022 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='379u'
+.param rg='2.5'
+.param rd='5u'
+.param rmet='164u'
+.param inn='50'
+.param unn='10'
+.param rmax='2.26m'
+.param gmin='37'
+.param act='3.254'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '8.59m+limit(dZth,0,1)*3.18m'
+r_th2 t1 t2 '104.59m+limit(dZth,0,1)*38.71m'
+r_th3 t2 t3 '364.98m+limit(dZth,0,1)*15.95m'
+r_th4 t3 t4 '439.26m+limit(dZth,0,1)*280.09m'
+r_th5 t4 tcase '454.71m+limit(dZth,0,1)*289.94m'
+c_th1 tj 0 28.314u
+c_th2 t1 0 127.573u
+c_th3 t2 0 772.68u
+c_th4 t3 0 573.417u
+c_th5 t4 0 22.335m
+c_th6 tcase 0 30m
+.ends iauc100n04s6n022
+.subckt iauc100n04s6l025 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='320u'
+.param rg='3.0'
+.param rd='5u'
+.param rmet='105u'
+.param inn='50'
+.param unn='10'
+.param rmax='2.56m'
+.param gmin='50'
+.param act='2.39'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '11.69m+limit(dZth,0,1)*4.33m'
+r_th2 t1 t2 '140.34m+limit(dZth,0,1)*51.94m'
+r_th3 t2 t3 '488.32m+limit(dZth,0,1)*22.48m'
+r_th4 t3 t4 '598.05m+limit(dZth,0,1)*290.01m'
+r_th5 t4 tcase '533.93m+limit(dZth,0,1)*258.91m'
+c_th1 tj 0 20.796u
+c_th2 t1 0 95.074u
+c_th3 t2 0 578.284u
+c_th4 t3 0 421.163u
+c_th5 t4 0 20.175m
+c_th6 tcase 0 30m
+.ends iauc100n04s6l025
+.subckt iauc100n04s6n028 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='320u'
+.param rg='3.2'
+.param rd='5u'
+.param rmet='105u'
+.param inn='50'
+.param unn='10'
+.param rmax='2.86m'
+.param gmin='32'
+.param act='2.39'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '11.69m+limit(dZth,0,1)*4.33m'
+r_th2 t1 t2 '140.34m+limit(dZth,0,1)*51.94m'
+r_th3 t2 t3 '488.32m+limit(dZth,0,1)*22.48m'
+r_th4 t3 t4 '598.05m+limit(dZth,0,1)*290.01m'
+r_th5 t4 tcase '533.93m+limit(dZth,0,1)*258.91m'
+c_th1 tj 0 20.796u
+c_th2 t1 0 95.074u
+c_th3 t2 0 578.284u
+c_th4 t3 0 421.163u
+c_th5 t4 0 20.175m
+c_th6 tcase 0 30m
+.ends iauc100n04s6n028
+.subckt iauc80n04s6l032 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='294u'
+.param rg='2.4'
+.param rd='5u'
+.param rmet='79u'
+.param inn='40'
+.param unn='10'
+.param rmax='3.29m'
+.param gmin='39'
+.param act='1.79'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '15.61m+limit(dZth,0,1)*5.78m'
+r_th2 t1 t2 '184.46m+limit(dZth,0,1)*68.27m'
+r_th3 t2 t3 '639.88m+limit(dZth,0,1)*31.1m'
+r_th4 t3 t4 '798.52m+limit(dZth,0,1)*355.22m'
+r_th5 t4 tcase '623.71m+limit(dZth,0,1)*277.45m'
+c_th1 tj 0 15.575u
+c_th2 t1 0 72.333u
+c_th3 t2 0 441.964u
+c_th4 t3 0 315.432u
+c_th5 t4 0 18.675m
+c_th6 tcase 0 30m
+.ends iauc80n04s6l032
+.subckt iauc80n04s6n036 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='294u'
+.param rg='2.4'
+.param rd='5u'
+.param rmet='79u'
+.param inn='40'
+.param unn='10'
+.param rmax='3.68m'
+.param gmin='25'
+.param act='1.79'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '15.61m+limit(dZth,0,1)*5.78m'
+r_th2 t1 t2 '184.46m+limit(dZth,0,1)*68.27m'
+r_th3 t2 t3 '639.88m+limit(dZth,0,1)*31.1m'
+r_th4 t3 t4 '798.52m+limit(dZth,0,1)*355.22m'
+r_th5 t4 tcase '623.71m+limit(dZth,0,1)*277.45m'
+c_th1 tj 0 15.575u
+c_th2 t1 0 72.333u
+c_th3 t2 0 441.964u
+c_th4 t3 0 315.432u
+c_th5 t4 0 18.675m
+c_th6 tcase 0 30m
+.ends iauc80n04s6n036
+.subckt iauc60n04s6l039 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='281u'
+.param rg='2.0'
+.param rd='5u'
+.param rmet='66u'
+.param inn='30'
+.param unn='10'
+.param rmax='4.02m'
+.param gmin='30'
+.param act='1.39'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '20.1m+limit(dZth,0,1)*7.45m'
+r_th2 t1 t2 '233.86m+limit(dZth,0,1)*86.55m'
+r_th3 t2 t3 '808.86m+limit(dZth,0,1)*41.4m'
+r_th4 t3 t4 '1.03+limit(dZth,0,1)*384.39m'
+r_th5 t4 tcase '719.05m+limit(dZth,0,1)*268.34m'
+c_th1 tj 0 12.095u
+c_th2 t1 0 57.053u
+c_th3 t2 0 350.158u
+c_th4 t3 0 244.944u
+c_th5 t4 0 17.675m
+c_th6 tcase 0 30m
+.ends iauc60n04s6l039
+.subckt iauc60n04s6n044 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='281u'
+.param rg='2.2'
+.param rd='5u'
+.param rmet='66u'
+.param inn='30'
+.param unn='10'
+.param rmax='4.52m'
+.param gmin='19'
+.param act='1.39'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '20.1m+limit(dZth,0,1)*7.45m'
+r_th2 t1 t2 '233.86m+limit(dZth,0,1)*86.55m'
+r_th3 t2 t3 '808.86m+limit(dZth,0,1)*41.4m'
+r_th4 t3 t4 '1.03+limit(dZth,0,1)*384.39m'
+r_th5 t4 tcase '719.05m+limit(dZth,0,1)*268.34m'
+c_th1 tj 0 12.095u
+c_th2 t1 0 57.053u
+c_th3 t2 0 350.158u
+c_th4 t3 0 244.944u
+c_th5 t4 0 17.675m
+c_th6 tcase 0 30m
+.ends iauc60n04s6n044
+.subckt iauc60n04s6l030 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='650u'
+.param rg='3.1'
+.param rd='5u'
+.param rmet='330u'
+.param inn='30'
+.param unn='10'
+.param rmax='3.0m'
+.param gmin='39'
+.param act='2.52'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '11.09m+limit(dZth,0,1)*4.1m'
+r_th2 t1 t2 '133.45m+limit(dZth,0,1)*49.39m'
+r_th3 t2 t3 '464.6m+limit(dZth,0,1)*21.19m'
+r_th4 t3 t4 '567.2m+limit(dZth,0,1)*328.75m'
+r_th5 t4 tcase '519.26m+limit(dZth,0,1)*300.97m'
+c_th1 tj 0 21.927u
+c_th2 t1 0 99.979u
+c_th3 t2 0 607.656u
+c_th4 t3 0 444.072u
+c_th5 t4 0 20.5m
+c_th6 tcase 0 30m
+.ends iauc60n04s6l030
+.subckt iauc60n04s6l030h battery gate1 gate2 ground phase tj1 tj2 tcase1 tcase2 dvth1='0' dvth2='0' drdson1='0' drdson2='0' dgfs1='0' dgfs2='0' dc1='0' dc2='0' dvbr1='0' dvbr2='0' dzth1='0' dzth2='0' ls1='0.05n' ld1='1n' lg1='3n' ls2='0.05n' ld2='1n' lg2='3n' 
+x_1 battery gate1 phase tj1 tcase1 iauc60n04s6l030 dvth='dVth1' drdson='dRdson1' dgfs='dgfs1' dc='dC1' dvbr='dVbr1' dzth='dZth1' ls='Ls1' ld='Ld1*2' lg='Lg1'  * endx-call 
+x_2 phase gate2 ground tj2 tcase2 iauc60n04s6l030 dvth='dVth2' drdson='dRdson2' dgfs='dgfs2' dc='dC2' dvbr='dVbr2' dzth='dZth2' ls='Ls2' ld='Ld2*2' lg='Lg2'  * endx-call 
+r_thclip1 tj1 tclip '1350m+limit(dZth1,0,1)*3m'
+c_thclip tclip 0 10m
+r_thclip2 tcase2 tclip '450m+limit(dZth2,0,1)*1m'
+.ends iauc60n04s6l030h
+.subckt iauc60n04s6n031 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='650u'
+.param rg='3.3'
+.param rd='5u'
+.param rmet='330u'
+.param inn='30'
+.param unn='10'
+.param rmax='3.1m'
+.param gmin='25'
+.param act='2.52'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '11.09m+limit(dZth,0,1)*4.1m'
+r_th2 t1 t2 '133.45m+limit(dZth,0,1)*49.39m'
+r_th3 t2 t3 '464.6m+limit(dZth,0,1)*21.19m'
+r_th4 t3 t4 '567.2m+limit(dZth,0,1)*328.75m'
+r_th5 t4 tcase '519.26m+limit(dZth,0,1)*300.97m'
+c_th1 tj 0 21.927u
+c_th2 t1 0 99.979u
+c_th3 t2 0 607.656u
+c_th4 t3 0 444.072u
+c_th5 t4 0 20.5m
+c_th6 tcase 0 30m
+.ends iauc60n04s6n031
+.subckt iauc60n04s6n031h battery gate1 gate2 ground phase tj1 tj2 tcase1 tcase2 dvth1='0' dvth2='0' drdson1='0' drdson2='0' dgfs1='0' dgfs2='0' dc1='0' dc2='0' dvbr1='0' dvbr2='0' dzth1='0' dzth2='0' ls1='0.05n' ld1='1n' lg1='3n' ls2='0.05n' ld2='1n' lg2='3n' 
+x_1 battery gate1 phase tj1 tcase1 iauc60n04s6n031 dvth='dVth1' drdson='dRdson1' dgfs='dgfs1' dc='dC1' dvbr='dVbr1' dzth='dZth1' ls='Ls1' ld='Ld1*2' lg='Lg1'  * endx-call 
+x_2 phase gate2 ground tj2 tcase2 iauc60n04s6n031 dvth='dVth2' drdson='dRdson2' dgfs='dgfs2' dc='dC2' dvbr='dVbr2' dzth='dZth2' ls='Ls2' ld='Ld2*2' lg='Lg2'  * endx-call 
+r_thclip1 tj1 tclip '1350m+limit(dZth1,0,1)*3m'
+c_thclip tclip 0 10m
+r_thclip2 tcase2 tclip '450m+limit(dZth2,0,1)*1m'
+.ends iauc60n04s6n031h
+.subckt iauc60n04s6l045 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='610u'
+.param rg='3.9'
+.param rd='5u'
+.param rmet='270u'
+.param inn='30'
+.param unn='10'
+.param rmax='4.5m'
+.param gmin='29'
+.param act='1.34'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '20.86m+limit(dZth,0,1)*7.71m'
+r_th2 t1 t2 '242m+limit(dZth,0,1)*89.57m'
+r_th3 t2 t3 '836.63m+limit(dZth,0,1)*43.17m'
+r_th4 t3 t4 '1.07+limit(dZth,0,1)*388.75m'
+r_th5 t4 tcase '734.46m+limit(dZth,0,1)*266.85m'
+c_th1 tj 0 11.66u
+c_th2 t1 0 55.134u
+c_th3 t2 0 338.613u
+c_th4 t3 0 236.133u
+c_th5 t4 0 17.55m
+c_th6 tcase 0 30m
+.ends iauc60n04s6l045
+.subckt iauc60n04s6l045h battery gate1 gate2 ground phase tj1 tj2 tcase1 tcase2 dvth1='0' dvth2='0' drdson1='0' drdson2='0' dgfs1='0' dgfs2='0' dc1='0' dc2='0' dvbr1='0' dvbr2='0' dzth1='0' dzth2='0' ls1='0.05n' ld1='1n' lg1='3n' ls2='0.05n' ld2='1n' lg2='3n' 
+x_1 battery gate1 phase tj1 tcase1 iauc60n04s6l045 dvth='dVth1' drdson='dRdson1' dgfs='dgfs1' dc='dC1' dvbr='dVbr1' dzth='dZth1' ls='Ls1' ld='Ld1*2' lg='Lg1'  * endx-call 
+x_2 phase gate2 ground tj2 tcase2 iauc60n04s6l045 dvth='dVth2' drdson='dRdson2' dgfs='dgfs2' dc='dC2' dvbr='dVbr2' dzth='dZth2' ls='Ls2' ld='Ld2*2' lg='Lg2'  * endx-call 
+r_thclip1 tj1 tclip '1350m+limit(dZth1,0,1)*3m'
+c_thclip tclip 0 10m
+r_thclip2 tcase2 tclip '450m+limit(dZth2,0,1)*1m'
+.ends iauc60n04s6l045h
+.subckt iauc60n04s6n050 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='610u'
+.param rg='4.1'
+.param rd='5u'
+.param rmet='270u'
+.param inn='30'
+.param unn='10'
+.param rmax='5.0m'
+.param gmin='19'
+.param act='1.34'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '20.86m+limit(dZth,0,1)*7.71m'
+r_th2 t1 t2 '242m+limit(dZth,0,1)*89.57m'
+r_th3 t2 t3 '836.63m+limit(dZth,0,1)*43.17m'
+r_th4 t3 t4 '1.07+limit(dZth,0,1)*388.75m'
+r_th5 t4 tcase '734.46m+limit(dZth,0,1)*266.85m'
+c_th1 tj 0 11.66u
+c_th2 t1 0 55.134u
+c_th3 t2 0 338.613u
+c_th4 t3 0 236.133u
+c_th5 t4 0 17.55m
+c_th6 tcase 0 30m
+.ends iauc60n04s6n050
+.subckt iauc60n04s6n050h battery gate1 gate2 ground phase tj1 tj2 tcase1 tcase2 dvth1='0' dvth2='0' drdson1='0' drdson2='0' dgfs1='0' dgfs2='0' dc1='0' dc2='0' dvbr1='0' dvbr2='0' dzth1='0' dzth2='0' ls1='0.05n' ld1='1n' lg1='3n' ls2='0.05n' ld2='1n' lg2='3n' 
+x_1 battery gate1 phase tj1 tcase1 iauc60n04s6n050 dvth='dVth1' drdson='dRdson1' dgfs='dgfs1' dc='dC1' dvbr='dVbr1' dzth='dZth1' ls='Ls1' ld='Ld1*2' lg='Lg1'  * endx-call 
+x_2 phase gate2 ground tj2 tcase2 iauc60n04s6n050 dvth='dVth2' drdson='dRdson2' dgfs='dgfs2' dc='dC2' dvbr='dVbr2' dzth='dZth2' ls='Ls2' ld='Ld2*2' lg='Lg2'  * endx-call 
+r_thclip1 tj1 tclip '1350m+limit(dZth1,0,1)*3m'
+c_thclip tclip 0 10m
+r_thclip2 tcase2 tclip '450m+limit(dZth2,0,1)*1m'
+.ends iauc60n04s6n050h
+.subckt iauc45n04s6l063 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='580u'
+.param rg='3.0'
+.param rd='5u'
+.param rmet='240u'
+.param inn='22.5'
+.param unn='10'
+.param rmax='6.3m'
+.param gmin='21'
+.param act='0.91'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '30.71m+limit(dZth,0,1)*11.36m'
+r_th2 t1 t2 '346.43m+limit(dZth,0,1)*128.22m'
+r_th3 t2 t3 '1.19+limit(dZth,0,1)*68.93m'
+r_th4 t3 t4 '1.57+limit(dZth,0,1)*392.77m'
+r_th5 t4 tcase '929.13m+limit(dZth,0,1)*232.45m'
+c_th1 tj 0 7.918u
+c_th2 t1 0 38.514u
+c_th3 t2 0 238.422u
+c_th4 t3 0 160.359u
+c_th5 t4 0 16.475m
+c_th6 tcase 0 30m
+.ends iauc45n04s6l063
+.subckt iauc45n04s6l063h battery gate1 gate2 ground phase tj1 tj2 tcase1 tcase2 dvth1='0' dvth2='0' drdson1='0' drdson2='0' dgfs1='0' dgfs2='0' dc1='0' dc2='0' dvbr1='0' dvbr2='0' dzth1='0' dzth2='0' ls1='0.05n' ld1='1n' lg1='3n' ls2='0.05n' ld2='1n' lg2='3n' 
+x_1 battery gate1 phase tj1 tcase1 iauc45n04s6l063 dvth='dVth1' drdson='dRdson1' dgfs='dgfs1' dc='dC1' dvbr='dVbr1' dzth='dZth1' ls='Ls1' ld='Ld1*2' lg='Lg1'  * endx-call 
+x_2 phase gate2 ground tj2 tcase2 iauc45n04s6l063 dvth='dVth2' drdson='dRdson2' dgfs='dgfs2' dc='dC2' dvbr='dVbr2' dzth='dZth2' ls='Ls2' ld='Ld2*2' lg='Lg2'  * endx-call 
+r_thclip1 tj1 tclip '1350m+limit(dZth1,0,1)*3m'
+c_thclip tclip 0 10m
+r_thclip2 tcase2 tclip '450m+limit(dZth2,0,1)*1m'
+.ends iauc45n04s6l063h
+.subckt iauc45n04s6n070 drain gate source tj tcase dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' dzth='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='580u'
+.param rg='3.2'
+.param rd='5u'
+.param rmet='240u'
+.param inn='22.5'
+.param unn='10'
+.param rmax='7.0m'
+.param gmin='13'
+.param act='0.91'
+.param rsp='2.4'
+x_1 d1 g s sp tj a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_th1 tj t1 '30.71m+limit(dZth,0,1)*11.36m'
+r_th2 t1 t2 '346.43m+limit(dZth,0,1)*128.22m'
+r_th3 t2 t3 '1.19+limit(dZth,0,1)*68.93m'
+r_th4 t3 t4 '1.57+limit(dZth,0,1)*392.77m'
+r_th5 t4 tcase '929.13m+limit(dZth,0,1)*232.45m'
+c_th1 tj 0 7.918u
+c_th2 t1 0 38.514u
+c_th3 t2 0 238.422u
+c_th4 t3 0 160.359u
+c_th5 t4 0 16.475m
+c_th6 tcase 0 30m
+.ends iauc45n04s6n070
+.subckt iauc45n04s6n070h battery gate1 gate2 ground phase tj1 tj2 tcase1 tcase2 dvth1='0' dvth2='0' drdson1='0' drdson2='0' dgfs1='0' dgfs2='0' dc1='0' dc2='0' dvbr1='0' dvbr2='0' dzth1='0' dzth2='0' ls1='0.05n' ld1='1n' lg1='3n' ls2='0.05n' ld2='1n' lg2='3n' 
+x_1 battery gate1 phase tj1 tcase1 iauc45n04s6n070 dvth='dVth1' drdson='dRdson1' dgfs='dgfs1' dc='dC1' dvbr='dVbr1' dzth='dZth1' ls='Ls1' ld='Ld1*2' lg='Lg1'  * endx-call 
+x_2 phase gate2 ground tj2 tcase2 iauc45n04s6n070 dvth='dVth2' drdson='dRdson2' dgfs='dgfs2' dc='dC2' dvbr='dVbr2' dzth='dZth2' ls='Ls2' ld='Ld2*2' lg='Lg2'  * endx-call 
+r_thclip1 tj1 tclip '1350m+limit(dZth1,0,1)*3m'
+c_thclip tclip 0 10m
+r_thclip2 tcase2 tclip '450m+limit(dZth2,0,1)*1m'
+.ends iauc45n04s6n070h
+.subckt iaua250n04s6n005_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='0.7n' lg='0.1n' 
+.param rs='85u'
+.param rg='1.0'
+.param rd='6u'
+.param rmet='11u'
+.param inn='125'
+.param unn='10'
+.param rmax='0.55m'
+.param gmin='126'
+.param act='14.78'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iaua250n04s6n005_l1
+.subckt iaua250n04s6n007e_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='0.7n' lg='0.1n' 
+.param rs='117u'
+.param rg='1.0'
+.param rd='6u'
+.param rmet='19u'
+.param inn='125'
+.param unn='10'
+.param rmax='0.7m'
+.param gmin='109'
+.param act='11.11'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iaua250n04s6n007e_l1
+.subckt iaua250n04s6n008_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='0.7n' lg='0.1n' 
+.param rs='117u'
+.param rg='0.9'
+.param rd='6u'
+.param rmet='19u'
+.param inn='125'
+.param unn='10'
+.param rmax='0.8m'
+.param gmin='101'
+.param act='9.42'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iaua250n04s6n008_l1
+.subckt iaucn04s6n007t_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.5n' ld='0.3n' lg='3n' 
+.param rs='162u'
+.param rg='1.0'
+.param rd='119u'
+.param rmet='6u'
+.param inn='60'
+.param unn='10'
+.param rmax='0.75m'
+.param gmin='77'
+.param act='11.58'
+.param rsp='1.6'
+x_1 d1 g s sp tj1 a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iaucn04s6n007t_l1
+.subckt iaucn04s6n009t_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.5n' ld='0.3n' lg='3n' 
+.param rs='173u'
+.param rg='0.9'
+.param rd='121u'
+.param rmet='7u'
+.param inn='60'
+.param unn='10'
+.param rmax='0.89m'
+.param gmin='70'
+.param act='9.42'
+.param rsp='1.5'
+x_1 d1 g s sp tj1 a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iaucn04s6n009t_l1
+.subckt iaucn04s6n013t_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.5n' ld='0.3n' lg='3n' 
+.param rs='261u'
+.param rg='1.1'
+.param rd='125u'
+.param rmet='61u'
+.param inn='60'
+.param unn='10'
+.param rmax='1.32m'
+.param gmin='55'
+.param act='5.85'
+.param rsp='1.8'
+x_1 d1 g s sp tj1 a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iaucn04s6n013t_l1
+.subckt iaucn04s6n017t_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.5n' ld='0.3n' lg='3n' 
+.param rs='211u'
+.param rg='2.5'
+.param rd='129u'
+.param rmet='11u'
+.param inn='60'
+.param unn='10'
+.param rmax='1.73m'
+.param gmin='46'
+.param act='4.14'
+.param rsp='4.1'
+x_1 d1 g s sp tj1 a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iaucn04s6n017t_l1
+.subckt iauc120n04s6l005_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='82u'
+.param rg='1.0'
+.param rd='33u'
+.param rmet='8u'
+.param inn='60'
+.param unn='10'
+.param rmax='0.55m'
+.param gmin='128'
+.param act='13.02'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc120n04s6l005_l1
+.subckt iauc120n04s6n006_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='82u'
+.param rg='1.0'
+.param rd='33u'
+.param rmet='8u'
+.param inn='60'
+.param unn='10'
+.param rmax='0.6m'
+.param gmin='83'
+.param act='13.02'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc120n04s6n006_l1
+.subckt iauc120n04s6l008_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='150u'
+.param rg='0.8'
+.param rd='5u'
+.param rmet='12u'
+.param inn='60'
+.param unn='10'
+.param rmax='0.8m'
+.param gmin='108'
+.param act='9.42'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_e_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc120n04s6l008_l1
+.subckt iauc120n04s6n008_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='150u'
+.param rg='0.8'
+.param rd='5u'
+.param rmet='12u'
+.param inn='60'
+.param unn='10'
+.param rmax='0.8m'
+.param gmin='70'
+.param act='9.42'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_e1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc120n04s6n008_l1
+.subckt iauc120n04s6n009_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='150u'
+.param rg='0.8'
+.param rd='5u'
+.param rmet='12u'
+.param inn='60'
+.param unn='10'
+.param rmax='0.9m'
+.param gmin='70'
+.param act='9.42'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_e1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc120n04s6n009_l1
+.subckt iauc120n04s6l009_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='270u'
+.param rg='0.75'
+.param rd='5u'
+.param rmet='93u'
+.param inn='60'
+.param unn='10'
+.param rmax='0.96m'
+.param gmin='104'
+.param act='9.28'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_e_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc120n04s6l009_l1
+.subckt iauc120n04s6n010_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='271u'
+.param rg='0.75'
+.param rd='5u'
+.param rmet='94u'
+.param inn='60'
+.param unn='10'
+.param rmax='1.03m'
+.param gmin='68'
+.param act='9.28'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_e1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc120n04s6n010_l1
+.subckt iauc120n04s6l012_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='235u'
+.param rg='0.75'
+.param rd='5u'
+.param rmet='58u'
+.param inn='60'
+.param unn='10'
+.param rmax='1.21m'
+.param gmin='84'
+.param act='5.74'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc120n04s6l012_l1
+.subckt iauc120n04s6n013_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='236u'
+.param rg='0.75'
+.param rd='5u'
+.param rmet='59u'
+.param inn='60'
+.param unn='10'
+.param rmax='1.34m'
+.param gmin='54'
+.param act='5.74'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc120n04s6n013_l1
+.subckt iauc100n04s6l014_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='222u'
+.param rg='2.2'
+.param rd='5u'
+.param rmet='45u'
+.param inn='50'
+.param unn='10'
+.param rmax='1.40m'
+.param gmin='69'
+.param act='4.672'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc100n04s6l014_l1
+.subckt iauc100n04s6n015_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='222u'
+.param rg='2.4'
+.param rd='5u'
+.param rmet='45u'
+.param inn='50'
+.param unn='10'
+.param rmax='1.55m'
+.param gmin='45'
+.param act='4.672'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc100n04s6n015_l1
+.subckt iauc100n04s6l020_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='378u'
+.param rg='2.3'
+.param rd='5u'
+.param rmet='163u'
+.param inn='50'
+.param unn='10'
+.param rmax='2.04m'
+.param gmin='57'
+.param act='3.254'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc100n04s6l020_l1
+.subckt iauc100n04s6n022_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='379u'
+.param rg='2.5'
+.param rd='5u'
+.param rmet='164u'
+.param inn='50'
+.param unn='10'
+.param rmax='2.26m'
+.param gmin='37'
+.param act='3.254'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc100n04s6n022_l1
+.subckt iauc100n04s6l025_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='320u'
+.param rg='3.0'
+.param rd='5u'
+.param rmet='105u'
+.param inn='50'
+.param unn='10'
+.param rmax='2.56m'
+.param gmin='50'
+.param act='2.39'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc100n04s6l025_l1
+.subckt iauc100n04s6n028_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='320u'
+.param rg='3.2'
+.param rd='5u'
+.param rmet='105u'
+.param inn='50'
+.param unn='10'
+.param rmax='2.86m'
+.param gmin='32'
+.param act='2.39'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc100n04s6n028_l1
+.subckt iauc80n04s6l032_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='294u'
+.param rg='2.4'
+.param rd='5u'
+.param rmet='79u'
+.param inn='40'
+.param unn='10'
+.param rmax='3.29m'
+.param gmin='39'
+.param act='1.79'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc80n04s6l032_l1
+.subckt iauc80n04s6n036_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='294u'
+.param rg='2.4'
+.param rd='5u'
+.param rmet='79u'
+.param inn='40'
+.param unn='10'
+.param rmax='3.68m'
+.param gmin='25'
+.param act='1.79'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc80n04s6n036_l1
+.subckt iauc60n04s6l039_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='281u'
+.param rg='2.0'
+.param rd='5u'
+.param rmet='66u'
+.param inn='30'
+.param unn='10'
+.param rmax='4.02m'
+.param gmin='30'
+.param act='1.39'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc60n04s6l039_l1
+.subckt iauc60n04s6n044_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='281u'
+.param rg='2.2'
+.param rd='5u'
+.param rmet='66u'
+.param inn='30'
+.param unn='10'
+.param rmax='4.52m'
+.param gmin='19'
+.param act='1.39'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc60n04s6n044_l1
+.subckt iauc60n04s6l030_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='650u'
+.param rg='3.1'
+.param rd='5u'
+.param rmet='330u'
+.param inn='30'
+.param unn='10'
+.param rmax='3.0m'
+.param gmin='39'
+.param act='2.52'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc60n04s6l030_l1
+.subckt iauc60n04s6l030h_l1 battery gate1 gate2 ground phase dvth1='0' dvth2='0' drdson1='0' drdson2='0' dgfs1='0' dgfs2='0' dc1='0' dc2='0' dvbr1='0' dvbr2='0' ls1='0.05n' ld1='1n' lg1='3n' ls2='0.05n' ld2='1n' lg2='3n' 
+x_1 battery gate1 phase iauc60n04s6l030_l1 dvth='dVth1' drdson='dRdson1' dgfs='dgfs1' dc='dC1' dvbr='dVbr1' dls='Ls1' ld='Ld1*2' lg='Lg1'  * endx-call 
+x_2 phase gate2 ground iauc60n04s6l030_l1 dvth='dVth2' drdson='dRdson2' dgfs='dgfs2' dc='dC2' dvbr='dVbr2' dls='Ls2' ld='Ld2*2' lg='Lg2'  * endx-call 
+.ends iauc60n04s6l030h_l1
+.subckt iauc60n04s6n031_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='650u'
+.param rg='3.3'
+.param rd='5u'
+.param rmet='330u'
+.param inn='30'
+.param unn='10'
+.param rmax='3.1m'
+.param gmin='25'
+.param act='2.52'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc60n04s6n031_l1
+.subckt iauc60n04s6n031h_l1 battery gate1 gate2 ground phase dvth1='0' dvth2='0' drdson1='0' drdson2='0' dgfs1='0' dgfs2='0' dc1='0' dc2='0' dvbr1='0' dvbr2='0' ls1='0.05n' ld1='1n' lg1='3n' ls2='0.05n' ld2='1n' lg2='3n' 
+x_1 battery gate1 phase iauc60n04s6n031_l1 dvth='dVth1' drdson='dRdson1' dgfs='dgfs1' dc='dC1' dvbr='dVbr1' dls='Ls1' ld='Ld1*2' lg='Lg1'  * endx-call 
+x_2 phase gate2 ground iauc60n04s6n031_l1 dvth='dVth2' drdson='dRdson2' dgfs='dgfs2' dc='dC2' dvbr='dVbr2' dls='Ls2' ld='Ld2*2' lg='Lg2'  * endx-call 
+.ends iauc60n04s6n031h_l1
+.subckt iauc60n04s6l045_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='610u'
+.param rg='3.9'
+.param rd='5u'
+.param rmet='270u'
+.param inn='30'
+.param unn='10'
+.param rmax='4.5m'
+.param gmin='29'
+.param act='1.34'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc60n04s6l045_l1
+.subckt iauc60n04s6l045h_l1 battery gate1 gate2 ground phase dvth1='0' dvth2='0' drdson1='0' drdson2='0' dgfs1='0' dgfs2='0' dc1='0' dc2='0' dvbr1='0' dvbr2='0' ls1='0.05n' ld1='1n' lg1='3n' ls2='0.05n' ld2='1n' lg2='3n' 
+x_1 battery gate1 phase iauc60n04s6l045_l1 dvth='dVth1' drdson='dRdson1' dgfs='dgfs1' dc='dC1' dvbr='dVbr1' dls='Ls1' ld='Ld1*2' lg='Lg1'  * endx-call 
+x_2 phase gate2 ground iauc60n04s6l045_l1 dvth='dVth2' drdson='dRdson2' dgfs='dgfs2' dc='dC2' dvbr='dVbr2' dls='Ls2' ld='Ld2*2' lg='Lg2'  * endx-call 
+.ends iauc60n04s6l045h_l1
+.subckt iauc60n04s6n050_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='610u'
+.param rg='4.1'
+.param rd='5u'
+.param rmet='270u'
+.param inn='30'
+.param unn='10'
+.param rmax='5.0m'
+.param gmin='19'
+.param act='1.34'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc60n04s6n050_l1
+.subckt iauc60n04s6n050h_l1 battery gate1 gate2 ground phase dvth1='0' dvth2='0' drdson1='0' drdson2='0' dgfs1='0' dgfs2='0' dc1='0' dc2='0' dvbr1='0' dvbr2='0' ls1='0.05n' ld1='1n' lg1='3n' ls2='0.05n' ld2='1n' lg2='3n' 
+x_1 battery gate1 phase iauc60n04s6n050_l1 dvth='dVth1' drdson='dRdson1' dgfs='dgfs1' dc='dC1' dvbr='dVbr1' dls='Ls1' ld='Ld1*2' lg='Lg1'  * endx-call 
+x_2 phase gate2 ground iauc60n04s6n050_l1 dvth='dVth2' drdson='dRdson2' dgfs='dgfs2' dc='dC2' dvbr='dVbr2' dls='Ls2' ld='Ld2*2' lg='Lg2'  * endx-call 
+.ends iauc60n04s6n050h_l1
+.subckt iauc45n04s6l063_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='580u'
+.param rg='3.0'
+.param rd='5u'
+.param rmet='240u'
+.param inn='22.5'
+.param unn='10'
+.param rmax='6.3m'
+.param gmin='21'
+.param act='0.91'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc45n04s6l063_l1
+.subckt iauc45n04s6l063h_l1 battery gate1 gate2 ground phase dvth1='0' dvth2='0' drdson1='0' drdson2='0' dgfs1='0' dgfs2='0' dc1='0' dc2='0' dvbr1='0' dvbr2='0' ls1='0.05n' ld1='1n' lg1='3n' ls2='0.05n' ld2='1n' lg2='3n' 
+x_1 battery gate1 phase iauc45n04s6l063_l1 dvth='dVth1' drdson='dRdson1' dgfs='dgfs1' dc='dC1' dvbr='dVbr1' dls='Ls1' ld='Ld1*2' lg='Lg1'  * endx-call 
+x_2 phase gate2 ground iauc45n04s6l063_l1 dvth='dVth2' drdson='dRdson2' dgfs='dgfs2' dc='dC2' dvbr='dVbr2' dls='Ls2' ld='Ld2*2' lg='Lg2'  * endx-call 
+.ends iauc45n04s6l063h_l1
+.subckt iauc45n04s6n070_l1 drain gate source dvth='0' drdson='0' dgfs='0' dc='0' dvbr='0' ls='0.05n' ld='1n' lg='3n' 
+.param rs='580u'
+.param rg='3.2'
+.param rd='5u'
+.param rmet='240u'
+.param inn='22.5'
+.param unn='10'
+.param rmax='7.0m'
+.param gmin='13'
+.param act='0.91'
+.param rsp='2.4'
+x_1 d1 g s sp tj1 a6_40_d1_var a='act' dvth='dVth' drdson='dRdson' dgfs='dgfs' dc='dC' dvbr='dVbr' inn='Inn' unn='Unn' rmax='Rmax' gmin='gmin' rsp='Rsp' rs='Rs' rp='Rd' rmet='Rmet'  * endx-call 
+r_g g1 g 'Rg'
+l_g gate g1 'Lg*if(dgfs==99,0,1)'
+g_s s1 s value = 'V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)'
+r_sa s1 s 1Meg
+l_s source s1 'Ls*if(dgfs==99,0,1)'
+r_da d1 d2 'Rd'
+l_d drain d2 'Ld*if(dgfs==99,0,1)'
+r_daux drain d2 10
+r_gaux gate g1 10
+r_saux source s1 10
+e_2 tj w value = 'TEMP'
+v_p tj1 tj 0
+r_1 tj tj1 1u
+g_power 0 tj value = 'V(s1,s)*V(s1,s)/(Rs*(1+(limit(V(Tj),-200,999)-25)*4m)-Rmet)+V(g,g1)*V(g,g1)/Rg+V(d1,d2)*V(d1,d2)/Rd+I(V_p)'
+r_2 w 0 1u
+.ends iauc45n04s6n070_l1
+.subckt iauc45n04s6n070h_l1 battery gate1 gate2 ground phase dvth1='0' dvth2='0' drdson1='0' drdson2='0' dgfs1='0' dgfs2='0' dc1='0' dc2='0' dvbr1='0' dvbr2='0' ls1='0.05n' ld1='1n' lg1='3n' ls2='0.05n' ld2='1n' lg2='3n' 
+x_1 battery gate1 phase iauc45n04s6n070_l1 dvth='dVth1' drdson='dRdson1' dgfs='dgfs1' dc='dC1' dvbr='dVbr1' dls='Ls1' ld='Ld1*2' lg='Lg1'  * endx-call 
+x_2 phase gate2 ground iauc45n04s6n070_l1 dvth='dVth2' drdson='dRdson2' dgfs='dgfs2' dc='dC2' dvbr='dVbr2' dls='Ls2' ld='Ld2*2' lg='Lg2'  * endx-call 
+.ends iauc45n04s6n070h_l1
+.subckt iaua250n04s6n005_l0 drain gate source 
+l_g gate g1 0.1n
+l_d drain d1 0.7n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 85u tc = 3m
+r_g g1 g2 1.0
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='1995.3' vto='3.5' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 0.24m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.9' m='0.8' cjo='3.7n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='10.02n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='14.8p' n='1.045' rs='0.03u' eg='1.12' tt='3n' 
+r_diode d1 21 0.1m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 1.5n
+.model dgd d
++m='0.55' cjo='1.5n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 8.32n
+.ends iaua250n04s6n005_l0
+.subckt iaua250n04s6n007e_l0 drain gate source 
+l_g gate g1 0.1n
+l_d drain d1 0.7n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 117u tc = 3m
+r_g g1 g2 1.0
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='1499.9' vto='3.5' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 0.31m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.9' m='0.8' cjo='2.78n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='7.67n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='11.1p' n='1.045' rs='0.05u' eg='1.12' tt='3n' 
+r_diode d1 21 0.14m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 1.15n
+.model dgd d
++m='0.55' cjo='1.15n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 6.25n
+.ends iaua250n04s6n007e_l0
+.subckt iaua250n04s6n008_l0 drain gate source 
+l_g gate g1 0.1n
+l_d drain d1 0.7n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 117u tc = 3m
+r_g g1 g2 0.9
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='1271.7' vto='3.5' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 0.37m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.9' m='0.8' cjo='2.36n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='6.57n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='9.4p' n='1.045' rs='0.05u' eg='1.12' tt='3n' 
+r_diode d1 21 0.16m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.99n
+.model dgd d
++m='0.55' cjo='0.99n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 5.3n
+.ends iaua250n04s6n008_l0
+.subckt iaucn04s6n007t_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 0.3n
+l_s source s1 0.5n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 162u tc = 3m
+r_g g1 g2 1.0
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='1563.3' vto='3.69' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 0.45m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='43.1' m='0.8' cjo='2.9n' vj='2.5' 
+r_sp s2 s3 1.6
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='7.97n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='11.6p' n='1.045' rs='0.04u' eg='1.12' tt='3n' 
+r_diode d1 21 0.43m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 1.2n
+.model dgd d
++m='0.55' cjo='1.2n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 6.52n
+.ends iaucn04s6n007t_l0
+.subckt iaucn04s6n009t_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 0.3n
+l_s source s1 0.5n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 173u tc = 3m
+r_g g1 g2 0.9
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='1271.7' vto='3.69' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 0.52m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='43.1' m='0.8' cjo='2.36n' vj='2.5' 
+r_sp s2 s3 1.5
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='6.57n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='9.4p' n='1.045' rs='0.05u' eg='1.12' tt='3n' 
+r_diode d1 21 0.53m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.99n
+.model dgd d
++m='0.55' cjo='0.99n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 5.3n
+.ends iaucn04s6n009t_l0
+.subckt iaucn04s6n013t_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 0.3n
+l_s source s1 0.5n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 261u tc = 3m
+r_g g1 g2 1.1
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='789.8' vto='3.69' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 0.77m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='43.1' m='0.8' cjo='1.46n' vj='2.5' 
+r_sp s2 s3 1.8
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='4.24n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='5.9p' n='1.045' rs='0.09u' eg='1.12' tt='3n' 
+r_diode d1 21 0.85m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.64n
+.model dgd d
++m='0.55' cjo='0.64n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 3.29n
+.ends iaucn04s6n013t_l0
+.subckt iaucn04s6n017t_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 0.3n
+l_s source s1 0.5n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 211u tc = 3m
+r_g g1 g2 2.5
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='558.9' vto='3.69' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 1.05m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='43.1' m='0.8' cjo='1.04n' vj='2.5' 
+r_sp s2 s3 4.1
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='3.09n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='4.1p' n='1.045' rs='0.12u' eg='1.12' tt='3n' 
+r_diode d1 21 1.21m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.47n
+.model dgd d
++m='0.55' cjo='0.47n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 2.33n
+.ends iaucn04s6n017t_l0
+.subckt iauc120n04s6l005_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 82u tc = 3m
+r_g g1 g2 1.0
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='2604' vto='2.2' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 0.31m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.1' m='0.8' cjo='3.26n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='8.89n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='43.7p' n='1.039' rs='0.04u' eg='1.12' tt='3n' 
+r_diode d1 21 0.11m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 1.93n
+.model dgd d
++m='0.55' cjo='1.93n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 8.31n
+.ends iauc120n04s6l005_l0
+.subckt iauc120n04s6n006_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 82u tc = 3m
+r_g g1 g2 1.0
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='1757.7' vto='3.5' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 0.29m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.9' m='0.8' cjo='3.26n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='8.89n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='13p' n='1.045' rs='0.04u' eg='1.12' tt='3n' 
+r_diode d1 21 0.11m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 1.33n
+.model dgd d
++m='0.55' cjo='1.33n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 7.33n
+.ends iauc120n04s6n006_l0
+.subckt iauc120n04s6l008_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 150u tc = 3m
+r_g g1 g2 0.8
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='1884' vto='2.2' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 0.44m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.1' m='0.8' cjo='2.36n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='6.57n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='31.7p' n='1.039' rs='0.05u' eg='1.12' tt='3n' 
+r_diode d1 21 0.16m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 1.4n
+.model dgd d
++m='0.55' cjo='1.4n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 6.01n
+.ends iauc120n04s6l008_l0
+.subckt iauc120n04s6n008_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 150u tc = 3m
+r_g g1 g2 0.8
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='1271.7' vto='3.5' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 0.42m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.9' m='0.8' cjo='2.36n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='6.57n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='9.4p' n='1.045' rs='0.05u' eg='1.12' tt='3n' 
+r_diode d1 21 0.16m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.99n
+.model dgd d
++m='0.55' cjo='0.99n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 5.3n
+.ends iauc120n04s6n008_l0
+.subckt iauc120n04s6n009_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 150u tc = 3m
+r_g g1 g2 0.8
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='1271.7' vto='3.5' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 0.42m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.9' m='0.8' cjo='2.36n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='6.57n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='9.4p' n='1.045' rs='0.05u' eg='1.12' tt='3n' 
+r_diode d1 21 0.16m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.99n
+.model dgd d
++m='0.55' cjo='0.99n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 5.3n
+.ends iauc120n04s6n009_l0
+.subckt iauc120n04s6l009_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 270u tc = 3m
+r_g g1 g2 0.75
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='1856' vto='2.2' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 0.45m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.1' m='0.8' cjo='2.32n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='6.48n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='31.2p' n='1.039' rs='0.05u' eg='1.12' tt='3n' 
+r_diode d1 21 0.16m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 1.38n
+.model dgd d
++m='0.55' cjo='1.38n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 5.92n
+.ends iauc120n04s6l009_l0
+.subckt iauc120n04s6n010_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 271u tc = 3m
+r_g g1 g2 0.75
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='1252.8' vto='3.5' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 0.43m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.9' m='0.8' cjo='2.32n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='6.48n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='9.3p' n='1.045' rs='0.05u' eg='1.12' tt='3n' 
+r_diode d1 21 0.16m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.98n
+.model dgd d
++m='0.55' cjo='0.98n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 5.22n
+.ends iauc120n04s6n010_l0
+.subckt iauc120n04s6l012_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 235u tc = 3m
+r_g g1 g2 0.75
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='1148' vto='2.2' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 0.63m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.1' m='0.8' cjo='1.44n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='4.16n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='19.3p' n='1.039' rs='0.09u' eg='1.12' tt='3n' 
+r_diode d1 21 0.26m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.86n
+.model dgd d
++m='0.55' cjo='0.86n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 3.66n
+.ends iauc120n04s6l012_l0
+.subckt iauc120n04s6n013_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 236u tc = 3m
+r_g g1 g2 0.75
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='774.9' vto='3.5' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 0.6m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.9' m='0.8' cjo='1.44n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='4.16n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='5.7p' n='1.045' rs='0.09u' eg='1.12' tt='3n' 
+r_diode d1 21 0.26m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.63n
+.model dgd d
++m='0.55' cjo='0.63n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 3.23n
+.ends iauc120n04s6n013_l0
+.subckt iauc100n04s6l014_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 222u tc = 3m
+r_g g1 g2 2.2
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='934.4' vto='2.2' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 0.77m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.1' m='0.8' cjo='1.17n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='3.45n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='15.7p' n='1.039' rs='0.11u' eg='1.12' tt='3n' 
+r_diode d1 21 0.32m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.71n
+.model dgd d
++m='0.55' cjo='0.71n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 2.98n
+.ends iauc100n04s6l014_l0
+.subckt iauc100n04s6n015_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 222u tc = 3m
+r_g g1 g2 2.4
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='630.7' vto='3.5' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 0.74m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.9' m='0.8' cjo='1.17n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='3.45n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='4.7p' n='1.045' rs='0.11u' eg='1.12' tt='3n' 
+r_diode d1 21 0.32m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.52n
+.model dgd d
++m='0.55' cjo='0.52n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 2.63n
+.ends iauc100n04s6n015_l0
+.subckt iauc100n04s6l020_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 378u tc = 3m
+r_g g1 g2 2.3
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='650.8' vto='2.2' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 1.11m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.1' m='0.8' cjo='0.81n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='2.49n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='10.9p' n='1.039' rs='0.15u' eg='1.12' tt='3n' 
+r_diode d1 21 0.46m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.5n
+.model dgd d
++m='0.55' cjo='0.5n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 2.08n
+.ends iauc100n04s6l020_l0
+.subckt iauc100n04s6n022_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 379u tc = 3m
+r_g g1 g2 2.5
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='439.3' vto='3.5' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 1.05m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.9' m='0.8' cjo='0.81n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='2.49n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='3.3p' n='1.045' rs='0.15u' eg='1.12' tt='3n' 
+r_diode d1 21 0.46m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.38n
+.model dgd d
++m='0.55' cjo='0.38n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 1.83n
+.ends iauc100n04s6n022_l0
+.subckt iauc100n04s6l025_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 320u tc = 3m
+r_g g1 g2 3.0
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='478' vto='2.2' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 1.51m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.1' m='0.8' cjo='0.6n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='1.9n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='8p' n='1.039' rs='0.21u' eg='1.12' tt='3n' 
+r_diode d1 21 0.63m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.37n
+.model dgd d
++m='0.55' cjo='0.37n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 1.52n
+.ends iauc100n04s6l025_l0
+.subckt iauc100n04s6n028_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 320u tc = 3m
+r_g g1 g2 3.2
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='322.7' vto='3.5' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 1.43m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.9' m='0.8' cjo='0.6n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='1.9n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='2.4p' n='1.045' rs='0.21u' eg='1.12' tt='3n' 
+r_diode d1 21 0.63m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.29n
+.model dgd d
++m='0.55' cjo='0.29n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 1.35n
+.ends iauc100n04s6n028_l0
+.subckt iauc80n04s6l032_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 294u tc = 3m
+r_g g1 g2 2.4
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='358' vto='2.2' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 2.02m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.1' m='0.8' cjo='0.45n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='1.48n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='6p' n='1.039' rs='0.28u' eg='1.12' tt='3n' 
+r_diode d1 21 0.84m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.28n
+.model dgd d
++m='0.55' cjo='0.28n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 1.14n
+.ends iauc80n04s6l032_l0
+.subckt iauc80n04s6n036_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 294u tc = 3m
+r_g g1 g2 2.4
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='241.7' vto='3.5' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 1.92m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.9' m='0.8' cjo='0.45n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='1.48n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='1.8p' n='1.045' rs='0.28u' eg='1.12' tt='3n' 
+r_diode d1 21 0.84m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.23n
+.model dgd d
++m='0.55' cjo='0.23n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 1.01n
+.ends iauc80n04s6n036_l0
+.subckt iauc60n04s6l039_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 281u tc = 3m
+r_g g1 g2 2.0
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='278' vto='2.2' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 2.59m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.1' m='0.8' cjo='0.35n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='1.19n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='4.7p' n='1.039' rs='0.36u' eg='1.12' tt='3n' 
+r_diode d1 21 1.08m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.22n
+.model dgd d
++m='0.55' cjo='0.22n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 0.89n
+.ends iauc60n04s6l039_l0
+.subckt iauc60n04s6n044_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 281u tc = 3m
+r_g g1 g2 2.2
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='187.7' vto='3.5' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 2.47m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.9' m='0.8' cjo='0.35n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='1.19n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='1.4p' n='1.045' rs='0.36u' eg='1.12' tt='3n' 
+r_diode d1 21 1.08m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.18n
+.model dgd d
++m='0.55' cjo='0.18n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 0.78n
+.ends iauc60n04s6n044_l0
+.subckt iauc60n04s6l030_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 650u tc = 3m
+r_g g1 g2 3.1
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='504' vto='2.2' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 1.43m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.1' m='0.8' cjo='0.63n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='1.99n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='8.5p' n='1.039' rs='0.2u' eg='1.12' tt='3n' 
+r_diode d1 21 0.59m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.39n
+.model dgd d
++m='0.55' cjo='0.39n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 1.61n
+.ends iauc60n04s6l030_l0
+.subckt iauc60n04s6l030h_l0 battery gate1 gate2 ground phase 
+x_1 battery gate1 phase iauc60n04s6l030_l0  * endx-call 
+x_2 phase gate2 ground iauc60n04s6l030_l0  * endx-call 
+.ends iauc60n04s6l030h_l0
+.subckt iauc60n04s6n031_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 650u tc = 3m
+r_g g1 g2 3.3
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='340.2' vto='3.5' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 1.36m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.9' m='0.8' cjo='0.63n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='1.99n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='2.5p' n='1.045' rs='0.2u' eg='1.12' tt='3n' 
+r_diode d1 21 0.59m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.31n
+.model dgd d
++m='0.55' cjo='0.31n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 1.42n
+.ends iauc60n04s6n031_l0
+.subckt iauc60n04s6n031h_l0 battery gate1 gate2 ground phase 
+x_1 battery gate1 phase iauc60n04s6n031_l0  * endx-call 
+x_2 phase gate2 ground iauc60n04s6n031_l0  * endx-call 
+.ends iauc60n04s6n031h_l0
+.subckt iauc60n04s6l045_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 610u tc = 3m
+r_g g1 g2 3.9
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='268' vto='2.2' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 2.69m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.1' m='0.8' cjo='0.34n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='1.15n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='4.5p' n='1.039' rs='0.37u' eg='1.12' tt='3n' 
+r_diode d1 21 1.12m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.21n
+.model dgd d
++m='0.55' cjo='0.21n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 0.85n
+.ends iauc60n04s6l045_l0
+.subckt iauc60n04s6l045h_l0 battery gate1 gate2 ground phase 
+x_1 battery gate1 phase iauc60n04s6l045_l0  * endx-call 
+x_2 phase gate2 ground iauc60n04s6l045_l0  * endx-call 
+.ends iauc60n04s6l045h_l0
+.subckt iauc60n04s6n050_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 610u tc = 3m
+r_g g1 g2 4.1
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='180.9' vto='3.5' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 2.56m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.9' m='0.8' cjo='0.34n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='1.15n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='1.3p' n='1.045' rs='0.37u' eg='1.12' tt='3n' 
+r_diode d1 21 1.12m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.18n
+.model dgd d
++m='0.55' cjo='0.18n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 0.75n
+.ends iauc60n04s6n050_l0
+.subckt iauc60n04s6n050h_l0 battery gate1 gate2 ground phase 
+x_1 battery gate1 phase iauc60n04s6n050_l0  * endx-call 
+x_2 phase gate2 ground iauc60n04s6n050_l0  * endx-call 
+.ends iauc60n04s6n050h_l0
+.subckt iauc45n04s6l063_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 580u tc = 3m
+r_g g1 g2 3.0
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='182' vto='2.2' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 4.0m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.1' m='0.8' cjo='0.23n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='0.83n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='3.1p' n='1.039' rs='0.55u' eg='1.12' tt='3n' 
+r_diode d1 21 1.65m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.15n
+.model dgd d
++m='0.55' cjo='0.15n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 0.58n
+.ends iauc45n04s6l063_l0
+.subckt iauc45n04s6l063h_l0 battery gate1 gate2 ground phase 
+x_1 battery gate1 phase iauc45n04s6l063_l0  * endx-call 
+x_2 phase gate2 ground iauc45n04s6l063_l0  * endx-call 
+.ends iauc45n04s6l063h_l0
+.subckt iauc45n04s6n070_l0 drain gate source 
+l_g gate g1 3n
+l_d drain d1 1n
+l_s source s1 0.05n
+r_daux drain d1 10
+r_gaux gate g1 10
+r_saux source s1 10
+r_s s1 s2 580u tc = 3m
+r_g g1 g2 3.2
+m_1 d2 g2 s2 s2 dmos l = 1u w = 1u
+.model dmos nmos
++kp='122.9' vto='3.5' theta='0' vmax='1.5e5' eta='0.005' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='3' 
+r_d d1 d2 3.76m tc = 4m
+d_bd s2 d2 dbt
+.model dbt d
++bv='42.9' m='0.8' cjo='0.23n' vj='2.5' 
+r_sp s2 s3 2.4
+d_bd1 s3 d2 dbt1
+.model dbt1 d
++bv='1000' m='0.8' cjo='0.83n' vj='2.5' 
+d_body s2 21 dbody
+.model dbody d
++is='0.9p' n='1.045' rs='0.55u' eg='1.12' tt='3n' 
+r_diode d1 21 1.65m tc = 2.5m
+.model sw nmos
++vto='0' kp='10' lambda='1m' cgdo='1f' cgso='1f' cgbo='1f' is='0' level='1' 
+m_aux g2 c a a sw l = 10u w = 10u
+m_aux2 b d g2 g2 sw l = 10u w = 10u
+e_aux c a d2 g2 1
+e_aux2 d g2 d2 g2 -1
+c_ox b d2 0.13n
+.model dgd d
++m='0.55' cjo='0.13n' vj='0.5' 
+d_gd a d2 dgd
+c_gs g2 s2 0.51n
+.ends iauc45n04s6n070_l0
+.subckt iauc45n04s6n070h_l0 battery gate1 gate2 ground phase 
+x_1 battery gate1 phase iauc45n04s6n070_l0  * endx-call 
+x_2 phase gate2 ground iauc45n04s6n070_l0  * endx-call 
+.ends iauc45n04s6n070h_l0
+.model _defaultidealdiodemodel d
++
+l0 n26_1 0 l = '0.001'
+c0 n1_1 output c = '1e-06'
+r1 n3_3 output r = '10000'
+r3 0 csense r = '0.003'
+v2 n4_8 0 dc = '24'
+r0 n2_2 csense r = '10000'
+r2 n2_2 n4_1 r = '33'
+r5 n4_3 n3_3 r = '33'
+r6 output n26_1 r = '10'
+v1 n3_4 0 dc = '24'
+v3 in1 0 pulse ( '0' '3.3' '1.01e-05' '1e-08' '1e-08' '9.9e-06' '2e-05' )
+v0 in2 0 pulse ( '3.3' '0' '9.9e-06' '1e-08' '1e-08' '1.01e-05' '2e-05' )
+x1 n4_1 n4_3 0 in2 in1 n4_8 n1_1 output 2EDL05N06PF  * endx-call 
+x0 n3_4 n3_3 n2_2 csense output iauc60n04s6n031h_l1  * endx-call 
+.tran '1m/1000.0' '1m'
+.output tran level = 0 v ( * ) v ( 0 )
+.output tran level = 0 i ( * , * )
+.temp 27 uet
+.param temp='27'
+.option accuracy = standard
+.option rshunt = 1.0G
+.option csdf 
+.save 'EasyBLDCV3'
+.end

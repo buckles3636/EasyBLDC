@@ -61,7 +61,7 @@
 			(color 0 0 0 0.0000)
 		)
 		(uuid "8049925a-2faa-4187-b86e-b6208aed2e10")
-		(property "Sheetname" "MCF8329 Breakout"
+		(property "Sheetname" "MCU"
 			(at 191.77 61.5184 0)
 			(effects
 				(font
