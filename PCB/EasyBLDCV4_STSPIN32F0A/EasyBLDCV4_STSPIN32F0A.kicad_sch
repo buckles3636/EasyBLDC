@@ -1,0 +1,133 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "6c304649-7c80-4a4c-b925-07b9210ad53d")
+	(paper "A4")
+	(title_block
+		(title "Easy BLDC")
+		(date "2024-08-06")
+		(rev "2.0")
+		(company "Peter Buckley Engineering")
+	)
+	(lib_symbols)
+	(sheet
+		(at 113.03 62.23)
+		(size 72.39 78.74)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "22fb4715-9f33-45f1-b8d4-9537d945fe69")
+		(property "Sheetname" "Main Connector & Debug"
+			(at 113.03 61.5184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MainConnector.kicad_sch"
+			(at 113.03 141.5546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "EasyBLDCV4_STSPIN32F0A"
+				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d"
+					(page "1")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 191.77 62.23)
+		(size 72.39 78.74)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8049925a-2faa-4187-b86e-b6208aed2e10")
+		(property "Sheetname" "MCU"
+			(at 191.77 61.5184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "TMS320F28027FBreakout_sch.kicad_sch"
+			(at 191.77 141.5546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "EasyBLDCV4_STSPIN32F0A"
+				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 34.29 62.23)
+		(size 72.39 78.74)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8a0cf24a-00c0-47a8-b582-1a7bbe5ca078")
+		(property "Sheetname" "Power Stage"
+			(at 34.29 61.5184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "DRV8305Breakout.kicad_sch"
+			(at 34.29 141.5546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "EasyBLDCV4_STSPIN32F0A"
+				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)
