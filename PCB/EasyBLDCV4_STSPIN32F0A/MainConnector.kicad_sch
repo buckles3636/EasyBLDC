@@ -2658,7 +2658,7 @@
 				)
 			)
 		)
-		(property "Footprint" "10159560-A00221RLF:AMPHENOL_10159560-A00221RLF"
+		(property "Footprint" "EasyBLDC:AMPHENOL_10159560-A00221RLF"
 			(at 54.61 59.69 0)
 			(effects
 				(font

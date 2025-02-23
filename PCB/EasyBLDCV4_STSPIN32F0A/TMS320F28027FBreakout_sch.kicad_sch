@@ -5126,7 +5126,7 @@
 				)
 			)
 		)
-		(property "Footprint" "STSPIN32F0A:IC_STSPIN32F0A"
+		(property "Footprint" "EasyBLDC:IC_STSPIN32F0A"
 			(at 97.79 118.11 0)
 			(effects
 				(font

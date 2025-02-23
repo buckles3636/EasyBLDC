@@ -2745,7 +2745,7 @@
 			)
 		)
 	)
-	(global_label "MOT_A"
+	(global_label "MOT_C"
 		(shape input)
 		(at 107.95 120.65 180)
 		(fields_autoplaced yes)
@@ -2757,7 +2757,7 @@
 		)
 		(uuid "3ae5a7d1-4db5-4d62-af57-4092ce5f9ddd")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 99.1591 120.65 0)
+			(at 98.9777 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2789,7 +2789,7 @@
 			)
 		)
 	)
-	(global_label "MOT_A"
+	(global_label "MOT_B"
 		(shape input)
 		(at 72.39 120.65 180)
 		(fields_autoplaced yes)
@@ -2801,7 +2801,7 @@
 		)
 		(uuid "3d418df3-31c6-4799-a170-dbe649f64827")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 63.5991 120.65 0)
+			(at 63.4177 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2833,7 +2833,7 @@
 			)
 		)
 	)
-	(global_label "BEMF_A"
+	(global_label "BEMF_B"
 		(shape output)
 		(at 88.9 125.73 0)
 		(fields_autoplaced yes)
@@ -2845,7 +2845,7 @@
 		)
 		(uuid "60a244f0-417f-4b59-ad7b-984ff515bb92")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 98.9004 125.73 0)
+			(at 99.0818 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2877,7 +2877,7 @@
 			)
 		)
 	)
-	(global_label "BEMF_A"
+	(global_label "BEMF_C"
 		(shape output)
 		(at 124.46 125.73 0)
 		(fields_autoplaced yes)
@@ -2889,7 +2889,7 @@
 		)
 		(uuid "720a4070-6a72-4df4-867f-133ddfc3623a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 134.4604 125.73 0)
+			(at 134.6418 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
