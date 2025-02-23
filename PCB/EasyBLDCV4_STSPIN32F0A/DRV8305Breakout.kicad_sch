@@ -3062,7 +3062,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "01550bee-365c-448b-9ecd-9c1d4ebbe330")
-		(property "Reference" "R9"
+		(property "Reference" "R3"
 			(at 201.93 49.53 90)
 			(effects
 				(font
@@ -3078,7 +3078,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 202.184 53.594 90)
 			(effects
 				(font
@@ -3114,7 +3114,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "R9")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -3129,7 +3129,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "02a290e2-35f1-40e7-88d6-3d83d1b2d4ed")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR09"
 			(at 194.31 143.51 0)
 			(effects
 				(font
@@ -3179,7 +3179,7 @@
 		(instances
 			(project ""
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "#PWR012")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -3194,7 +3194,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "07f0520d-40fe-4b12-a6a5-8ba5755779fd")
-		(property "Reference" "R8"
+		(property "Reference" "R5"
 			(at 127 62.23 90)
 			(effects
 				(font
@@ -3210,7 +3210,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 127.254 66.294 90)
 			(effects
 				(font
@@ -3246,7 +3246,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "R8")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -3261,7 +3261,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "32b17015-4029-4b83-b79e-d5ad092045c5")
-		(property "Reference" "#PWR018"
+		(property "Reference" "#PWR013"
 			(at 85.09 146.05 0)
 			(effects
 				(font
@@ -3311,7 +3311,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "#PWR018")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -3327,7 +3327,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "391ca7aa-9ad8-4448-8b92-698fe067a2e0")
-		(property "Reference" "R13"
+		(property "Reference" "R15"
 			(at 53.34 132.08 0)
 			(effects
 				(font
@@ -3343,7 +3343,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 50.546 133.096 90)
 			(effects
 				(font
@@ -3379,7 +3379,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "R13")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -3395,7 +3395,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3ad51627-8122-4e21-b919-a14feec263e4")
-		(property "Reference" "C9"
+		(property "Reference" "C4"
 			(at 177.8 125.73 0)
 			(effects
 				(font
@@ -3413,7 +3413,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 179.3748 130.81 0)
 			(effects
 				(font
@@ -3449,7 +3449,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "C9")
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -3464,7 +3464,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3fcb24e9-ae54-437c-82d1-8793e6f0857a")
-		(property "Reference" "R15"
+		(property "Reference" "R11"
 			(at 43.18 115.57 90)
 			(effects
 				(font
@@ -3480,7 +3480,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 43.434 119.634 90)
 			(effects
 				(font
@@ -3516,7 +3516,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "R15")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -3531,7 +3531,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "42a65863-4aec-4dfc-8621-501159c2771c")
-		(property "Reference" "C4"
+		(property "Reference" "C8"
 			(at 83.82 173.99 0)
 			(effects
 				(font
@@ -3549,7 +3549,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 82.2452 179.07 0)
 			(effects
 				(font
@@ -3585,7 +3585,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "C4")
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -3600,7 +3600,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "459e2b36-c4de-4c4a-93cd-0505599274d8")
-		(property "Reference" "C5"
+		(property "Reference" "C9"
 			(at 95.25 173.99 0)
 			(effects
 				(font
@@ -3618,7 +3618,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 93.6752 179.07 0)
 			(effects
 				(font
@@ -3654,7 +3654,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "C5")
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -3669,7 +3669,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "45ff9f5d-ceea-4c2d-ba00-bfa613f495a5")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR011"
 			(at 250.19 143.51 0)
 			(effects
 				(font
@@ -3719,7 +3719,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "#PWR016")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -3751,7 +3751,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PG-TDSON-8-56"
+		(property "Footprint" "EasyBLDC:PG-TDSON-8-56"
 			(at 92.71 49.53 0)
 			(effects
 				(font
@@ -3822,7 +3822,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4b77c63c-66ca-4d79-882a-64f98bd1af1a")
-		(property "Reference" "R7"
+		(property "Reference" "R2"
 			(at 127 49.53 90)
 			(effects
 				(font
@@ -3838,7 +3838,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 127.254 53.594 90)
 			(effects
 				(font
@@ -3874,7 +3874,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "R7")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -3890,7 +3890,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5dc6163f-7dfc-4da2-81b8-5a002bbd9d77")
-		(property "Reference" "R16"
+		(property "Reference" "R8"
 			(at 88.9 111.76 0)
 			(effects
 				(font
@@ -3906,7 +3906,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 86.106 112.776 90)
 			(effects
 				(font
@@ -3942,7 +3942,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "R16")
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -3957,7 +3957,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "62057f12-457f-4787-af16-73e0dac6be77")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR04"
 			(at 73.66 43.18 0)
 			(effects
 				(font
@@ -4007,7 +4007,7 @@
 		(instances
 			(project ""
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "#PWR08")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -4022,7 +4022,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "65b93839-7098-446b-af7d-a4990a5e353f")
-		(property "Reference" "R10"
+		(property "Reference" "R6"
 			(at 201.93 62.23 90)
 			(effects
 				(font
@@ -4038,7 +4038,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 202.184 66.294 90)
 			(effects
 				(font
@@ -4074,7 +4074,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "R10")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -4089,7 +4089,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "71d2c25d-2f8d-4fe8-be81-933b3e9c0ab0")
-		(property "Reference" "R11"
+		(property "Reference" "R14"
 			(at 190.5 125.73 0)
 			(effects
 				(font
@@ -4105,7 +4105,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
 			(at 193.294 126.746 90)
 			(effects
 				(font
@@ -4141,7 +4141,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "R11")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -4157,7 +4157,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "77edad09-f07f-4d51-9b0c-acfb699d9b42")
-		(property "Reference" "U2"
+		(property "Reference" "U1"
 			(at 218.44 105.41 0)
 			(effects
 				(font
@@ -4173,7 +4173,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DBV0005A_N"
+		(property "Footprint" "EasyBLDC:DBV0005A_N"
 			(at 218.44 120.65 0)
 			(effects
 				(font
@@ -4220,7 +4220,7 @@
 		(instances
 			(project ""
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "U2")
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -4235,7 +4235,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7959fef2-2eb9-4e5b-bb05-bc1c64702b1c")
-		(property "Reference" "R6"
+		(property "Reference" "R4"
 			(at 53.34 62.23 90)
 			(effects
 				(font
@@ -4251,7 +4251,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 53.594 66.294 90)
 			(effects
 				(font
@@ -4287,7 +4287,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "R6")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -4302,7 +4302,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "79f75566-441f-45c0-a46e-77212d7c0436")
-		(property "Reference" "R23"
+		(property "Reference" "R13"
 			(at 114.3 115.57 90)
 			(effects
 				(font
@@ -4318,7 +4318,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 114.554 119.634 90)
 			(effects
 				(font
@@ -4354,7 +4354,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "R23")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -4369,7 +4369,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7dd0ae4d-105a-42b3-b3eb-a27fe1a036f4")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR08"
 			(at 180.34 143.51 0)
 			(effects
 				(font
@@ -4419,7 +4419,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "#PWR014")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -4434,7 +4434,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "80f48a9c-9c56-4a7b-9553-5f8ff16011cd")
-		(property "Reference" "C3"
+		(property "Reference" "C7"
 			(at 72.39 173.99 0)
 			(effects
 				(font
@@ -4452,7 +4452,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 70.8152 179.07 0)
 			(effects
 				(font
@@ -4488,7 +4488,7 @@
 		(instances
 			(project ""
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "C3")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -4504,7 +4504,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "81f670e3-c0b2-4eb5-8846-46a2cd3fef2e")
-		(property "Reference" "R19"
+		(property "Reference" "R9"
 			(at 124.46 111.76 0)
 			(effects
 				(font
@@ -4520,7 +4520,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 121.666 112.776 90)
 			(effects
 				(font
@@ -4556,7 +4556,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "R19")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -4571,7 +4571,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "851861fa-9a0f-4266-9ef0-b39bba815a2c")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR014"
 			(at 120.65 146.05 0)
 			(effects
 				(font
@@ -4621,7 +4621,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "#PWR022")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -4636,7 +4636,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8954a31d-b452-44ca-bc00-5ab8732f2faa")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR012"
 			(at 49.53 146.05 0)
 			(effects
 				(font
@@ -4686,7 +4686,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "#PWR017")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -4701,7 +4701,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8e2bcd83-1128-47ee-9df9-b34bc57e838e")
-		(property "Reference" "C7"
+		(property "Reference" "C11"
 			(at 116.84 173.99 0)
 			(effects
 				(font
@@ -4719,7 +4719,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 115.2652 179.07 0)
 			(effects
 				(font
@@ -4755,7 +4755,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "C7")
+					(reference "C11")
 					(unit 1)
 				)
 			)
@@ -4770,7 +4770,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8f49e8aa-507c-4b38-ab1b-d241e87f95e6")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR010"
 			(at 240.03 143.51 0)
 			(effects
 				(font
@@ -4820,7 +4820,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "#PWR015")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -4835,7 +4835,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "94b864e6-fe7c-4df3-82c0-7037ceb05a2a")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR05"
 			(at 147.32 43.18 0)
 			(effects
 				(font
@@ -4885,7 +4885,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "#PWR09")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -4900,7 +4900,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9bae851c-470c-4ae2-9b51-144f82b7dfef")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR07"
 			(at 180.34 115.57 0)
 			(effects
 				(font
@@ -4950,7 +4950,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "#PWR013")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -4966,7 +4966,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a768ae9b-bff3-4605-92ab-7e2e89b8118b")
-		(property "Reference" "R24"
+		(property "Reference" "R17"
 			(at 124.46 132.08 0)
 			(effects
 				(font
@@ -4982,7 +4982,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 121.666 133.096 90)
 			(effects
 				(font
@@ -5018,7 +5018,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "R24")
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -5033,7 +5033,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b28f19e0-8883-4d85-a790-7768465761f3")
-		(property "Reference" "C10"
+		(property "Reference" "C5"
 			(at 252.73 125.73 0)
 			(effects
 				(font
@@ -5051,7 +5051,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 251.1552 130.81 0)
 			(effects
 				(font
@@ -5087,7 +5087,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "C10")
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -5102,7 +5102,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c1f68ce0-a2e3-4796-969d-82fca6d585d5")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR015"
 			(at 59.69 170.18 0)
 			(effects
 				(font
@@ -5152,7 +5152,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "#PWR011")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -5167,7 +5167,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c50b1869-6b38-458c-adf8-25fcfabf2ffe")
-		(property "Reference" "R17"
+		(property "Reference" "R12"
 			(at 78.74 115.57 90)
 			(effects
 				(font
@@ -5183,7 +5183,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 78.994 119.634 90)
 			(effects
 				(font
@@ -5219,7 +5219,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "R17")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -5251,7 +5251,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PG-TDSON-8-56"
+		(property "Footprint" "EasyBLDC:PG-TDSON-8-56"
 			(at 241.3 49.53 0)
 			(effects
 				(font
@@ -5322,7 +5322,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cbf27b1f-1664-45c8-a251-1bafea1ebb4f")
-		(property "Reference" "R5"
+		(property "Reference" "R1"
 			(at 53.34 49.53 90)
 			(effects
 				(font
@@ -5338,7 +5338,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 53.594 53.594 90)
 			(effects
 				(font
@@ -5374,7 +5374,7 @@
 		(instances
 			(project ""
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "R5")
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -5406,7 +5406,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PG-TDSON-8-56"
+		(property "Footprint" "EasyBLDC:PG-TDSON-8-56"
 			(at 166.37 49.53 0)
 			(effects
 				(font
@@ -5477,7 +5477,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d69ffed5-6737-4eaf-a713-75af12342f67")
-		(property "Reference" "C8"
+		(property "Reference" "C6"
 			(at 62.23 173.99 0)
 			(effects
 				(font
@@ -5495,7 +5495,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 60.6552 179.07 0)
 			(effects
 				(font
@@ -5531,7 +5531,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "C8")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -5547,7 +5547,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dacb8ae5-b508-4798-acb9-faba69cc24fd")
-		(property "Reference" "R18"
+		(property "Reference" "R16"
 			(at 88.9 132.08 0)
 			(effects
 				(font
@@ -5563,7 +5563,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 86.106 133.096 90)
 			(effects
 				(font
@@ -5599,7 +5599,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "R18")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -5614,7 +5614,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e549cd16-48e8-4356-a15a-4e900bd4fa28")
-		(property "Reference" "R12"
+		(property "Reference" "R10"
 			(at 242.57 110.49 90)
 			(effects
 				(font
@@ -5630,7 +5630,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 242.824 114.554 90)
 			(effects
 				(font
@@ -5666,7 +5666,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "R12")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -5681,7 +5681,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "eb843a68-234f-4a06-bc51-717ea9bd27af")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR06"
 			(at 222.25 43.18 0)
 			(effects
 				(font
@@ -5731,7 +5731,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "#PWR010")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -5746,7 +5746,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "edd45a9e-aa89-41ce-af83-8d2e4cfc28af")
-		(property "Reference" "C6"
+		(property "Reference" "C10"
 			(at 106.68 173.99 0)
 			(effects
 				(font
@@ -5764,7 +5764,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 105.1052 179.07 0)
 			(effects
 				(font
@@ -5800,7 +5800,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "C6")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -5816,7 +5816,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fa480d08-2bd3-4ede-ba61-f75af3970d8c")
-		(property "Reference" "R14"
+		(property "Reference" "R7"
 			(at 53.34 111.76 0)
 			(effects
 				(font
@@ -5832,7 +5832,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 50.546 112.776 90)
 			(effects
 				(font
@@ -5868,7 +5868,7 @@
 		(instances
 			(project "EasyBLDCV4_STSPIN32F0A"
 				(path "/6c304649-7c80-4a4c-b925-07b9210ad53d/8a0cf24a-00c0-47a8-b582-1a7bbe5ca078"
-					(reference "R14")
+					(reference "R7")
 					(unit 1)
 				)
 			)
