@@ -599,4 +599,15 @@
 		(solder_mask_margin 0.102)
 		(uuid "bcaa3da6-7eac-47c6-a1e7-d56c42cc0705")
 	)
+	(model "C:/Users/peter/GitHub/EasyBLDC/PCB/EasyBLDCFootprints/EasyBLDC.pretty/STSPIN32F0A.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 0 0)
+		)
+	)
 )
