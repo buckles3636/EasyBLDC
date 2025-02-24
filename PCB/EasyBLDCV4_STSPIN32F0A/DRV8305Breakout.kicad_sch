@@ -3751,7 +3751,7 @@
 				)
 			)
 		)
-		(property "Footprint" "EasyBLDC:PG-TDSON-8-56"
+		(property "Footprint" "EasyBLDC:PG-TDSON-8-56-2"
 			(at 92.71 49.53 0)
 			(effects
 				(font
@@ -5251,7 +5251,7 @@
 				)
 			)
 		)
-		(property "Footprint" "EasyBLDC:PG-TDSON-8-56"
+		(property "Footprint" "EasyBLDC:PG-TDSON-8-56-2"
 			(at 241.3 49.53 0)
 			(effects
 				(font
@@ -5406,7 +5406,7 @@
 				)
 			)
 		)
-		(property "Footprint" "EasyBLDC:PG-TDSON-8-56"
+		(property "Footprint" "EasyBLDC:PG-TDSON-8-56-2"
 			(at 166.37 49.53 0)
 			(effects
 				(font
