@@ -3940,17 +3940,19 @@ x_2 phase gate2 ground iauc45n04s6n070_l0  * endx-call
 .ends iauc45n04s6n070h_l0
 .model _defaultidealdiodemodel d
 +
-l0 n26_1 0 l = '0.001'
+c1 n8_1 0 c = '1e-08'
 c0 n1_1 output c = '1e-06'
+l0 n26_1 0 l = '0.001'
 r1 n3_3 output r = '10000'
+r2 n2_2 n4_1 r = '33'
+r0 n2_2 csense r = '10000'
+v1 n3_4 0 dc = '24'
+r5 n4_3 n3_3 r = '33'
+r4 output n8_1 r = '1'
 r3 0 csense r = '0.003'
 v2 n4_8 0 dc = '24'
-r0 n2_2 csense r = '10000'
-r2 n2_2 n4_1 r = '33'
-r5 n4_3 n3_3 r = '33'
-r6 output n26_1 r = '10'
-v1 n3_4 0 dc = '24'
 v3 in1 0 pulse ( '0' '3.3' '1.01e-05' '1e-08' '1e-08' '9.9e-06' '2e-05' )
+r6 output n26_1 r = '10'
 v0 in2 0 pulse ( '3.3' '0' '9.9e-06' '1e-08' '1e-08' '1.01e-05' '2e-05' )
 x1 n4_1 n4_3 0 in2 in1 n4_8 n1_1 output 2EDL05N06PF  * endx-call 
 x0 n3_4 n3_3 n2_2 csense output iauc60n04s6n031h_l1  * endx-call 

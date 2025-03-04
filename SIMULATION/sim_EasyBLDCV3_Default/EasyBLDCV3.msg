@@ -5,7 +5,7 @@
 
            TITAN version 2024.03            2024-09-06 for WINNT
 
-             Started at 2025-01-20 01:09:28 on host LAPTOP-33HE614J
+             Started at 2025-02-27 11:27:33 on host LAPTOP-33HE614J
 
 ==============================================================================
  
@@ -510,30 +510,32 @@
                    	 'Subckt' with name 'iauc45n04s6n070h_l0'
  (  3941) (  3941) .model _defaultidealdiodemodel d
  (  3942) (  3942) +
- (  3943) (  3943) l0 n26_1 0 l = '0.001'
+ (  3943) (  3943) c1 n8_1 0 c = '1e-08'
  (  3944) (  3944) c0 n1_1 output c = '1e-06'
- (  3945) (  3945) r1 n3_3 output r = '10000'
- (  3946) (  3946) r3 0 csense r = '0.003'
- (  3947) (  3947) v2 n4_8 0 dc = '24'
+ (  3945) (  3945) l0 n26_1 0 l = '0.001'
+ (  3946) (  3946) r1 n3_3 output r = '10000'
+ (  3947) (  3947) r2 n2_2 n4_1 r = '33'
  (  3948) (  3948) r0 n2_2 csense r = '10000'
- (  3949) (  3949) r2 n2_2 n4_1 r = '33'
+ (  3949) (  3949) v1 n3_4 0 dc = '24'
  (  3950) (  3950) r5 n4_3 n3_3 r = '33'
- (  3951) (  3951) r6 output n26_1 r = '10'
- (  3952) (  3952) v1 n3_4 0 dc = '24'
- (  3953) (  3953) v3 in1 0 pulse ( '0' '3.3' '1.01e-05' '1e-08' '1e-08' '9.9e-06' '2e-05' )
- (  3954) (  3954) v0 in2 0 pulse ( '3.3' '0' '9.9e-06' '1e-08' '1e-08' '1.01e-05' '2e-05' )
- (  3955) (  3955) x1 n4_1 n4_3 0 in2 in1 n4_8 n1_1 output 2EDL05N06PF  * endx-call 
- (  3956) (  3956) x0 n3_4 n3_3 n2_2 csense output iauc60n04s6n031h_l1  * endx-call 
- (  3957) (  3957) .tran '1m/1000.0' '1m'
- (  3958) (  3958) .output tran level = 0 v ( * ) v ( 0 )
- (  3959) (  3959) .output tran level = 0 i ( * , * )
- (  3960) (  3960) .temp 27 uet
- (  3961) (  3961) .param temp='27'
+ (  3951) (  3951) r4 output n8_1 r = '1'
+ (  3952) (  3952) r3 0 csense r = '0.003'
+ (  3953) (  3953) v2 n4_8 0 dc = '24'
+ (  3954) (  3954) v3 in1 0 pulse ( '0' '3.3' '1.01e-05' '1e-08' '1e-08' '9.9e-06' '2e-05' )
+ (  3955) (  3955) r6 output n26_1 r = '10'
+ (  3956) (  3956) v0 in2 0 pulse ( '3.3' '0' '9.9e-06' '1e-08' '1e-08' '1.01e-05' '2e-05' )
+ (  3957) (  3957) x1 n4_1 n4_3 0 in2 in1 n4_8 n1_1 output 2EDL05N06PF  * endx-call 
+ (  3958) (  3958) x0 n3_4 n3_3 n2_2 csense output iauc60n04s6n031h_l1  * endx-call 
+ (  3959) (  3959) .tran '1m/1000.0' '1m'
+ (  3960) (  3960) .output tran level = 0 v ( * ) v ( 0 )
+ (  3961) (  3961) .output tran level = 0 i ( * , * )
+ (  3962) (  3962) .temp 27 uet
+ (  3963) (  3963) .param temp='27'
 
                    -------^
 *** WARNING [W-328] Redefinition of global parameter 'TEMP'.
 
- (  3962) (  3962) .option accuracy = standard
+ (  3964) (  3964) .option accuracy = standard
 
 *** INFO [I-582] Setting option TRITOL to 20.
 
@@ -575,10 +577,10 @@
 
 *** INFO [I-582] Setting option FRTOLF to 1e-05.
 
- (  3963) (  3963) .option rshunt = 1.0G
- (  3964) (  3964) .option csdf 
- (  3965) (  3965) .save 'EasyBLDCV3'
- (  3966) (  3966) .end
+ (  3965) (  3965) .option rshunt = 1.0G
+ (  3966) (  3966) .option csdf 
+ (  3967) (  3967) .save 'EasyBLDCV3'
+ (  3968) (  3968) .end
 
 *** INFO [I-308] The circuit to be simulated contains operators (like 'SQRT' in
 *** INFO [I-308] ... line 407) within PSpice compatibility mode (activated by
@@ -591,6 +593,6 @@
 *** WARNING [W-560] ... VERBOSE parameter of COMOPT UNUSED MODELS.
 
 
-                   TITAN input processor end after 0.091 cpu-sec
+                   TITAN input processor end after 0.090 cpu-sec
                    on host LAPTOP-33HE614J (WINNT)
                    0 errors, 4 warnings 
