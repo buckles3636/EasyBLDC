@@ -4692,7 +4692,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "GREEN"
+		(property "Value" "RED"
 			(at 226.06 129.8574 90)
 			(effects
 				(font
